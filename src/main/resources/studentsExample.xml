@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Students>
+    <Student>
+        <id.UPN/>
+        <id.CRS/>
+        <Name.Given>Káo</Name.Given>
+        <Name.Family>Bdánek</Name.Family>
+        <Birth.Number>2188406221</Birth.Number>
+        <id.Sex>1</id.Sex>
+        <Birth.Date>18.01.2004</Birth.Date>
+        <Birth.Place>Bratislava</Birth.Place>
+        <Birth.Country/>
+    </Student>
+</Students>

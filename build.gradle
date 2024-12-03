@@ -31,6 +31,8 @@ dependencies {
     implementation 'org.openjfx:javafx-graphics:17.0.8'
     implementation 'jakarta.xml.bind:jakarta.xml.bind-api:3.0.1'
     implementation 'org.glassfish.jaxb:jaxb-runtime:3.0.1'
+    implementation 'com.github.mwiede:jsch:0.2.16'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
