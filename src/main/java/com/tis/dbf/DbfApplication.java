@@ -1,6 +1,6 @@
 package com.tis.dbf;
 
-import com.tis.dbf.model.Subject;
+import com.tis.dbf.model.Students;
 import com.tis.dbf.model.Subjects;
 import com.tis.dbf.service.XMLParsingServes;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +20,10 @@ public class DbfApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception{
-        Subjects subjects = xmlParsingServes.parseXml("example.xml");
+        Subjects subjects = xmlParsingServes.parseSubjectsXml("example.xml");
+        Students students = xmlParsingServes.parseStudents("studentsExample.xml");
         System.out.println(subjects);
+        System.out.println(students);
     }
 
 }
