@@ -2,9 +2,7 @@ package com.tis.dbf.service;
 
 import com.jcraft.jsch.*;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 
-@Service
 public class ServerConnection {
 
     @Value("${server.username}")
