@@ -71,7 +71,7 @@ public class DownloadController {
                     // Stop the spinning and update the status when download is complete
                     timeline.stop(); // Stop the spinning animation
                     spinner.setVisible(false); // Hide the spinner after download
-                    statusLabel.setText("Download complete!"); // Update the status label
+                    updateStatus("Download complete!"); // Update the status label
 
                     // Set the button's position to the same as the spinner's center
                     nextButton.setLayoutX((anchorPane.getWidth() - nextButton.getWidth()) / 2);
