@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<AnchorPane prefWidth="800" prefHeight="600" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.login.DownloadController">
+    <Label fx:id="statusLabel" text="Initializing..." layoutX="100" layoutY="100"/>
+    <ProgressIndicator fx:id="progressIndicator" layoutX="100" layoutY="150" progress="0.0"/>
+</AnchorPane>
+

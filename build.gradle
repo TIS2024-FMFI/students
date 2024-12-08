@@ -6,6 +6,10 @@ plugins {
     id 'application'
 }
 
+application {
+    mainClass = 'com.tis.dbf.JavaFxApp'
+}
+
 group = 'com.tis'
 version = '0.0.1-SNAPSHOT'
 
