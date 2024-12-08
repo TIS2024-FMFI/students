@@ -1,0 +1,13 @@
+/* styles.css */
+.green-button {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.green-button:hover {
+    -fx-background-color: #4CAF50; /* Lighter green for hover */
+}

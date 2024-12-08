@@ -1,5 +1,6 @@
 package com.example.login;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,6 +18,15 @@ public class LoginController {
     private PasswordField passwordField;
     @FXML
     private Button loginButton;
+
+    @FXML
+    public void initialize() {
+        // Clear focus from all components
+        Platform.runLater(() -> {
+            // Clear focus by setting focus to the root of the scene
+            usernameField.getScene().getRoot().requestFocus();
+        });
+    }
 
     // Handle the login button click event
     @FXML
