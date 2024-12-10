@@ -28,6 +28,8 @@ public class Student {
     private String birthdayPlace;
     @XmlElement(name = "Birth.Country")
     private String birthCountry;
+    @XmlElement(name = "Birth.Name")
+    private String birthName;
 
     @Override
     public String toString() {
@@ -36,5 +38,9 @@ public class Student {
                 ", second name='" + secondName + '\'' +
                 ", birthday day='" + birthDate + '\'' +
                 '}';
+    }
+
+    public String getFullName() {
+        return firstName + " " + secondName;
     }
 }

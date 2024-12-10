@@ -94,7 +94,7 @@ public class DownloadController {
     private void handleProceed() {
         try {
             // Load the new scene (Main Scene)
-            Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene.fxml")));
+            Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene2.fxml")));
 
             // Get the current stage and set the new scene
             Stage stage = (Stage) nextButton.getScene().getWindow();
