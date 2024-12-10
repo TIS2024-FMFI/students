@@ -1,6 +1,6 @@
 package com.tis.dbf;
 
-import com.tis.dbf.model.Students;
+import javafx.application.Application;
 import com.tis.dbf.model.Subjects;
 import com.tis.dbf.service.ServerConnection;
 import com.tis.dbf.service.XMLParsingServes;
@@ -10,27 +10,26 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DbfApplication implements CommandLineRunner {
+public class DbfApplication {
 
-    @Autowired
-    private XMLParsingServes xmlParsingServes;
-
-    @Autowired
+//    @Autowired
+//    private XMLParsingServes xmlParsingServes;
+//
     private ServerConnection serverConnection;
 
     public static void main(String[] args) {
-        SpringApplication.run(DbfApplication.class, args);
+        Application.launch(JavaFxApp.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception{
+//    @Override
+//    public void run(String... args) throws Exception{
 
 //        Students students = xmlParsingServes.parseStudents("studentsExample.xml");
 //        System.out.println(students);
 
-        serverConnection.downloadFilesFromServer();
-        Subjects subjects = xmlParsingServes.parseSubjectsXml("predmety.xml");
-        System.out.println(subjects);
-    }
+//        serverConnection.downloadFilesFromServer();
+//        Subjects subjects = xmlParsingServes.parseSubjectsXml("predmety.xml");
+//        System.out.println(subjects);
+//    }
 
 }
