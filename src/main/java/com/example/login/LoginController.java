@@ -10,6 +10,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class LoginController {
 
     @FXML
@@ -34,9 +39,8 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if ("a".equals(username) && "p".equals(password)) {
+        if (authenticateUser(username, password)) {
             showAlert(Alert.AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
-
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DownloadScene.fxml"));
                 Scene downloadScene = new Scene(loader.load(), 1920, 1080);
@@ -61,5 +65,37 @@ public class LoginController {
         alert.setTitle(title);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    private boolean authenticateUser(String username, String password) {
+        try {
+            String hashedPassword = hashPassword(password);
+            InputStream is = getClass().getClassLoader().getResourceAsStream("users.txt");
+            if (is == null) {
+                return false;
+            }
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] parts = line.split(":");
+                    if (parts.length == 2 && parts[0].equals(username) && parts[1].equals(hashedPassword)) {
+                        return true;
+                    }
+                }
+            }
+        } catch (NoSuchAlgorithmException | IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    private String hashPassword(String password) throws NoSuchAlgorithmException {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : hash) {
+            hexString.append(Integer.toHexString(0xff & b));
+        }
+        return hexString.toString();
     }
 }
