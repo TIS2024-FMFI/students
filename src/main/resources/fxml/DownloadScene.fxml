@@ -1,14 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.shape.Arc?>
+
 <?import javafx.scene.control.Button?>
-<AnchorPane fx:id="anchorPane" prefWidth="1920" prefHeight="1080" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.login.DownloadController">
-    <Label fx:id="statusLabel" text="Initializing..." layoutX="100" layoutY="100"/>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.text.Font?>
 
-    <!-- A loading circle with a visible segment -->
-    <Arc fx:id="spinner" startAngle="90" length="270" radiusX="50" radiusY="50" fill="transparent" stroke="black" strokeWidth="5"/>
-
-    <!-- Button that appears after download completes -->
-    <Button fx:id="nextButton" text="Proceed" layoutX="100" layoutY="200" onAction="#handleProceed" visible="false"/>
+<AnchorPane fx:id="anchorPane" prefHeight="517.0" prefWidth="1071.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.login.DownloadController">
+   <BorderPane prefHeight="517.0" prefWidth="1071.0">
+      <center>
+         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+               <Pane prefHeight="101.0" prefWidth="671.0">
+                  <children>
+                      <Label fx:id="statusLabel" layoutX="258.0" layoutY="24.0" text="Načítavanie...">
+                        <font>
+                           <Font name="System Bold" size="21.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane prefHeight="121.0" prefWidth="671.0">
+                  <children>
+                  
+                                              <!-- A loading circle with a visible segment -->
+                      <Arc fx:id="spinner" fill="transparent" layoutX="316.0" layoutY="48.0" length="270" radiusX="50.0" radiusY="50.0" startAngle="90" stroke="black" strokeWidth="5" />
+                  </children>
+               </Pane>
+               <Pane prefHeight="112.0" prefWidth="671.0">
+                  <children>
+                  
+                                  <!-- Button that appears after download completes -->
+                      <Button fx:id="nextButton" layoutX="250.0" layoutY="25.0" onAction="#handleProceed" prefHeight="51.0" prefWidth="168.0" text="Proceed" visible="false" />
+                  </children>
+               </Pane>
+            </children>
+         </VBox>
+      </center>
+      <top>
+         <Pane prefHeight="88.0" prefWidth="1071.0" BorderPane.alignment="CENTER" />
+      </top>
+      <right>
+         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      </right>
+      <bottom>
+         <Pane prefHeight="173.0" prefWidth="1071.0" BorderPane.alignment="CENTER" />
+      </bottom>
+      <left>
+         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      </left>
+   </BorderPane>
 </AnchorPane>
