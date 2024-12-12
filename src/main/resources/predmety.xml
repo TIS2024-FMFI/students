@@ -1,0 +1,6229 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Predmety>
+  <Predmet>
+    <UIDP>SAAA</UIDP>
+    <ID.system1/>
+    <ID.system2/>
+    <ID.system3/>
+    <Name.SK>Povinné predmety</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAB</UIDP>
+    <ID.system1/>
+    <ID.system2/>
+    <ID.system3/>
+    <Name.SK>Povinné voliteľné predmety</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAC</UIDP>
+    <ID.system1/>
+    <ID.system2/>
+    <ID.system3/>
+    <Name.SK>Výberové predmety</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAD</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS010</ID.system2>
+    <ID.system3>1AEB010</ID.system3>
+    <Name.SK>Matematika</Name.SK>
+    <Name.EN>Mathematics</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAE</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS010</ID.system2>
+    <ID.system3>1SAB010</ID.system3>
+    <Name.SK>Informatika</Name.SK>
+    <Name.EN>Informatics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS010</ID.system2>
+    <ID.system3>1ESB010</ID.system3>
+    <Name.SK>Úvod do práva</Name.SK>
+    <Name.EN>Introduction to Law</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAG</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS370</ID.system2>
+    <ID.system3>1ESB370</ID.system3>
+    <Name.SK>Úvod do politiky a politológie</Name.SK>
+    <Name.EN>Introduction to Politics and Politology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS020</ID.system2>
+    <ID.system3>1AEB020</ID.system3>
+    <Name.SK>Úvod do ekonómie</Name.SK>
+    <Name.EN>Introduction to Economics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS030</ID.system2>
+    <ID.system3>1ESB030</ID.system3>
+    <Name.SK>Úvod do európskej integrácie</Name.SK>
+    <Name.EN>Introduction to European Integration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAJ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS050</ID.system2>
+    <ID.system3>1ESB050</ID.system3>
+    <Name.SK>Medzinárodné vzťahy</Name.SK>
+    <Name.EN>International Relations</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAK</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS050</ID.system2>
+    <ID.system3>1AEB050</ID.system3>
+    <Name.SK>Štatistika</Name.SK>
+    <Name.EN>Statistics</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAL</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS040</ID.system2>
+    <ID.system3>1AEB040</ID.system3>
+    <Name.SK>Matematika</Name.SK>
+    <Name.EN>Mathematics</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAM</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS030</ID.system2>
+    <ID.system3>1AEB030</ID.system3>
+    <Name.SK>Mikroekonómia</Name.SK>
+    <Name.EN>Microeconomics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS000</ID.system2>
+    <ID.system3>1AEB000</ID.system3>
+    <Name.SK>Matematika</Name.SK>
+    <Name.EN>Matematics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAO</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS180</ID.system2>
+    <ID.system3>1APB180</ID.system3>
+    <Name.SK>Štatistika</Name.SK>
+    <Name.EN>Statistics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAP</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS040</ID.system2>
+    <ID.system3>1ESB040</ID.system3>
+    <Name.SK>Politický systém SR</Name.SK>
+    <Name.EN>Political System of Slovak Republik</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS060</ID.system2>
+    <ID.system3>1ESB060</ID.system3>
+    <Name.SK>Základy diplomacie</Name.SK>
+    <Name.EN>Introduction to Diplomacy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAR</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS030</ID.system2>
+    <ID.system3>1SPP030</ID.system3>
+    <Name.SK>Sociálna psychológia</Name.SK>
+    <Name.EN>Social Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAS</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS050</ID.system2>
+    <ID.system3>1APB050</ID.system3>
+    <Name.SK>Sociológia</Name.SK>
+    <Name.EN>Sociology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAT</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS040</ID.system2>
+    <ID.system3>1APB040</ID.system3>
+    <Name.SK>Psychológia osobnosti</Name.SK>
+    <Name.EN>Psychology of Personality</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS060</ID.system2>
+    <ID.system3>1APB060</ID.system3>
+    <Name.SK>Metodológia a metódy psychológie</Name.SK>
+    <Name.EN>Methodology and Methods of Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAV</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS060</ID.system2>
+    <ID.system3>1AEB060</ID.system3>
+    <Name.SK>Makroekonómia</Name.SK>
+    <Name.EN>Macroeconomics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAW</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS070</ID.system2>
+    <ID.system3>1AEB070</ID.system3>
+    <Name.SK>Ekonometria</Name.SK>
+    <Name.EN>Econometrics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAX</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS080</ID.system2>
+    <ID.system3>1AEB080</ID.system3>
+    <Name.SK>Demografia</Name.SK>
+    <Name.EN>Demography</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAY</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS160</ID.system2>
+    <ID.system3>1APB160</ID.system3>
+    <Name.SK>Seminár k záverečnej práci-realizácia VP</Name.SK>
+    <Name.EN>Bachelor Thesis Seminar</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAAZ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS070</ID.system2>
+    <ID.system3>1ESB070</ID.system3>
+    <Name.SK>Politické kultúry v Európe</Name.SK>
+    <Name.EN>European Political Cultures</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABA</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS100</ID.system2>
+    <ID.system3>1SAB100</ID.system3>
+    <Name.SK>Globálne problémy a globalizácia</Name.SK>
+    <Name.EN>Global Issues and Globalization</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAEBS090</ID.system2>
+    <ID.system3>1AEB090</ID.system3>
+    <Name.SK>Medzinárodné štatistické databázy</Name.SK>
+    <Name.EN>International Statistical Databases</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAEBS220</ID.system2>
+    <ID.system3>1AEB220</ID.system3>
+    <Name.SK>Logistika</Name.SK>
+    <Name.EN>Logistics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABD</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS110</ID.system2>
+    <ID.system3>1AEB110</ID.system3>
+    <Name.SK>Operačný výskum</Name.SK>
+    <Name.EN>Operational Research</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAEBS260</ID.system2>
+    <ID.system3>1AEB260</ID.system3>
+    <Name.SK>Analýza časových radov</Name.SK>
+    <Name.EN>Time Series Analysis</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS140</ID.system2>
+    <ID.system3>1AEB140</ID.system3>
+    <Name.SK>Modely konkurencie a kooperácie</Name.SK>
+    <Name.EN>Models of Cooperation and Competition</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABG</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS190</ID.system2>
+    <ID.system3>1APB190</ID.system3>
+    <Name.SK>Seminár k záverečnej práci</Name.SK>
+    <Name.EN>Bachelor Thesis Seminar</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS170</ID.system2>
+    <ID.system3>1APB170</ID.system3>
+    <Name.SK>Tvorba a rozvoj tímov</Name.SK>
+    <Name.EN>Team Building and Development</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS180</ID.system2>
+    <ID.system3>1ESB180</ID.system3>
+    <Name.SK>Seminár k záverečnej práci</Name.SK>
+    <Name.EN>Bachelor Thesis Seminar</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABJ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS330</ID.system2>
+    <ID.system3>1ESB330</ID.system3>
+    <Name.SK>Kultúrne a politické dejiny Európy</Name.SK>
+    <Name.EN>Cultural and Political History of Europ</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABK</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS090</ID.system2>
+    <ID.system3>1ESB090</ID.system3>
+    <Name.SK>Ľudské práva</Name.SK>
+    <Name.EN>Human Rights</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABL</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS350</ID.system2>
+    <ID.system3>1ESB350</ID.system3>
+    <Name.SK>Politika a spoločnosť - stredná a vý-   chodná Európa</Name.SK>
+    <Name.EN>Politics and Society: Central and Easter Europe</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABM</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS060</ID.system2>
+    <ID.system3>1SAB060</ID.system3>
+    <Name.SK>Filozofia sociálnych vied v multikultúr-nom svete</Name.SK>
+    <Name.EN>Philosophy of Social Sciences in Multicult World</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS070</ID.system2>
+    <ID.system3>1SAB070</ID.system3>
+    <Name.SK>Úvod do antropológie</Name.SK>
+    <Name.EN>Introduction to Anthropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABO</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS111</ID.system2>
+    <ID.system3>1ESB111</ID.system3>
+    <Name.SK>Diplomatická francúzština</Name.SK>
+    <Name.EN>Le francais diplomatique</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS220</ID.system2>
+    <ID.system3>1ESB220</ID.system3>
+    <Name.SK>Verejná politika</Name.SK>
+    <Name.EN>Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS380</ID.system2>
+    <ID.system3>1ESB380</ID.system3>
+    <Name.SK>Dejiny európskej integrácie</Name.SK>
+    <Name.EN>History of European Integration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABR</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS390</ID.system2>
+    <ID.system3>1ESB390</ID.system3>
+    <Name.SK>Právo európskej integrácie</Name.SK>
+    <Name.EN>The Law of the European Integration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABS</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS130</ID.system2>
+    <ID.system3>1ESB130</ID.system3>
+    <Name.SK>Ľudská podstata a sociálne vedy</Name.SK>
+    <Name.EN>Human Nature and Social Sciences</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABT</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS410</ID.system2>
+    <ID.system3>1ESt410</ID.system3>
+    <Name.SK>Komparatívna politika</Name.SK>
+    <Name.EN>Comparative Politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS400</ID.system2>
+    <ID.system3>1APB400</ID.system3>
+    <Name.SK>Sociálne postoje</Name.SK>
+    <Name.EN>Social Attitudes</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABV</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS150</ID.system2>
+    <ID.system3>1APB150</ID.system3>
+    <Name.SK>Konflikty a negociácia</Name.SK>
+    <Name.EN>Conflicts and Negotiations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS170</ID.system2>
+    <ID.system3>1ESB170</ID.system3>
+    <Name.SK>Comparative European Politics</Name.SK>
+    <Name.EN>Comparative European Politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABX</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS070</ID.system2>
+    <ID.system3>1APB070</ID.system3>
+    <Name.SK>Organizačná a pracovná psychológia</Name.SK>
+    <Name.EN>Work and Organizational Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABY</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS080</ID.system2>
+    <ID.system3>1APB080</ID.system3>
+    <Name.SK>Štatistické metódy</Name.SK>
+    <Name.EN>Statistical Methods</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SABZ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPBS090</ID.system2>
+    <ID.system3>1SPP090</ID.system3>
+    <Name.SK>Sociálna motivácia a správanie</Name.SK>
+    <Name.EN>Social Motivation and Behaviour</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACA</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS100</ID.system2>
+    <ID.system3>1APB100</ID.system3>
+    <Name.SK>Psychológia masovej komunikácie a verej-ná mienka</Name.SK>
+    <Name.EN>Psychology of Mass Communication and Publlic Opinion</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS260</ID.system2>
+    <ID.system3>1APB260</ID.system3>
+    <Name.SK>Základy neuropsychológie a biopsycholó- gie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS250</ID.system2>
+    <ID.system3>1APB250</ID.system3>
+    <Name.SK>Rozhodovanie a teória hier</Name.SK>
+    <Name.EN>Decision Marking and Game Theory</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS220</ID.system2>
+    <ID.system3>1APB220</ID.system3>
+    <Name.SK>Praktikum sociálnej interakcie</Name.SK>
+    <Name.EN>Practical Social Interaction</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACE</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS120</ID.system2>
+    <ID.system3>1APB120</ID.system3>
+    <Name.SK>Riadenie ľudských zdrojov</Name.SK>
+    <Name.EN>Human Resources Management</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS130</ID.system2>
+    <ID.system3>1APB130</ID.system3>
+    <Name.SK>Psychológia marketingovej komunikácie</Name.SK>
+    <Name.EN>Psychology of Marketing Communications</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACG</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS140</ID.system2>
+    <ID.system3>1APB140</ID.system3>
+    <Name.SK>Medzikultúrne štúdie</Name.SK>
+    <Name.EN>Cross-Cultural Studies</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS110</ID.system2>
+    <ID.system3>1SAB110</ID.system3>
+    <Name.SK>Filozofia mysle a kognitívne vedy</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS370</ID.system2>
+    <ID.system3>1APB370</ID.system3>
+    <Name.SK>Kognitívna psychológia</Name.SK>
+    <Name.EN>Cognitive Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS230</ID.system2>
+    <ID.system3>1APB230</ID.system3>
+    <Name.SK>Praktikum sociálnej interakcie</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS340</ID.system2>
+    <ID.system3>1APB340</ID.system3>
+    <Name.SK>Manažment vzdelávania</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS290</ID.system2>
+    <ID.system3>1APB290</ID.system3>
+    <Name.SK>Vzťahy s verejnosťou</Name.SK>
+    <Name.EN>Public Relations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS350</ID.system2>
+    <ID.system3>1APB350</ID.system3>
+    <Name.SK>Politická psychológia</Name.SK>
+    <Name.EN>Political Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS040</ID.system2>
+    <ID.system3>1SAB040</ID.system3>
+    <Name.SK>Moderná hebrejčina - ivrit</Name.SK>
+    <Name.EN>Modern Hebrew</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACO</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS200</ID.system2>
+    <ID.system3>1APB200</ID.system3>
+    <Name.SK>Manažment sociálnych systémov</Name.SK>
+    <Name.EN>Management of Social Systems</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS041</ID.system2>
+    <ID.system3>1SAB041</ID.system3>
+    <Name.SK>Moderná hebrejčina - ivrit</Name.SK>
+    <Name.EN>Modern Hebrew</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS210</ID.system2>
+    <ID.system3>1APB210</ID.system3>
+    <Name.SK>Kultúra a moc</Name.SK>
+    <Name.EN>Culture and Power</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACR</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS160</ID.system2>
+    <ID.system3>1SAB160</ID.system3>
+    <Name.SK>Antropológia a psychológia</Name.SK>
+    <Name.EN>Antropology and Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS280</ID.system2>
+    <ID.system3>1APB280</ID.system3>
+    <Name.SK>Praktikum sociálnej interakcie</Name.SK>
+    <Name.EN/>
+    <Name.Part>3</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACT</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS240</ID.system2>
+    <ID.system3>1APB240</ID.system3>
+    <Name.SK>Praktikum vybraných kvalitatívnych metód</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS270</ID.system2>
+    <ID.system3>1APB270</ID.system3>
+    <Name.SK>Spoločnosti v súčasnom svete: Sociálne  inštitúcie a sociálna zmena</Name.SK>
+    <Name.EN>Contemporary World Societies: Social Institutions and Social Change</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS300</ID.system2>
+    <ID.system3>1APB300</ID.system3>
+    <Name.SK>Rodová rovnosť</Name.SK>
+    <Name.EN>Gender Equality</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS320</ID.system2>
+    <ID.system3>1APB320</ID.system3>
+    <Name.SK>Vybrané problémy psychológie umenia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACX</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS150</ID.system2>
+    <ID.system3>1AEB150</ID.system3>
+    <Name.SK>Ekonómia a ekonomika EÚ</Name.SK>
+    <Name.EN>Economics and Economy of EU</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACY</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS160</ID.system2>
+    <ID.system3>1AEB160</ID.system3>
+    <Name.SK>Finančné inžinierstvo</Name.SK>
+    <Name.EN>Financial Engineering</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SACZ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS170</ID.system2>
+    <ID.system3>1AEB170</ID.system3>
+    <Name.SK>Verejná voľba</Name.SK>
+    <Name.EN>Public Choice</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADA</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS180</ID.system2>
+    <ID.system3>1AEB180</ID.system3>
+    <Name.SK>Seminár k záverečnej práci</Name.SK>
+    <Name.EN>Final Thesis Seminar</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADB</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS190</ID.system2>
+    <ID.system3>1AEB190</ID.system3>
+    <Name.SK>Seminár k záverečnej práci</Name.SK>
+    <Name.EN>Final Thesis Seminar</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADC</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS200</ID.system2>
+    <ID.system3>1AEB200</ID.system3>
+    <Name.SK>Ekonomická politika EÚ</Name.SK>
+    <Name.EN>Economic Policy of EU</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADD</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS210</ID.system2>
+    <ID.system3>1AEB210</ID.system3>
+    <Name.SK>Hospodárska politika SR</Name.SK>
+    <Name.EN>Economic Policy of SR</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADE</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS160</ID.system2>
+    <ID.system3>1ESB160</ID.system3>
+    <Name.SK>Etnicita, nacionalizmus a štát</Name.SK>
+    <Name.EN>Ethnicity, Nationalism and the State</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS250</ID.system2>
+    <ID.system3>1ESt250</ID.system3>
+    <Name.SK>Komparatívna politika: Balkán</Name.SK>
+    <Name.EN>Comparative Politics: Balkan</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADG</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS150</ID.system2>
+    <ID.system3>1ESB150</ID.system3>
+    <Name.SK>Inštitúcie EÚ a ich fungovanie</Name.SK>
+    <Name.EN>EU Institutions</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS185</ID.system2>
+    <ID.system3>1ESB185</ID.system3>
+    <Name.SK>Seminár k záverečnej práci</Name.SK>
+    <Name.EN>Bachelor Thesis Seminar</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS190</ID.system2>
+    <ID.system3>1ESB190</ID.system3>
+    <Name.SK>Médiá v medzinárodnej politike</Name.SK>
+    <Name.EN>Media in International Relations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADJ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS200</ID.system2>
+    <ID.system3>1ESB200</ID.system3>
+    <Name.SK>Národnostné menšiny v SR</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADK</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS130</ID.system2>
+    <ID.system3>1AEB130</ID.system3>
+    <Name.SK>Globálne a regionálne politické a ekono-mické systémy</Name.SK>
+    <Name.EN>Global and Regional Political and Economic Systems</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADL</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS140</ID.system2>
+    <ID.system3>1ESt140</ID.system3>
+    <Name.SK>Komparatívna politika: Princípy</Name.SK>
+    <Name.EN>Comparative Politics - Principles</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS360</ID.system2>
+    <ID.system3>1ESB360</ID.system3>
+    <Name.SK>Bioetika a spoločnosť</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS240</ID.system2>
+    <ID.system3>1ESB240</ID.system3>
+    <Name.SK>Úvod do bezpečnostných štúdií</Name.SK>
+    <Name.EN>Introduction to Security Studies</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADO</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS020</ID.system2>
+    <ID.system3>1APB020</ID.system3>
+    <Name.SK>Základy psychológie</Name.SK>
+    <Name.EN>Intoduction to Psychology</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADP</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS020</ID.system2>
+    <ID.system3>1ESB020</ID.system3>
+    <Name.SK>Politológia a politická analýza</Name.SK>
+    <Name.EN>Political Science and Political Analysis</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADQ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS270</ID.system2>
+    <ID.system3>1ESB270</ID.system3>
+    <Name.SK>Súčasná čínska politika a ekonomika</Name.SK>
+    <Name.EN>Present Chinese Politics and Economics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADR</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS120</ID.system2>
+    <ID.system3>1AEB120</ID.system3>
+    <Name.SK>Medzinárodná ekonómia</Name.SK>
+    <Name.EN>International Economics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADS</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS110</ID.system2>
+    <ID.system3>1APB110</ID.system3>
+    <Name.SK>Psychology of Adulthood and Aging</Name.SK>
+    <Name.EN>Psychology of Adulthood and Aging</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADT</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS080</ID.system2>
+    <ID.system3>1ESB080</ID.system3>
+    <Name.SK>Dejiny Európy</Name.SK>
+    <Name.EN>Histories of Europe</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS100</ID.system2>
+    <ID.system3>1ESt100</ID.system3>
+    <Name.SK>Komparatívna politika: Stredná Európa</Name.SK>
+    <Name.EN>Comparative Politics - Central Europe</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS047</ID.system2>
+    <ID.system3>1SAB047</ID.system3>
+    <Name.SK>Hebrejská Biblia s jej komentármi (1)</Name.SK>
+    <Name.EN>Hebrew Bible and its Commenataries (1)</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS030</ID.system2>
+    <ID.system3>1SAB030</ID.system3>
+    <Name.SK>Sloboda a spoločnosť</Name.SK>
+    <Name.EN>Freedom and Society</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADX</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS050</ID.system2>
+    <ID.system3>1SAB050</ID.system3>
+    <Name.SK>Racionalita a konanie v sociálnych ve-  dách</Name.SK>
+    <Name.EN>Rationality and Action in Social Sciences</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS140</ID.system2>
+    <ID.system3>1SAB140</ID.system3>
+    <Name.SK>Úvod do judaizmu</Name.SK>
+    <Name.EN>Introduction to Judaism</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SADZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS080</ID.system2>
+    <ID.system3>1SAB080</ID.system3>
+    <Name.SK>Židia v dejinách európskej kultúry</Name.SK>
+    <Name.EN>Jews in the History of European Culture</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS090</ID.system2>
+    <ID.system3>1SAB090</ID.system3>
+    <Name.SK>Rasa, etnicita, myseľ, kultúra</Name.SK>
+    <Name.EN>Race, Ethnicity, Mind and Culture</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SVPMS030</ID.system2>
+    <ID.system3>2VPM030</ID.system3>
+    <Name.SK>Verejné právo a verejná politika</Name.SK>
+    <Name.EN>Law and Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEC</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS010</ID.system2>
+    <ID.system3>1APB010</ID.system3>
+    <Name.SK>Základy psychológie</Name.SK>
+    <Name.EN>Intoduction to Psychology</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAED</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBS280</ID.system2>
+    <ID.system3>1AEB280</ID.system3>
+    <Name.SK>Výskumný seminár</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS150</ID.system2>
+    <ID.system3>1SAB150</ID.system3>
+    <Name.SK>Filozofia</Name.SK>
+    <Name.EN>Philosophy</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEF</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS042</ID.system2>
+    <ID.system3>1SAB042</ID.system3>
+    <Name.SK>Moderná hebrejčina - ivrit</Name.SK>
+    <Name.EN>Modern Hebrew</Name.EN>
+    <Name.Part>3</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEG</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS043</ID.system2>
+    <ID.system3>1SAB043</ID.system3>
+    <Name.SK>Moderná hebrejčina - ivrit</Name.SK>
+    <Name.EN>Modern Hebrew</Name.EN>
+    <Name.Part>4</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS210</ID.system2>
+    <ID.system3>1ESB210</ID.system3>
+    <Name.SK>Balkán v kontexte politických dejín     Európy</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEI</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS230</ID.system2>
+    <ID.system3>1ESB230</ID.system3>
+    <Name.SK>Management programov a projektov EÚ</Name.SK>
+    <Name.EN>Management of EU Programs and Projects</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SVPMS010</ID.system2>
+    <ID.system3>2VPT010</ID.system3>
+    <Name.SK>Verejná politika</Name.SK>
+    <Name.EN>Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SVPMS020</ID.system2>
+    <ID.system3>2VPM020</ID.system3>
+    <Name.SK>Ekonomické aspekty verejnej politiky</Name.SK>
+    <Name.EN>Economic Aspects of Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEL</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSMS190</ID.system2>
+    <ID.system3>2KVe190</ID.system3>
+    <Name.SK>Metódy sociálnych vied</Name.SK>
+    <Name.EN>Methods of Social Sciences</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SVPMS040</ID.system2>
+    <ID.system3>2VPM040</ID.system3>
+    <Name.SK>Viacúrovňová tvorba verejnej politiky a jej dôsledky-integrácia, decentralizácia</Name.SK>
+    <Name.EN>Multilevel Public Policy Making and Its Consequences-Intergration, Decentralizan</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS050</ID.system2>
+    <ID.system3>2VPM050</ID.system3>
+    <Name.SK>Metódy analýzy a výskumu - kvalitatívne</Name.SK>
+    <Name.EN>Analytical and  Research Methods - Qualitative</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEO</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SVPMS060</ID.system2>
+    <ID.system3>2VPM060</ID.system3>
+    <Name.SK>Praktické aspekty verejnej politiky</Name.SK>
+    <Name.EN>Practical Aspects of Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEP</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS430</ID.system2>
+    <ID.system3>1ESB430</ID.system3>
+    <Name.SK>Vybrané kapitoly medzinárodného práva</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEQ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS112</ID.system2>
+    <ID.system3>1ESB112</ID.system3>
+    <Name.SK>Diplomatická francúzština</Name.SK>
+    <Name.EN>Le francais diplomatique</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAER</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APO00431</ID.system2>
+    <ID.system3>1PO0431</ID.system3>
+    <Name.SK>Politické ideológie</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAES</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS260</ID.system2>
+    <ID.system3>1ESB260</ID.system3>
+    <Name.SK>Political Sociology of Central Europe</Name.SK>
+    <Name.EN>Political Sociology of Central Europe</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAET</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAEBS250</ID.system2>
+    <ID.system3>1AEB250</ID.system3>
+    <Name.SK>Informatika-kurz</Name.SK>
+    <Name.EN>Course and Informatics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS330</ID.system2>
+    <ID.system3>1APB330</ID.system3>
+    <Name.SK>Základy psychológie</Name.SK>
+    <Name.EN>Introduction to Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS360</ID.system2>
+    <ID.system3>1APB360</ID.system3>
+    <Name.SK>Teória pripútania a možnosti jej apli-  kácie v praxi</Name.SK>
+    <Name.EN>Application of Attachment Theory</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAEBS270</ID.system2>
+    <ID.system3>1AEB270</ID.system3>
+    <Name.SK>Finančné investovanie v Exceli</Name.SK>
+    <Name.EN>Financial Investing in Excel</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEX</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS141</ID.system2>
+    <ID.system3>1SAB141</ID.system3>
+    <Name.SK>Úvod do judaizmu</Name.SK>
+    <Name.EN>Introduction to Judaism</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00010</ID.system2>
+    <ID.system3>1PS0010</ID.system3>
+    <Name.SK>Percepcia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAEZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00051</ID.system2>
+    <ID.system3>1PS0051</ID.system3>
+    <Name.SK>Pamäť a pozornosť</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>MINCU055</ID.system2>
+    <ID.system3>1INC055</ID.system3>
+    <Name.SK>Kognitívne vedy: mozog a myseľ</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFB</UIDP>
+    <ID.system1/>
+    <ID.system2>XEPL2013</ID.system2>
+    <ID.system3>1EPL013</ID.system3>
+    <Name.SK>Vláda a demokracia vo Veľkej Británii</Name.SK>
+    <Name.EN>Government and Democracy in the UK</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFC</UIDP>
+    <ID.system1/>
+    <ID.system2>XEPL3057</ID.system2>
+    <ID.system3>1EPL057</ID.system3>
+    <Name.SK>Komunizmus vo východnej Európe</Name.SK>
+    <Name.EN>Communism in Eastern Europe</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFD</UIDP>
+    <ID.system1/>
+    <ID.system2>XEPL3102</ID.system2>
+    <ID.system3>1EPL102</ID.system3>
+    <Name.SK>Politika rozdelenia-Severné Írsko</Name.SK>
+    <Name.EN>The Politics of Division: Northern Ireland</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFE</UIDP>
+    <ID.system1/>
+    <ID.system2>XE</ID.system2>
+    <ID.system3>1E</ID.system3>
+    <Name.SK>Úvod do rakúskej politiky</Name.SK>
+    <Name.EN>Einfuhrung in die Osterreichische Politik</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFF</UIDP>
+    <ID.system1/>
+    <ID.system2>XE</ID.system2>
+    <ID.system3>1E</ID.system3>
+    <Name.SK>Základné texty - Medzinárodná politika</Name.SK>
+    <Name.EN>Grundlegende Texte - Internationale Politik</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFG</UIDP>
+    <ID.system1/>
+    <ID.system2>XE</ID.system2>
+    <ID.system3>1E</ID.system3>
+    <Name.SK>Aktuálne problémy svetovej politiky</Name.SK>
+    <Name.EN>Aktuelle Probleme der Weltpolitik</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFH</UIDP>
+    <ID.system1/>
+    <ID.system2>XEPL3067</ID.system2>
+    <ID.system3>1EPL067</ID.system3>
+    <Name.SK>Nacionalizmus, konzervativizmus a libe- ralizmus</Name.SK>
+    <Name.EN>Nationalism, Conservatism and Liberalism</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFI</UIDP>
+    <ID.system1/>
+    <ID.system2>XEPL3053</ID.system2>
+    <ID.system3>1EPL053</ID.system3>
+    <Name.SK>Teórie politiky</Name.SK>
+    <Name.EN>Political Theory</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFJ</UIDP>
+    <ID.system1/>
+    <ID.system2>XEPL3106</ID.system2>
+    <ID.system3>1EPL106</ID.system3>
+    <Name.SK>Parlamentná  politika</Name.SK>
+    <Name.EN>Parliamentary Politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>U  FJ083</ID.system2>
+    <ID.system3>1  F083</ID.system3>
+    <Name.SK>Španielčina I. - druhý románsky jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAEBS230</ID.system2>
+    <ID.system3>1AEB230</ID.system3>
+    <Name.SK>Národné účty</Name.SK>
+    <Name.EN>National Accounts</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFM</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2>SAEBSŠS1</ID.system2>
+    <ID.system3>1AEBŠS1</ID.system3>
+    <Name.SK>Kvantitatívne metódy v ekonómii</Name.SK>
+    <Name.EN>Quantitative Methods in Economics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFN</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2>SAEBSŠS2</ID.system2>
+    <ID.system3>1AEBŠS2</ID.system3>
+    <Name.SK>Medzinárodné ekonomické vzťahy</Name.SK>
+    <Name.EN>International Economic Relations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFO</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2>SESBSŠS1</ID.system2>
+    <ID.system3>1ESBŠS1</ID.system3>
+    <Name.SK>Európska integrácia</Name.SK>
+    <Name.EN>European Integration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFP</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2>SESBSŠS2</ID.system2>
+    <ID.system3>1ESBŠS2</ID.system3>
+    <Name.SK>Politológia a medzinárodné vzťahy</Name.SK>
+    <Name.EN>Political Science and International Relations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFQ</UIDP>
+    <ID.system1>S</ID.system1>
+    <ID.system2>SAPBSSS1</ID.system2>
+    <ID.system3>1APBSS1</ID.system3>
+    <Name.SK>Všeobecná a sociálna psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFR</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX090</ID.system2>
+    <ID.system3>1ESX090</ID.system3>
+    <Name.SK>Konštrukcia Európy v politickej reklame a vo verejných kampaniach</Name.SK>
+    <Name.EN>Public Construction of Europe-Political Advertising and campaigning</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>Z</ID.system2>
+    <ID.system3>1</ID.system3>
+    <Name.SK>Medzinárodná politická scéna</Name.SK>
+    <Name.EN>International political relations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFT</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>Z</ID.system2>
+    <ID.system3>1</ID.system3>
+    <Name.SK>Medzinárodná ochrana ľudských práv</Name.SK>
+    <Name.EN>International protection of human rights</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>Z</ID.system2>
+    <ID.system3>1</ID.system3>
+    <Name.SK>Sociologický pohľad na poľskú spoločnosť</Name.SK>
+    <Name.EN>Sociological insight into Polish society</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>Z</ID.system2>
+    <ID.system3>1</ID.system3>
+    <Name.SK>Post-komunizmus: vynárajúca sa záhada</Name.SK>
+    <Name.EN>Post-communism: the emerging enigma</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>Z</ID.system2>
+    <ID.system3>1</ID.system3>
+    <Name.SK>Situácia na strednom východe</Name.SK>
+    <Name.EN>The Middle Eastern scene</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFX</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESBS290</ID.system2>
+    <ID.system3>1ESB290</ID.system3>
+    <Name.SK>Ochrana základných práv v EÚ</Name.SK>
+    <Name.EN>Protection of the Fundamental Rights in EU</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX020</ID.system2>
+    <ID.system3>1ESX020</ID.system3>
+    <Name.SK>Klientelizmus a korupcia</Name.SK>
+    <Name.EN>Clientelism and Corruption</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAFZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX030</ID.system2>
+    <ID.system3>1ESX030</ID.system3>
+    <Name.SK>Vzťahy Európskej únie a Číny</Name.SK>
+    <Name.EN>Sino - European Relations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX040</ID.system2>
+    <ID.system3>1ESX040</ID.system3>
+    <Name.SK>Problémy výskumu verejnej mienky</Name.SK>
+    <Name.EN>Public Opinion Research</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX060</ID.system2>
+    <ID.system3>1ESX060</ID.system3>
+    <Name.SK>Rakúsky politický systém</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX070</ID.system2>
+    <ID.system3>1ESX070</ID.system3>
+    <Name.SK>Holokaust v európskych dejinách</Name.SK>
+    <Name.EN>Holocaust in the European History</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX080</ID.system2>
+    <ID.system3>1ESX080</ID.system3>
+    <Name.SK>Federácia v strednej Európe - Hodžov    projekt</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX050</ID.system2>
+    <ID.system3>1ESX050</ID.system3>
+    <Name.SK>Sexualita a moc</Name.SK>
+    <Name.EN>Sexuality and Power</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGF</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESMS080</ID.system2>
+    <ID.system3>2ESM080</ID.system3>
+    <Name.SK>Komparatívna politika: Latinská Amerika</Name.SK>
+    <Name.EN>Comparative Politics: Latin America</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGG</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX010</ID.system2>
+    <ID.system3>ESX010</ID.system3>
+    <Name.SK>Rodová politika v Európskej únii</Name.SK>
+    <Name.EN>Gender Policy in the EU</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGH</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAEBS290</ID.system2>
+    <ID.system3>1AEB290</ID.system3>
+    <Name.SK>Seminár z poisťovníctva</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS120</ID.system2>
+    <ID.system3>1ESt120</ID.system3>
+    <Name.SK>Komparatívna politika - Západná Európa</Name.SK>
+    <Name.EN>Comparative Politics - Western Europe</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS420</ID.system2>
+    <ID.system3>1APB420</ID.system3>
+    <Name.SK>Spoločnosť a moc</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS300</ID.system2>
+    <ID.system3>1ESB300</ID.system3>
+    <Name.SK>Menšinová politika v EÚ</Name.SK>
+    <Name.EN>Politics of Minorities in EU</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGL</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS100</ID.system2>
+    <ID.system3>2VPM100</ID.system3>
+    <Name.SK>Sociologické aspekty verejnej politiky</Name.SK>
+    <Name.EN>Sociological Aspects of Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGM</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS055</ID.system2>
+    <ID.system3>2VPM055</ID.system3>
+    <Name.SK>Nástroje verejnej politiky a implemen-  tácia</Name.SK>
+    <Name.EN>Public Policy Instruments and Implementation</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS065</ID.system2>
+    <ID.system3>2VPM065</ID.system3>
+    <Name.SK>Verejné financie</Name.SK>
+    <Name.EN>Public Finance</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGO</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS070</ID.system2>
+    <ID.system3>2VPM070</ID.system3>
+    <Name.SK>Komparatívna verejná politika v kontex- te EÚ</Name.SK>
+    <Name.EN>Comparative Public Policy in EU Context</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGP</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS300</ID.system2>
+    <ID.system3>2VPM300</ID.system3>
+    <Name.SK>Teória a prax moderného welfare state</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS045</ID.system2>
+    <ID.system3>2VPM045</ID.system3>
+    <Name.SK>Metódy analýzy výskumu - kvantitatívne</Name.SK>
+    <Name.EN>Analytical and Research Methods - Quantitative</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGR</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS012</ID.system2>
+    <ID.system3>1SAB012</ID.system3>
+    <Name.SK>Metodológia sociálnych vied</Name.SK>
+    <Name.EN>Methodology of Social Sciences</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBS110</ID.system2>
+    <ID.system3>1ESB110</ID.system3>
+    <Name.SK>Diplomatická francuzština</Name.SK>
+    <Name.EN>Le Francais Diplomatique et des Relations Internationales</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGT</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SSABD021</ID.system2>
+    <ID.system3>1SAB021</ID.system3>
+    <Name.SK>Antropologické teórie</Name.SK>
+    <Name.EN>Anthropological Theories</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS022</ID.system2>
+    <ID.system3>1SAB022</ID.system3>
+    <Name.SK>Sociálna analýza a interpretácia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGV</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS023</ID.system2>
+    <ID.system3>1SAB023</ID.system3>
+    <Name.SK>Štatistika pre antropológov</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGW</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS024</ID.system2>
+    <ID.system3>1SAB024</ID.system3>
+    <Name.SK>Úvod do humánnej ekológie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGX</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS200</ID.system2>
+    <ID.system3>1SAB200</ID.system3>
+    <Name.SK>Základy judaizmu</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGY</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS010</ID.system2>
+    <ID.system3>2ESM010</ID.system3>
+    <Name.SK>Spoločná európska bezpečnostná a obrannápolitika</Name.SK>
+    <Name.EN>Common European Security and Defense Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAGZ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS020</ID.system2>
+    <ID.system3>2ESM020</ID.system3>
+    <Name.SK>Teórie medzinárodných vzťahov</Name.SK>
+    <Name.EN>Theories of International Relations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS210</ID.system2>
+    <ID.system3>1SAB210</ID.system3>
+    <Name.SK>Základy sociálnych vied</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHB</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS120</ID.system2>
+    <ID.system3>2APM120</ID.system3>
+    <Name.SK>Metódy sociálnej psychológie</Name.SK>
+    <Name.EN>Methods of Social Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHC</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS020</ID.system2>
+    <ID.system3>2APM020</ID.system3>
+    <Name.SK>Klinická psychológia v pracovnej sfére</Name.SK>
+    <Name.EN>Clinical Psychology in Work Scope</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHD</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS190</ID.system2>
+    <ID.system3>2APM190</ID.system3>
+    <Name.SK>Interná a externá komunikácia organizá- cie</Name.SK>
+    <Name.EN>Internal and External Communication</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHE</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS040</ID.system2>
+    <ID.system3>2APM040</ID.system3>
+    <Name.SK>Evolučná psychológia</Name.SK>
+    <Name.EN>Evolutionary Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS010</ID.system2>
+    <ID.system3>2APM010</ID.system3>
+    <Name.SK>Metódy psychológie práce a organizácie</Name.SK>
+    <Name.EN>Methods of the and Organizational Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHG</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS030</ID.system2>
+    <ID.system3>2APM030</ID.system3>
+    <Name.SK>Spotrebiteľské správanie a cieľová sku- pina</Name.SK>
+    <Name.EN>Consumer Behaviour and Target Group</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHH</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS080</ID.system2>
+    <ID.system3>2APM080</ID.system3>
+    <Name.SK>Riadenie zmien v organizácii</Name.SK>
+    <Name.EN>Change Management in Organization</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHI</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS090</ID.system2>
+    <ID.system3>2APM090</ID.system3>
+    <Name.SK>Riadenie a rozvoj ľudských zdrojov</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHJ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS210</ID.system2>
+    <ID.system3>2APM210</ID.system3>
+    <Name.SK>Psychológia bezpečnosti práce</Name.SK>
+    <Name.EN>Psychology of Work Safety</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHK</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESBS310</ID.system2>
+    <ID.system3>1ESB310</ID.system3>
+    <Name.SK>Politiky EÚ</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPXX070</ID.system2>
+    <ID.system3>2APM070</ID.system3>
+    <Name.SK>Praktický úvod do kritického myslenia</Name.SK>
+    <Name.EN>Practical Introduction into Critical Thinking</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPXX290</ID.system2>
+    <ID.system3>2APM290</ID.system3>
+    <Name.SK>Modely kognitívneho vývinu</Name.SK>
+    <Name.EN>Models of Cognitive Development</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS060</ID.system2>
+    <ID.system3>2APM060</ID.system3>
+    <Name.SK>Význam a komunikácia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHO</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPXX100</ID.system2>
+    <ID.system3>2APM100</ID.system3>
+    <Name.SK>Experienciálne učenie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPXX110</ID.system2>
+    <ID.system3>2APM110</ID.system3>
+    <Name.SK>Spoločenská zodpovednosť firiem</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHQ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS050</ID.system2>
+    <ID.system3>2APM050</ID.system3>
+    <Name.SK>Kognitívna neuroveda</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHR</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS090</ID.system2>
+    <ID.system3>2ESM090</ID.system3>
+    <Name.SK>Bioetika a EÚ</Name.SK>
+    <Name.EN>Bioethics and European Union</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHS</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS100</ID.system2>
+    <ID.system3>2ESM100</ID.system3>
+    <Name.SK>Negociácia vo svetovej politike: Modely politickej komunikácie</Name.SK>
+    <Name.EN>Negotations in World Politics: Political Communication Models</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHT</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS170</ID.system2>
+    <ID.system3>2AEM170</ID.system3>
+    <Name.SK>Spoločná poľnohospodárska politika</Name.SK>
+    <Name.EN>Common Agricultural Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS180</ID.system2>
+    <ID.system3>2ESM180</ID.system3>
+    <Name.SK>Vonkajšie vzťahy EÚ</Name.SK>
+    <Name.EN>External Relations of the European Union</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHV</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS110</ID.system2>
+    <ID.system3>2ESM110</ID.system3>
+    <Name.SK>Symboly a mýty európkej integrácie</Name.SK>
+    <Name.EN>Symbols and Myths of European Integration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHW</UIDP>
+    <ID.system1/>
+    <ID.system2/>
+    <ID.system3/>
+    <Name.SK>Predmety štátnej skúšky</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHX</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>1APBŠS2</ID.system3>
+    <Name.SK>Organizačná a pracovná psychológia</Name.SK>
+    <Name.EN>Organizational and Work Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00091</ID.system2>
+    <ID.system3/>
+    <Name.SK>Predstavy a myslenie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAHZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>M</ID.system2>
+    <ID.system3/>
+    <Name.SK>Francúzsky jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>M</ID.system2>
+    <ID.system3/>
+    <Name.SK>Nemecký jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>T7BmTJ21</ID.system2>
+    <ID.system3/>
+    <Name.SK>Technika jazzového tanca</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIC</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2SPPŠS1</ID.system3>
+    <Name.SK>Psychológia v organizácii a v marketingu</Name.SK>
+    <Name.EN>Psychology in Organization and Marketing</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAID</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2SPPŠS2</ID.system3>
+    <Name.SK>Metódy aplikovanej psychológie</Name.SK>
+    <Name.EN>Methods of Applied Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIE</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2VPMŠS2</ID.system3>
+    <Name.SK>Komparatívna verejná politika</Name.SK>
+    <Name.EN>Comparative Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIF</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2VPMŠS2</ID.system3>
+    <Name.SK>Aplikovaná verejná politika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIG</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>1SABŠS1</ID.system3>
+    <Name.SK>Antropologické teórie</Name.SK>
+    <Name.EN>Anthropological Theories</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIH</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>1SABŠS2</ID.system3>
+    <Name.SK>Modelový projekt terénneho výskumu - ko-lokvium</Name.SK>
+    <Name.EN>Sample Project of a Fieldwork - Colloquial Exam</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAII</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2ESMŠS1</ID.system3>
+    <Name.SK>Politiky EÚ</Name.SK>
+    <Name.EN>EU Politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIJ</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2ESMŠS2</ID.system3>
+    <Name.SK>Medzinárodná politika</Name.SK>
+    <Name.EN>International Politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboPO039</ID.system2>
+    <ID.system3/>
+    <Name.SK>Problémy západného Balkánu</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX110</ID.system2>
+    <ID.system3>1ESX110</ID.system3>
+    <Name.SK>Občianska spoločnosť</Name.SK>
+    <Name.EN>The Civil Society</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX100</ID.system2>
+    <ID.system3>1ESX100</ID.system3>
+    <Name.SK>Teritoriálne štúdiá: Západný Balkán</Name.SK>
+    <Name.EN>Teritorial Studies: The Western Balkans</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS048</ID.system2>
+    <ID.system3>1SAB048</ID.system3>
+    <Name.SK>Hebrejská Biblia s jej komentármi (2)</Name.SK>
+    <Name.EN>Hebrew Bible and its Commenataries (2)</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIO</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS020</ID.system2>
+    <ID.system3>1SAB020</ID.system3>
+    <Name.SK>História židovského národa</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIP</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS170</ID.system2>
+    <ID.system3>1SAB170</ID.system3>
+    <Name.SK>Židovská identita</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIQ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS180</ID.system2>
+    <ID.system3>1SAB180</ID.system3>
+    <Name.SK>Ľudská prirodzenosť a kultúrna identita</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIR</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS032</ID.system2>
+    <ID.system3>1SAB032</ID.system3>
+    <Name.SK>Ekonomická antropológia</Name.SK>
+    <Name.EN>Economic Anthropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS044</ID.system2>
+    <ID.system3>1SAB044</ID.system3>
+    <Name.SK>Moderná hebrejčina - Ivrit (5)</Name.SK>
+    <Name.EN>Modern Hebrew (5)</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIT</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS045</ID.system2>
+    <ID.system3>1SAB045</ID.system3>
+    <Name.SK>Moderná hebrejčina - Ivrit (6)</Name.SK>
+    <Name.EN>Modern Hebrew (6)</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APP00562</ID.system2>
+    <ID.system3/>
+    <Name.SK>Corporate Identity</Name.SK>
+    <Name.EN>Corporate Identity</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>P</ID.system2>
+    <ID.system3>1PRV</ID.system3>
+    <Name.SK>Forezna psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SVPMS080</ID.system2>
+    <ID.system3>2VPM080</ID.system3>
+    <Name.SK>Etika v politike a sociálnych vedách</Name.SK>
+    <Name.EN>Ethics in politics and Social Sciences</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIX</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSO270</ID.system2>
+    <ID.system3/>
+    <Name.SK>Obchodné právo (1)</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSO240</ID.system2>
+    <ID.system3/>
+    <Name.SK>Štatistika na PC</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAIZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSO260</ID.system2>
+    <ID.system3/>
+    <Name.SK>Ekononómia IV</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>300402SE</ID.system2>
+    <ID.system3/>
+    <Name.SK>Kritická teória ako analytický          prostriedok súčasných problémov</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>990122UE</ID.system2>
+    <ID.system3/>
+    <Name.SK>Nemčina</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAE</ID.system2>
+    <ID.system3/>
+    <Name.SK>Historia 20. storočia so zameraním na   Strednú Európu</Name.SK>
+    <Name.EN>Century History with focus on the CE</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAE</ID.system2>
+    <ID.system3/>
+    <Name.SK>Teória investovania, ekonomická nemčina</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAE</ID.system2>
+    <ID.system3/>
+    <Name.SK>Základy daňového práva, právo sociálnehozabezpečenia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJF</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUES</ID.system2>
+    <ID.system3/>
+    <Name.SK>Európska únia: história, štruktúry,     problémy</Name.SK>
+    <Name.EN>European Union: History, Structures, Problems</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJG</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APO00472</ID.system2>
+    <ID.system3/>
+    <Name.SK>Teórie medzinárodných vzťahov</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJH</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAP</ID.system2>
+    <ID.system3/>
+    <Name.SK>Poľská spoločnosť a politika</Name.SK>
+    <Name.EN>Polish society and politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJI</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAP</ID.system2>
+    <ID.system3/>
+    <Name.SK>Trendy v ochrane detí</Name.SK>
+    <Name.EN>Trends in child protection</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAP</ID.system2>
+    <ID.system3/>
+    <Name.SK>Sociologické vhľady do poľskej          spoločnosti</Name.SK>
+    <Name.EN>Sociological insights into Polish society</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAP</ID.system2>
+    <ID.system3/>
+    <Name.SK>Úvod do psychológie</Name.SK>
+    <Name.EN>Introduction to psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAP</ID.system2>
+    <ID.system3/>
+    <Name.SK>Základné komunikačné zručnosti</Name.SK>
+    <Name.EN>Basic communication skills</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAP</ID.system2>
+    <ID.system3/>
+    <Name.SK>Kurz písania pre sociálne vedy</Name.SK>
+    <Name.EN>Social science writing</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESocrUAP</ID.system2>
+    <ID.system3/>
+    <Name.SK>Úvod do medicínskej antropológie</Name.SK>
+    <Name.EN>Introduction to medical anthropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJO</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>1APBŠS1</ID.system3>
+    <Name.SK>Všeobecná psychológia</Name.SK>
+    <Name.EN>General Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPXX140</ID.system2>
+    <ID.system3>1APB140</ID.system3>
+    <Name.SK>Sociálny marketing</Name.SK>
+    <Name.EN>Social marketing</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJQ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPXX150</ID.system2>
+    <ID.system3>1APB150</ID.system3>
+    <Name.SK>Sociálna psychológia vo filme</Name.SK>
+    <Name.EN>Social Psychology in Film</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJR</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEBS300</ID.system2>
+    <ID.system3>1AEB300</ID.system3>
+    <Name.SK>Medzinárodné organizácie</Name.SK>
+    <Name.EN>International Organizations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX120</ID.system2>
+    <ID.system3>1ESB120</ID.system3>
+    <Name.SK>Symbolická politika v strednej a východnej Európe 1945 - 1989</Name.SK>
+    <Name.EN>Symbolic Politics in Central and Eastern Europe 1945 - 1989</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJT</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX140</ID.system2>
+    <ID.system3>1AEB140</ID.system3>
+    <Name.SK>Európa a medzinárodná migrácia</Name.SK>
+    <Name.EN>Europe and International Migration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX160</ID.system2>
+    <ID.system3>1ESB160</ID.system3>
+    <Name.SK>Rasizmus, antisemitizmus, holokaust</Name.SK>
+    <Name.EN>Racism, Antisemitism, Holocaust</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX150</ID.system2>
+    <ID.system3>1ESB150</ID.system3>
+    <Name.SK>Európska zahraničná politika</Name.SK>
+    <Name.EN>European Foreign Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX130</ID.system2>
+    <ID.system3>1ESB130</ID.system3>
+    <Name.SK>Kultúra každodennosti za komunizmu</Name.SK>
+    <Name.EN>Everyday Communism in Central and Eastern Europe</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJX</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS030</ID.system2>
+    <ID.system3>2ESM030</ID.system3>
+    <Name.SK>Aktuálne otázky európskej integrácie</Name.SK>
+    <Name.EN>Contemporary Issues in European Integration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJY</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMS070</ID.system2>
+    <ID.system3>2AEM070</ID.system3>
+    <Name.SK>Regionálna ekonómia a politika</Name.SK>
+    <Name.EN>Regional Economics and Politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAJZ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS200</ID.system2>
+    <ID.system3>2ESM200</ID.system3>
+    <Name.SK>Súdny systém EÚ</Name.SK>
+    <Name.EN>Le Systeme Judiciaire Communautaire</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKA</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS200</ID.system2>
+    <ID.system3>2APM200</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN>Master Thesis Seminar</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKB</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS150</ID.system2>
+    <ID.system3>2ESM150</ID.system3>
+    <Name.SK>Zahraničná politika SR</Name.SK>
+    <Name.EN>Foreign Policy of Slovakia</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKC</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS340</ID.system2>
+    <ID.system3>1ESB340</ID.system3>
+    <Name.SK>Akademický prejav</Name.SK>
+    <Name.EN>Adacemic Communication</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKD</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS320</ID.system2>
+    <ID.system3>1ESB320</ID.system3>
+    <Name.SK>Medzinárodné vzťahy</Name.SK>
+    <Name.EN>International Relations</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS331</ID.system2>
+    <ID.system3>1APX331</ID.system3>
+    <Name.SK>Základy psychológie pre nepsychológov</Name.SK>
+    <Name.EN>Introduction to Psychology for Non-Psychologists</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKF</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS310</ID.system2>
+    <ID.system3>1SPP310</ID.system3>
+    <Name.SK>Negociácia, mediácia a riešenie konfli- ktov</Name.SK>
+    <Name.EN>Negotiation, Mediation and Conflict Resolution</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKG</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS031</ID.system2>
+    <ID.system3>1SAB031</ID.system3>
+    <Name.SK>Politická antropológia</Name.SK>
+    <Name.EN>Political Antropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS033</ID.system2>
+    <ID.system3>1SAB033</ID.system3>
+    <Name.SK>Terénne metódy a techniky</Name.SK>
+    <Name.EN>Title of Course: Field Methods</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKI</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS034</ID.system2>
+    <ID.system3>1SAB034</ID.system3>
+    <Name.SK>Humánna ekológia</Name.SK>
+    <Name.EN>Human Ecology</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKJ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS025</ID.system2>
+    <ID.system3>1SAB025</ID.system3>
+    <Name.SK>Judaistika 1: História židovského národa</Name.SK>
+    <Name.EN>Jewish Studies 1: The History of Jewish Nation</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKK</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS035</ID.system2>
+    <ID.system3>1SAB035</ID.system3>
+    <Name.SK>Sociálne transformácie v Európe</Name.SK>
+    <Name.EN>Social Transformations in Europe</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKL</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS036</ID.system2>
+    <ID.system3>1SAB036</ID.system3>
+    <Name.SK>Aplikovaná antropológia</Name.SK>
+    <Name.EN>Applied Anthropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKM</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS037</ID.system2>
+    <ID.system3>1SAB037</ID.system3>
+    <Name.SK>Etnicita a nacionalizmus</Name.SK>
+    <Name.EN>Ethnicity and Nationalism</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS038</ID.system2>
+    <ID.system3>1SAB038</ID.system3>
+    <Name.SK>Terénne metódy a techniky</Name.SK>
+    <Name.EN>Title of Course: Field Methods</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKO</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS039</ID.system2>
+    <ID.system3>1SAB039</ID.system3>
+    <Name.SK>Humánna ekológia</Name.SK>
+    <Name.EN>Human Ecology</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKP</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS021</ID.system2>
+    <ID.system3>1SAB021</ID.system3>
+    <Name.SK>Judaistika 2: Židovská identita</Name.SK>
+    <Name.EN>Jewish Studies 2: The Jewish Identity</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKQ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS046</ID.system2>
+    <ID.system3>1SAB046</ID.system3>
+    <Name.SK>Antropológia spotreby</Name.SK>
+    <Name.EN>Title of Course: Anthropology of Consumption</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKR</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS015</ID.system2>
+    <ID.system3>2VPM015</ID.system3>
+    <Name.SK>Základy verejnej politiky</Name.SK>
+    <Name.EN>Introduction to Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKS</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS270</ID.system2>
+    <ID.system3>2APM270</ID.system3>
+    <Name.SK>Personálny manažment - trendy a prax</Name.SK>
+    <Name.EN>Pesonal Management - Trends and Practice</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKT</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS260</ID.system2>
+    <ID.system3>2APM260</ID.system3>
+    <Name.SK>Psychológia v nezamestnanosti</Name.SK>
+    <Name.EN>Unemployment Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS230</ID.system2>
+    <ID.system3>2APM230</ID.system3>
+    <Name.SK>Pedagogická psychológia</Name.SK>
+    <Name.EN>Title of: Educational Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKV</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS130</ID.system2>
+    <ID.system3>2APM130</ID.system3>
+    <Name.SK>Karierové poradenstvo</Name.SK>
+    <Name.EN>Carrer Consultancy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKW</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS240</ID.system2>
+    <ID.system3>2APM240</ID.system3>
+    <Name.SK>Marketing neziskových projektov</Name.SK>
+    <Name.EN>Marketing of Nonprofit Projects</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKX</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS150</ID.system2>
+    <ID.system3>2APM150</ID.system3>
+    <Name.SK>Psychológia tvorivosti</Name.SK>
+    <Name.EN>Psychology of Creativity</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKY</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS180</ID.system2>
+    <ID.system3>2APM180</ID.system3>
+    <Name.SK>Metódy psychológie marketingovej komuni-kácie</Name.SK>
+    <Name.EN>Metods of Marketing Communication psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAKZ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS120</ID.system2>
+    <ID.system3>2ESM120</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN>Master Thesis Seminar</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALA</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS160</ID.system2>
+    <ID.system3>2ESM160</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN>Master Thesis Seminar</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALB</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS250</ID.system2>
+    <ID.system3>2APM250</ID.system3>
+    <Name.SK>Rodové prístupy a psychológia</Name.SK>
+    <Name.EN>Gender Approaches and Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALC</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS170</ID.system2>
+    <ID.system3>2APM170</ID.system3>
+    <Name.SK>Psychodiagnostika dospelých</Name.SK>
+    <Name.EN>Psychodiagnostics of Adults</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS160</ID.system2>
+    <ID.system3>2APM160</ID.system3>
+    <Name.SK>Empowerment: viesť seba a druhých</Name.SK>
+    <Name.EN>Empowerment: Leading Without Power</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS250</ID.system2>
+    <ID.system3>2APM250</ID.system3>
+    <Name.SK>Príprava experienciálneho vzdelávacieho projektu</Name.SK>
+    <Name.EN>Preparation of Experiential Educational Project</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALF</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS220</ID.system2>
+    <ID.system3>2APM220</ID.system3>
+    <Name.SK>Psychológia reklamy a nástrojov marketi-ngovej komunikácie</Name.SK>
+    <Name.EN>Psychology of Advertising and of the Marketing Communication Tools</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALG</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS280</ID.system2>
+    <ID.system3>2APM280</ID.system3>
+    <Name.SK>Základy práva pre psychológov</Name.SK>
+    <Name.EN>Elements of Law Psychologists</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS010</ID.system2>
+    <ID.system3>2AEM010</ID.system3>
+    <Name.SK>Aplikovaná ekonometria</Name.SK>
+    <Name.EN>Applied Econometrics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS050</ID.system2>
+    <ID.system3>2AEM050</ID.system3>
+    <Name.SK>Mikroekonomická analýza</Name.SK>
+    <Name.EN>Microeconomic Analysis</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALJ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMS030</ID.system2>
+    <ID.system3>2AEM030</ID.system3>
+    <Name.SK>Teória rozhodovania</Name.SK>
+    <Name.EN>Decision Making Theory</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALK</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMS040</ID.system2>
+    <ID.system3>2AEM040</ID.system3>
+    <Name.SK>Teória hier</Name.SK>
+    <Name.EN>Game Theory</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALL</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMS080</ID.system2>
+    <ID.system3>2AEM080</ID.system3>
+    <Name.SK>Ekonómia životného prostredia</Name.SK>
+    <Name.EN>Economics of Enviroment</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALM</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS060</ID.system2>
+    <ID.system3>2AEM060</ID.system3>
+    <Name.SK>Modelovanie sociálno-ekonomických proce-sov</Name.SK>
+    <Name.EN>Modelling of Socio-Economic Processes</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALN</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMS180</ID.system2>
+    <ID.system3>2AEM180</ID.system3>
+    <Name.SK>Ekonomický rast a sociálny rozvoj</Name.SK>
+    <Name.EN>Economic Growth and Social Development</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALO</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMS111</ID.system2>
+    <ID.system3>2KVe111</ID.system3>
+    <Name.SK>Úvod do kognitívnej vedy</Name.SK>
+    <Name.EN>Introduction to Cognitive Science</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALP</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>MINCU017</ID.system2>
+    <ID.system3>2KVM017</ID.system3>
+    <Name.SK>Základy umelej inteligencie</Name.SK>
+    <Name.EN>Elements of Artificial Intelligence</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMS121</ID.system2>
+    <ID.system3>2KVe121</ID.system3>
+    <Name.SK>Úvod do filozofie mysle</Name.SK>
+    <Name.EN>Introduction to Philosophy of Mind</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALR</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>MINAA027</ID.system2>
+    <ID.system3>2KVM114</ID.system3>
+    <Name.SK>Programovanie</Name.SK>
+    <Name.EN>Programming</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALS</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2/>
+    <ID.system3>2KVM115</ID.system3>
+    <Name.SK>Matematika</Name.SK>
+    <Name.EN>Matematics</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALT</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMS122</ID.system2>
+    <ID.system3>2KVe122</ID.system3>
+    <Name.SK>Úvod do neurovedy</Name.SK>
+    <Name.EN>Introduction to Neuroscience</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMS117</ID.system2>
+    <ID.system3>2KVe117</ID.system3>
+    <Name.SK>Výpočtová inteligencia</Name.SK>
+    <Name.EN>Computational Inteligence</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALV</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>MINCU005</ID.system2>
+    <ID.system3>2KVM118</ID.system3>
+    <Name.SK>Reprezentácia znalostí a inferencia</Name.SK>
+    <Name.EN>Representation of Knowledge and Inferance</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALW</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMS119</ID.system2>
+    <ID.system3>2KVe119</ID.system3>
+    <Name.SK>Laboratórny projekt</Name.SK>
+    <Name.EN>Lab Project</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALX</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSMS450</ID.system2>
+    <ID.system3>2SAn450</ID.system3>
+    <Name.SK>Súčasné teórie vedomia</Name.SK>
+    <Name.EN>Contemporary Theories if Consciousness</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALY</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSMS130</ID.system2>
+    <ID.system3>2KVe130</ID.system3>
+    <Name.SK>Neuropočítanie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SALZ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS040</ID.system2>
+    <ID.system3>2ESM040</ID.system3>
+    <Name.SK>Euro-atlantická bezpečnostná architektú-ra</Name.SK>
+    <Name.EN>Euro-Atlantic Security Architecture</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMMM9110</ID.system2>
+    <ID.system3>GMM9110</ID.system3>
+    <Name.SK>Systémy odmeňovania</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMB</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS220</ID.system2>
+    <ID.system3>1SAB220</ID.system3>
+    <Name.SK>Ekonómia a etika</Name.SK>
+    <Name.EN>Economics and Ethics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMC</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMS110</ID.system2>
+    <ID.system3>2AEM110</ID.system3>
+    <Name.SK>Európske finančné trhy</Name.SK>
+    <Name.EN>European Financial Markets</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMD</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS190</ID.system2>
+    <ID.system3>2ESM190</ID.system3>
+    <Name.SK>Medzinárodné právo</Name.SK>
+    <Name.EN>International Law</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAME</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS090</ID.system2>
+    <ID.system3>2VPM090</ID.system3>
+    <Name.SK>Analýza verejnej politiky a rozhodovacieprocesy</Name.SK>
+    <Name.EN>Policy analysis and Decision Making Processes</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS200</ID.system2>
+    <ID.system3>2VPM200</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN>Theisis Seminar and Intership</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMG</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS250</ID.system2>
+    <ID.system3>2VPM250</ID.system3>
+    <Name.SK>Štatistické spracovanie dát</Name.SK>
+    <Name.EN>Elaboration of Statistical Data</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMH</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS120</ID.system2>
+    <ID.system3>2VPM120</ID.system3>
+    <Name.SK>Etické otázky, transparentnosť a korupc-ia vo verejnej politike</Name.SK>
+    <Name.EN>Ethics, Transparency and Corruption in Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMI</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS180</ID.system2>
+    <ID.system3>2VPM180</ID.system3>
+    <Name.SK>Sociálna politika</Name.SK>
+    <Name.EN>Social Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMJ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS160</ID.system2>
+    <ID.system3>2VPM160</ID.system3>
+    <Name.SK>Vzdelávacia politika</Name.SK>
+    <Name.EN>Educational Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMK</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS130</ID.system2>
+    <ID.system3>2PMS130</ID.system3>
+    <Name.SK>Tvorba legislatívy vo verejnej politike</Name.SK>
+    <Name.EN>Legislative Process in Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAML</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS110</ID.system2>
+    <ID.system3>2VPM110</ID.system3>
+    <Name.SK>Politicko-administratívne vzťahy</Name.SK>
+    <Name.EN>Politics-Administrative Relations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMM</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS220</ID.system2>
+    <ID.system3>2VPM220</ID.system3>
+    <Name.SK>Politika súťaže</Name.SK>
+    <Name.EN>Competition Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS201</ID.system2>
+    <ID.system3>2VPM201</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN>Theisis Seminar and Intership</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMO</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS150</ID.system2>
+    <ID.system3>2PMS150</ID.system3>
+    <Name.SK>Evalvácia verejnej politiky</Name.SK>
+    <Name.EN>Public Policy Evaluation</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMP</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS170</ID.system2>
+    <ID.system3>2VPM170</ID.system3>
+    <Name.SK>Tvorba a implementácia regionálnej poli-tiky</Name.SK>
+    <Name.EN>European Regional Policy Making /EUREP/</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMQ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS230</ID.system2>
+    <ID.system3>2VPM230</ID.system3>
+    <Name.SK>Hospodárska politika</Name.SK>
+    <Name.EN>Economic Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMR</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS240</ID.system2>
+    <ID.system3>2VPM240</ID.system3>
+    <Name.SK>Komunálna politika</Name.SK>
+    <Name.EN>Municipal Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMS</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS280</ID.system2>
+    <ID.system3>2VPM280</ID.system3>
+    <Name.SK>Lesnícka politika</Name.SK>
+    <Name.EN>Ferest Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMT</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS190</ID.system2>
+    <ID.system3>2VPM190</ID.system3>
+    <Name.SK>Politika zdravotnej starostlivosti</Name.SK>
+    <Name.EN>Healht Care Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMU</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS260</ID.system2>
+    <ID.system3>2VPM260</ID.system3>
+    <Name.SK>Migrácia a verejná politika</Name.SK>
+    <Name.EN>Migration and Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMV</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS290</ID.system2>
+    <ID.system3>2VPM290</ID.system3>
+    <Name.SK>Trvalo udržateľný rozvoj: Multikritariá-lna intergrácia</Name.SK>
+    <Name.EN>Sustainable Development: Multi-Criteria Integration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMW</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS140</ID.system2>
+    <ID.system3>2VPM140</ID.system3>
+    <Name.SK>Európske tradície ľudských a občianskychpráv</Name.SK>
+    <Name.EN>European Tradition of Human and Civic Rights</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMX</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS270</ID.system2>
+    <ID.system3>2VPM270</ID.system3>
+    <Name.SK>Občianska spoločnosť a verejná sféra</Name.SK>
+    <Name.EN>Civil Society and Public Sphere</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SVPMS210</ID.system2>
+    <ID.system3>2VPM210</ID.system3>
+    <Name.SK>Poľnohospodárska politika a rozvoj vidi-eka</Name.SK>
+    <Name.EN>Agricultural Policy and Rural Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAMZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSMS151</ID.system2>
+    <ID.system3>2KVe151</ID.system3>
+    <Name.SK>Multiagentové systémy</Name.SK>
+    <Name.EN>Multiagent Systems</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSMS136</ID.system2>
+    <ID.system3>2KVe136</ID.system3>
+    <Name.SK>Výpočtové modelovanie evolúcie a aktivi-zície jazyka</Name.SK>
+    <Name.EN>CDomputational Modeling of Laguage Evolution and Acquisition</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANB</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2VPMŠS1</ID.system3>
+    <Name.SK>Teória a metodológia verejnej politiky</Name.SK>
+    <Name.EN>Theory and Methods of Public Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANC</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2VPMŠS3</ID.system3>
+    <Name.SK>Špecializácia: odvetvový alebo prierezo-vý predmet</Name.SK>
+    <Name.EN>Specialization: sectoral, or cross-sectoral curse</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAND</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2AEMŠS1</ID.system3>
+    <Name.SK>Kvantitatívne metódy v ekonómii</Name.SK>
+    <Name.EN>Quantitatve Methods in Economics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANE</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2>SAEMSSS2</ID.system2>
+    <ID.system3>2AEMŠS2</ID.system3>
+    <Name.SK>Ekonomická analýza</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANF</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2KVMŠS1</ID.system3>
+    <Name.SK>Kognitívna psychológia</Name.SK>
+    <Name.EN>Cognitive psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANG</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2/>
+    <ID.system3>2KVMŠS2</ID.system3>
+    <Name.SK>Umelá inteligencia</Name.SK>
+    <Name.EN>Artificial Intelligence</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANH</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBJ3510</ID.system2>
+    <ID.system3/>
+    <Name.SK>Francúzsky jazyk pre manažérov III.</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANI</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMMML430</ID.system2>
+    <ID.system3>GMML430</ID.system3>
+    <Name.SK>Organizačné kultúry</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>XPPECTS6</ID.system2>
+    <ID.system3>2PPE</ID.system3>
+    <Name.SK>Strategický manažment</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESOCRUAP</ID.system2>
+    <ID.system3>EAPS607</ID.system3>
+    <Name.SK>Psychológia komunikácie</Name.SK>
+    <Name.EN>Psychology Communmication</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>ESOCRUAP</ID.system2>
+    <ID.system3>EAPS607</ID.system3>
+    <Name.SK>Sociológia rodiny</Name.SK>
+    <Name.EN>Family Sociology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>XPrírfak</ID.system2>
+    <ID.system3>XPrífak</ID.system3>
+    <Name.SK>Trvalo udržateľný rozvoj a jeho regioná-lna dimenzia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSO300</ID.system2>
+    <ID.system3/>
+    <Name.SK>Marketing</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANO</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBS3330</ID.system2>
+    <ID.system3/>
+    <Name.SK>Obchodné právo 2</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>11165</ID.system2>
+    <ID.system3>11165</ID.system3>
+    <Name.SK>Resocializácia I.</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANQ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>11101r</ID.system2>
+    <ID.system3>11101r</ID.system3>
+    <Name.SK>Úvod do štúdia sociálnej práce</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANR</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboSL912</ID.system2>
+    <ID.system3>AboS912</ID.system3>
+    <Name.SK>Slovenčina ako cudzí jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>USCSC057</ID.system2>
+    <ID.system3>1USC057</ID.system3>
+    <Name.SK>Gerontológia a sociálna práca so senior-mi</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANT</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>USCSC001</ID.system2>
+    <ID.system3>1PPSC01</ID.system3>
+    <Name.SK>Sociálna práca a sociálna politika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>USCSC023</ID.system2>
+    <ID.system3>1USC023</ID.system3>
+    <Name.SK>Kultúra, subkultúry, minority</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>MFYJF022</ID.system2>
+    <ID.system3>MFYJ022</ID.system3>
+    <Name.SK>Základy dozimetrie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboPS001</ID.system2>
+    <ID.system3>AboP001</ID.system3>
+    <Name.SK>Všeobecná psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANX</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboCJ032</ID.system2>
+    <ID.system3/>
+    <Name.SK>Odborná nemčina II.</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00041</ID.system2>
+    <ID.system3>AFiF041</ID.system3>
+    <Name.SK>Sociálna psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SANZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AFiF1UK</ID.system2>
+    <ID.system3>1FiFUK1</ID.system3>
+    <Name.SK>Osobnosť firmy</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00151</ID.system2>
+    <ID.system3>AFiF151</ID.system3>
+    <Name.SK>Metódy psychológie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00121</ID.system2>
+    <ID.system3>AFiF121</ID.system3>
+    <Name.SK>Štatistické metódy</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00572</ID.system2>
+    <ID.system3>AFiF572</ID.system3>
+    <Name.SK>Organizačná psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00291</ID.system2>
+    <ID.system3>AFiF291</ID.system3>
+    <Name.SK>Metódy sociálnej psychológie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOE</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS026</ID.system2>
+    <ID.system3>1SAB026</ID.system3>
+    <Name.SK>Úvod do politickej antropológie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOF</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AFiF2UK</ID.system2>
+    <ID.system3>AFiFUK2</ID.system3>
+    <Name.SK>Odborná psychologická prax 1,2</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOG</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AFiF3UK</ID.system2>
+    <ID.system3>1FiFUK3</ID.system3>
+    <Name.SK>Riešenie a zvládanie situácií psycholog-ickej záťaže</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOH</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AFiF4UK</ID.system2>
+    <ID.system3>1FiFUK4</ID.system3>
+    <Name.SK>Teória psychodiagnostiky a psychometriky</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBD251</ID.system2>
+    <ID.system3>1AEB251</ID.system3>
+    <Name.SK>Informatika</Name.SK>
+    <Name.EN>Informatics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOJ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS300</ID.system2>
+    <ID.system3>2SPP300</ID.system3>
+    <Name.SK>Marketing neziskových organizácií</Name.SK>
+    <Name.EN>Marketing of Nonprofit Organizations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOK</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS310</ID.system2>
+    <ID.system3>2SPP310</ID.system3>
+    <Name.SK>Etika a spoločnosť</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOL</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPBS390</ID.system2>
+    <ID.system3>1SPP390</ID.system3>
+    <Name.SK>Vývinová psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APOOO902</ID.system2>
+    <ID.system3>APOO902</ID.system3>
+    <Name.SK>Terorizmus ako politický fenomén</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAON</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS320</ID.system2>
+    <ID.system3>2APM320</ID.system3>
+    <Name.SK>Psychológia myslenia, rozhodovania a (i)racionalita</Name.SK>
+    <Name.EN>Psychology of Thinking, Decison Making and (i)racionality</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOO</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS430</ID.system2>
+    <ID.system3>1APB430</ID.system3>
+    <Name.SK>Interkultúrna reklama</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS440</ID.system2>
+    <ID.system3>1SPP440</ID.system3>
+    <Name.SK>Sociálna psychológia práva</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOQ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS450</ID.system2>
+    <ID.system3>1APB450</ID.system3>
+    <Name.SK>Komunitná psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOR</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS330</ID.system2>
+    <ID.system3>2SPP330</ID.system3>
+    <Name.SK>Sociálna psychológia v systéme forenz-  ných vied</Name.SK>
+    <Name.EN>Social Psychology in Forensic Sciences</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS340</ID.system2>
+    <ID.system3>2APM340</ID.system3>
+    <Name.SK>Tvorba psychodiagnostických metód</Name.SK>
+    <Name.EN>Psychodiagnostic Methods Formation</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOT</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX170</ID.system2>
+    <ID.system3>1ESt170</ID.system3>
+    <Name.SK>Turecko: prípadová štúdia rozširovania  EÚ</Name.SK>
+    <Name.EN>Turkey: A Case Study in the EU Enlargement</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APO01062</ID.system2>
+    <ID.system3>APO1062</ID.system3>
+    <Name.SK>Balkánske štúdiá</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APS00612</ID.system2>
+    <ID.system3>AFiF612</ID.system3>
+    <Name.SK>Sociálno psychologický výcvik</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AHIO 120</ID.system2>
+    <ID.system3>AFiF120</ID.system3>
+    <Name.SK>Medzinárodná politika 1918-1939</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOX</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AHIO 126</ID.system2>
+    <ID.system3>AFiF126</ID.system3>
+    <Name.SK>Európa po II. svetovej vojne</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSO470</ID.system2>
+    <ID.system3>GMBS470</ID.system3>
+    <Name.SK>Rétorika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAOZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS052</ID.system2>
+    <ID.system3>1SAn052</ID.system3>
+    <Name.SK>Rómske štúdie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS057</ID.system2>
+    <ID.system3>1SAn057</ID.system3>
+    <Name.SK>Kognitívna antropológia</Name.SK>
+    <Name.EN>Cognitive Anthropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS181</ID.system2>
+    <ID.system3>1SAn181</ID.system3>
+    <Name.SK>Antropologické aspekty hudby</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS183</ID.system2>
+    <ID.system3>1SAn183</ID.system3>
+    <Name.SK>Pôvod kultúry</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS182</ID.system2>
+    <ID.system3>1SAn182</ID.system3>
+    <Name.SK>Francúzština</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPE</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSMS135</ID.system2>
+    <ID.system3>2KVe135</ID.system3>
+    <Name.SK>Filozofia jazyka</Name.SK>
+    <Name.EN>Philosophy of language</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBD012</ID.system2>
+    <ID.system3>1SAn012</ID.system3>
+    <Name.SK>Úvod do metodológie sociálnych vied</Name.SK>
+    <Name.EN>Introduction to methodology of Social</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPG</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPBD380</ID.system2>
+    <ID.system3>1SPP380</ID.system3>
+    <Name.SK>Konflikty a ich riešenie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPH</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPBD462</ID.system2>
+    <ID.system3>1SPP462</ID.system3>
+    <Name.SK>Metódy kvalitatívneho výskumu v sociáln-ej psychológii</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEBD210</ID.system2>
+    <ID.system3>1AEk210</ID.system3>
+    <Name.SK>Informatika</Name.SK>
+    <Name.EN>Informatics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AbR00005</ID.system2>
+    <ID.system3>AbR0005</ID.system3>
+    <Name.SK>Druhý románsky jazyk - portugalský</Name.SK>
+    <Name.EN>Second Romance Lauguage - Portuguese</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPK</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS053</ID.system2>
+    <ID.system3>1SAn053</ID.system3>
+    <Name.SK>Materiálna kultúra</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPL</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS054</ID.system2>
+    <ID.system3>1SAn054</ID.system3>
+    <Name.SK>Materiálna kultúra</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPM</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS055</ID.system2>
+    <ID.system3>1SAn055</ID.system3>
+    <Name.SK>Bakalársky seminár</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS056</ID.system2>
+    <ID.system3>1SAn056</ID.system3>
+    <Name.SK>Bakalársky seminár</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPO</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS058</ID.system2>
+    <ID.system3>1SAn058</ID.system3>
+    <Name.SK>Terénny výskum</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPP</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS027</ID.system2>
+    <ID.system3>1SAn027</ID.system3>
+    <Name.SK>Antropológia a filozofia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS076</ID.system2>
+    <ID.system3>1SAn076</ID.system3>
+    <Name.SK>Antropológia postsocializmu</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPR</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS077</ID.system2>
+    <ID.system3>1SAn077</ID.system3>
+    <Name.SK>Antropológia náboženstva</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPS</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS028</ID.system2>
+    <ID.system3>1SAn028</ID.system3>
+    <Name.SK>Antropológia Európy</Name.SK>
+    <Name.EN>European Anthropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPT</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SKSBS221</ID.system2>
+    <ID.system3>2SAn221</ID.system3>
+    <Name.SK>Moderné sociálne teórie</Name.SK>
+    <Name.EN>Modern Social Theory</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBD450</ID.system2>
+    <ID.system3>1ESt450</ID.system3>
+    <Name.SK>Štatistika</Name.SK>
+    <Name.EN>Statistics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPV</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESBD420</ID.system2>
+    <ID.system3>1ESt420</ID.system3>
+    <Name.SK>Medzinárodná ochrana ľudských práv</Name.SK>
+    <Name.EN>International protection of human rights</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPW</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESBD430</ID.system2>
+    <ID.system3>1ESt430</ID.system3>
+    <Name.SK>Politická sociológia</Name.SK>
+    <Name.EN>Political Sociology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPX</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESBD440</ID.system2>
+    <ID.system3>1ESt440</ID.system3>
+    <Name.SK>Komparatívna politika: Západný Balkán</Name.SK>
+    <Name.EN>Comparative Politis: Western Balkans</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX200</ID.system2>
+    <ID.system3>1ESt200</ID.system3>
+    <Name.SK>Nové sociálne hnutia</Name.SK>
+    <Name.EN>New Social Movements</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAPZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX220</ID.system2>
+    <ID.system3>1ESt220</ID.system3>
+    <Name.SK>Energetická politika a bezpečnosť EÚ</Name.SK>
+    <Name.EN>Energy policy and Security in EU</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX241</ID.system2>
+    <ID.system3>1ESt241</ID.system3>
+    <Name.SK>Terorizmus ako subdisciplína politológie</Name.SK>
+    <Name.EN>Therrorist Studies</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX250</ID.system2>
+    <ID.system3>1ESt250</ID.system3>
+    <Name.SK>Americká politika</Name.SK>
+    <Name.EN>American Politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX180</ID.system2>
+    <ID.system3>1ESt180</ID.system3>
+    <Name.SK>Komparatívana politika - Austrália a No-vý Zéland</Name.SK>
+    <Name.EN>Comparative Politics - Australia and New Zeland</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX190</ID.system2>
+    <ID.system3>1ESt190</ID.system3>
+    <Name.SK>Kultúra a rovnosť: Teória a prax multik-ulturalizmu</Name.SK>
+    <Name.EN>Culture and Equality: The Theory and Practice of Multiculturalism</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX210</ID.system2>
+    <ID.system3>1ESt210</ID.system3>
+    <Name.SK>Európska únia v politickom a verejnom d-iskurze</Name.SK>
+    <Name.EN>European Nnion in Political and Public Discourse</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBD461</ID.system2>
+    <ID.system3>1SPP461</ID.system3>
+    <Name.SK>Úvod do metodológie sociálnych vied</Name.SK>
+    <Name.EN>Introduction to Methodology of Social Sciences</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQG</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2>SPPBDŠS1</ID.system2>
+    <ID.system3>1PPBŠS1</ID.system3>
+    <Name.SK>Pracovná a organizačná psychológia</Name.SK>
+    <Name.EN>Work and Organizational Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQH</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APOOO772</ID.system2>
+    <ID.system3>APOO772</ID.system3>
+    <Name.SK>Politická geografia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQI</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS350</ID.system2>
+    <ID.system3>2SPP350</ID.system3>
+    <Name.SK>Základy organizačných štúdií</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS463</ID.system2>
+    <ID.system3>1SPP463</ID.system3>
+    <Name.SK>Človek, rodina a obec v antickej kultúre</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQK</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS050</ID.system2>
+    <ID.system3>2ESt050</ID.system3>
+    <Name.SK>Súčasná východoeurópska politika</Name.SK>
+    <Name.EN>Contemporary Eastern European Policy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboAG002</ID.system2>
+    <ID.system3>AboA002</ID.system3>
+    <Name.SK>Filozofia výchovy</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboAG003</ID.system2>
+    <ID.system3>AboA003</ID.system3>
+    <Name.SK>Filozofia výchovy</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboAG021</ID.system2>
+    <ID.system3>AboA021</ID.system3>
+    <Name.SK>Andragogická psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQO</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS130</ID.system2>
+    <ID.system3>2AEk130</ID.system3>
+    <Name.SK>Makroekonómia európskej integrácie</Name.SK>
+    <Name.EN>Macroeconomics of European Integration</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQP</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMS160</ID.system2>
+    <ID.system3>2AEk160</ID.system3>
+    <Name.SK>Ekonomický rozvoj</Name.SK>
+    <Name.EN>Economics Development</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS090</ID.system2>
+    <ID.system3>2AEk090</ID.system3>
+    <Name.SK>Makroekonomická analýza</Name.SK>
+    <Name.EN>Macroeconomic Analysis</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQR</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS100</ID.system2>
+    <ID.system3>2AEk100</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN>Master Theisis Seminar</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQS</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMS120</ID.system2>
+    <ID.system3>2AEk120</ID.system3>
+    <Name.SK>Finančné investovanie</Name.SK>
+    <Name.EN>Financial Investing</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQT</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS140</ID.system2>
+    <ID.system3>2AEk140</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN>Master Theisis Seminar</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESXX230</ID.system2>
+    <ID.system3>1ESt230</ID.system3>
+    <Name.SK>Politická psychológia</Name.SK>
+    <Name.EN>Political Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSOJ10</ID.system2>
+    <ID.system3>GMBSJ10</ID.system3>
+    <Name.SK>Japonský jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>NbZHG006</ID.system2>
+    <ID.system3>NbZHG06</ID.system3>
+    <Name.SK>Komunálna ekonómia a komunálna politika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQX</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>NbZHG007</ID.system2>
+    <ID.system3>NbZHG07</ID.system3>
+    <Name.SK>Sociológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2/>
+    <ID.system3>SOC 435</ID.system3>
+    <Name.SK>Politika zdravotnej starostlivosti</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAQZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>KPaEŠ/EU</ID.system2>
+    <ID.system3>KPaEŠ/E</ID.system3>
+    <Name.SK>Nacionalizmus a náboženský fundamentali-zmus</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>FM UK001</ID.system2>
+    <ID.system3>2FMU001</ID.system3>
+    <Name.SK>Organizačné správanie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>FM UK002</ID.system2>
+    <ID.system3>2FMU002</ID.system3>
+    <Name.SK>Podnikateľská etika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AH103080</ID.system2>
+    <ID.system3>1AH1080</ID.system3>
+    <Name.SK>Politické ideológie 19 a 20. storočia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AHI03402</ID.system2>
+    <ID.system3>AHI0402</ID.system3>
+    <Name.SK>Dejiny Európskej integrácie po r.1945</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APo01042</ID.system2>
+    <ID.system3>APo1042</ID.system3>
+    <Name.SK>Politický extrémizmus</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARF</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSOJ20</ID.system2>
+    <ID.system3>GMBSJ20</ID.system3>
+    <Name.SK>Japonský jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARG</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBD460</ID.system2>
+    <ID.system3>1ESB460</ID.system3>
+    <Name.SK>Reálie frakofónnych krajín</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARH</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2/>
+    <ID.system3>1ESt280</ID.system3>
+    <Name.SK>EÚ integrácia - Švajčiarsko</Name.SK>
+    <Name.EN>EU integration and Switzerland</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMD360</ID.system2>
+    <ID.system3>2SPP360</ID.system3>
+    <Name.SK>Komunikácia v manažmente</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AbuMA331</ID.system2>
+    <ID.system3>AbuM331</ID.system3>
+    <Name.SK>Fínčina</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APOO1152</ID.system2>
+    <ID.system3>APO1152</ID.system3>
+    <Name.SK>Politika vo filmových dokumentoch</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboSL930</ID.system2>
+    <ID.system3/>
+    <Name.SK>Odborná komunikácia</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboSL939</ID.system2>
+    <ID.system3>AboS939</ID.system3>
+    <Name.SK>Slovenčina ako cudzí jazyk B1</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AbR00014</ID.system2>
+    <ID.system3>AbR0014</ID.system3>
+    <Name.SK>Španielsky jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARO</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AbR00006</ID.system2>
+    <ID.system3>AbR0006</ID.system3>
+    <Name.SK>Portugalský jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBD464</ID.system2>
+    <ID.system3>1APB464</ID.system3>
+    <Name.SK>Manažment úspešnej životnej zmeny</Name.SK>
+    <Name.EN>Management of the Succesful Life Change</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARQ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBD465</ID.system2>
+    <ID.system3>1APB465</ID.system3>
+    <Name.SK>Záťaž na pracovisku</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARR</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBD466</ID.system2>
+    <ID.system3>1APB466</ID.system3>
+    <Name.SK>Prevencia fajčenia a alkoholizmu</Name.SK>
+    <Name.EN>Prevention of Smoking and Alcolism Introduction to Law</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMD467</ID.system2>
+    <ID.system3>2APM467</ID.system3>
+    <Name.SK>Sociálno-psychologická prax v treľom se-ktore</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SART</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMD468</ID.system2>
+    <ID.system3>2APM468</ID.system3>
+    <Name.SK>Zodpovedné podnikanie</Name.SK>
+    <Name.EN>Corporate Social Responsibility</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMD469</ID.system2>
+    <ID.system3>2APM469</ID.system3>
+    <Name.SK>Sociálna psychológia klamstva a vieroho-dnosti</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMD470</ID.system2>
+    <ID.system3>2APM470</ID.system3>
+    <Name.SK>Stáž v oblasti manažmentu ľudských zdro-jov</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARW</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2>SAEMSSS2</ID.system2>
+    <ID.system3>2AEMŠS2</ID.system3>
+    <Name.SK>Ekonomická teória</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARX</UIDP>
+    <ID.system1>Š</ID.system1>
+    <ID.system2>SAEBSSS2</ID.system2>
+    <ID.system3>1AEMŠS2</ID.system3>
+    <Name.SK>Ekonomická teória</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARY</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS320</ID.system2>
+    <ID.system3>2VPM320</ID.system3>
+    <Name.SK>Odborná prax</Name.SK>
+    <Name.EN>Internship</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SARZ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS310</ID.system2>
+    <ID.system3>2VPM310</ID.system3>
+    <Name.SK>Diplomový seminár - academic writing</Name.SK>
+    <Name.EN>Theisis Seminar - academic writing</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASA</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEBD310</ID.system2>
+    <ID.system3>1AEk310</ID.system3>
+    <Name.SK>Finančné trhy</Name.SK>
+    <Name.EN>Financial Markets</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASB</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBD230</ID.system2>
+    <ID.system3>1SAn230</ID.system3>
+    <Name.SK>Evolučná antropológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASC</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMD190</ID.system2>
+    <ID.system3>1AEk190</ID.system3>
+    <Name.SK>Modely všeobecnej ekonomickej ronováhy</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASD</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAEMD200</ID.system2>
+    <ID.system3>2AEk200</ID.system3>
+    <Name.SK>Negociácie vo svetovej politike</Name.SK>
+    <Name.EN>Negotations in World Politics</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASE</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESBS400</ID.system2>
+    <ID.system3>1ESt400</ID.system3>
+    <Name.SK>Medzinárodné organizácie</Name.SK>
+    <Name.EN>International Organizations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESBS460</ID.system2>
+    <ID.system3>1ESt460</ID.system3>
+    <Name.SK>Politická angličtina</Name.SK>
+    <Name.EN>English in Political Science</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASG</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSBS120</ID.system2>
+    <ID.system3>1SAn120</ID.system3>
+    <Name.SK>Internetové zdroje a akademický prejav -pre antropológov</Name.SK>
+    <Name.EN>Internet Resoureces and Academic Presentation for Anthropologist</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASH</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS130</ID.system2>
+    <ID.system3>1SAn130</ID.system3>
+    <Name.SK>Environmentálna antropológia</Name.SK>
+    <Name.EN>Environmental Anthropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASI</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS190</ID.system2>
+    <ID.system3>1SAn190</ID.system3>
+    <Name.SK>Európa a Orient</Name.SK>
+    <Name.EN>Europe and Orient</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASJ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SKSBS230</ID.system2>
+    <ID.system3>1SAn230</ID.system3>
+    <Name.SK>Rituál, evolúcia, myseľ</Name.SK>
+    <Name.EN>Ritual, Evolution, Mind</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBD280</ID.system2>
+    <ID.system3>1ESt280</ID.system3>
+    <Name.SK>Symbolická politika. Pamäť a identita v európskej politike od r.1989</Name.SK>
+    <Name.EN>Symbolic Politics: Memory and Identity in European Politics Since 89</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBD275</ID.system2>
+    <ID.system3>1ESt275</ID.system3>
+    <Name.SK>Analýza textu</Name.SK>
+    <Name.EN>Text Analysis</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBD300</ID.system2>
+    <ID.system3>1ESt300</ID.system3>
+    <Name.SK>Kosovo</Name.SK>
+    <Name.EN>Kosovo</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBD295</ID.system2>
+    <ID.system3>1ESt295</ID.system3>
+    <Name.SK>Politické režimy a ozbrojené konflikty</Name.SK>
+    <Name.EN>Political Regimes and Violent Conflicts</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASO</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBD305</ID.system2>
+    <ID.system3>1ESt305</ID.system3>
+    <Name.SK>Dejiny strednej a juhovýchodnej Európy</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SESBD265</ID.system2>
+    <ID.system3>1ESt265</ID.system3>
+    <Name.SK>Odborná stáž</Name.SK>
+    <Name.EN>Traineeship (Practical Placement)</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASQ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMD405</ID.system2>
+    <ID.system3>2ESt405</ID.system3>
+    <Name.SK>Filozofia mysle</Name.SK>
+    <Name.EN>Philosophy of Mind</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASR</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMD415</ID.system2>
+    <ID.system3>2ESt415</ID.system3>
+    <Name.SK>Environmentálna politika v EÚ</Name.SK>
+    <Name.EN>Environmental Politiccs in the EU</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASS</UIDP>
+    <ID.system1/>
+    <ID.system2/>
+    <ID.system3/>
+    <Name.SK>aaaaaaaaaaaa</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAST</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMD410</ID.system2>
+    <ID.system3>2SAn410</ID.system3>
+    <Name.SK>Urbánna antropológia</Name.SK>
+    <Name.EN>Urban Anthropology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASU</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMD620</ID.system2>
+    <ID.system3>2SAn420</ID.system3>
+    <Name.SK>Psychologická antropológia</Name.SK>
+    <Name.EN>Psychological Anthropology</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASV</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMD425</ID.system2>
+    <ID.system3>2SAn425</ID.system3>
+    <Name.SK>Psychologická antropológia</Name.SK>
+    <Name.EN>Psychological Anthropology</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASW</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMD430</ID.system2>
+    <ID.system3>2SAn430</ID.system3>
+    <Name.SK>Terénne metódy: Etnografické interview</Name.SK>
+    <Name.EN>Field Methods: Ethnographic Interview</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASX</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMD435</ID.system2>
+    <ID.system3>2SAn435</ID.system3>
+    <Name.SK>Terénne metódy: Experimenty v teréne</Name.SK>
+    <Name.EN>Field Methods: Experiments in the Field</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASY</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SKSMD440</ID.system2>
+    <ID.system3>2SAn440</ID.system3>
+    <Name.SK>Humánna ekológia: Reprezentácie priesto-ru</Name.SK>
+    <Name.EN>Human Ecology: Spatial Representations</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SASZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBOSJ30</ID.system2>
+    <ID.system3>GMBSJ30</ID.system3>
+    <Name.SK>Japonský jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part>3</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBOSJ40</ID.system2>
+    <ID.system3>GMBSJ40</ID.system3>
+    <Name.SK>Japonský jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part>4</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboAG028</ID.system2>
+    <ID.system3>AbAG028</ID.system3>
+    <Name.SK>Sociálna andragogika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAEMS190</ID.system2>
+    <ID.system3>2AEk190</ID.system3>
+    <Name.SK>The Management of Financial Holding Com-pany</Name.SK>
+    <Name.EN>The Management of Financial Holding Company</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboRU450</ID.system2>
+    <ID.system3>AbRU450</ID.system3>
+    <Name.SK>Ruský jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSOS10</ID.system2>
+    <ID.system3>GMBSS10</ID.system3>
+    <Name.SK>Španielsky jazyk</Name.SK>
+    <Name.EN>Spanish course</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATF</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AbuMA332</ID.system2>
+    <ID.system3>AbuM332</ID.system3>
+    <Name.SK>Fínčina</Name.SK>
+    <Name.EN>Finnish</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATG</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AboPS11G</ID.system2>
+    <ID.system3>AbPS11G</ID.system3>
+    <Name.SK>Experiment v sociálnej psychológii</Name.SK>
+    <Name.EN>Experment in Social Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATH</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AbpPL026</ID.system2>
+    <ID.system3>AbPL026</ID.system3>
+    <Name.SK>Slovanský jazyk 1: Bulharský</Name.SK>
+    <Name.EN>Slovanie Languaqe 1: Bulgarien</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATI</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AUVMA210</ID.system2>
+    <ID.system3>AUMA210</ID.system3>
+    <Name.SK>Fínska konverzácia</Name.SK>
+    <Name.EN>Finnish Conerstation</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATJ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AUVMA220</ID.system2>
+    <ID.system3>AUMA026</ID.system3>
+    <Name.SK>Fínska konverzácia</Name.SK>
+    <Name.EN>Finnish Converstation</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AUVMA030</ID.system2>
+    <ID.system3>AUMA030</ID.system3>
+    <Name.SK>Fínčina</Name.SK>
+    <Name.EN>Finnish</Name.EN>
+    <Name.Part>3</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATL</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APO01252</ID.system2>
+    <ID.system3>APO1252</ID.system3>
+    <Name.SK>Bezpečnostné štúdie</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATM</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>APO01262</ID.system2>
+    <ID.system3>APO1262</ID.system3>
+    <Name.SK>Bezpečnostné štúdie</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATN</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AmoPS603</ID.system2>
+    <ID.system3>AmoP603</ID.system3>
+    <Name.SK>Úvod do psychoanalýzy</Name.SK>
+    <Name.EN>Introduction to Psychoanalysis</Name.EN>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATO</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AmoPS203</ID.system2>
+    <ID.system3>AmoP203</ID.system3>
+    <Name.SK>Psychopatológia</Name.SK>
+    <Name.EN>Psychopatology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATP</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AmoPS626</ID.system2>
+    <ID.system3>AmoP626</ID.system3>
+    <Name.SK>Imaginativne metódy v psychoterapii</Name.SK>
+    <Name.EN>Imaginative Methods in Psychtherapy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SESMS215</ID.system2>
+    <ID.system3>2ESt215</ID.system3>
+    <Name.SK>Zahraničná politika Európskej únie</Name.SK>
+    <Name.EN>Foreign Policy EU</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATR</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SSABD022</ID.system2>
+    <ID.system3>1SAn022</ID.system3>
+    <Name.SK>Judaistika 2: Židia na Slovensku v 20.s-toročí</Name.SK>
+    <Name.EN>Jewish Studies 2: Jews in Slovakia in 20th Century</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATS</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>1bR00006</ID.system2>
+    <ID.system3>1bR0006</ID.system3>
+    <Name.SK>Druhý románsky jazyk - portugalský</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATT</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AbpPL040</ID.system2>
+    <ID.system3>AbpP040</ID.system3>
+    <Name.SK>Slovanský jazyk - srbský - lektor</Name.SK>
+    <Name.EN>Salvonic Language - Serbian - Lecturer</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATU</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBJ4510</ID.system2>
+    <ID.system3>GMB4510</ID.system3>
+    <Name.SK>Francúzsky jazyk</Name.SK>
+    <Name.EN/>
+    <Name.Part>4</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSS40</ID.system2>
+    <ID.system3>GMBSS40</ID.system3>
+    <Name.SK>Španielsky jazyk</Name.SK>
+    <Name.EN>Spanish course</Name.EN>
+    <Name.Part>4</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>GMBSOS20</ID.system2>
+    <ID.system3>GMBSS20</ID.system3>
+    <Name.SK>Španielsky jazyk</Name.SK>
+    <Name.EN>Spanish course</Name.EN>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATX</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>NbEXX094</ID.system2>
+    <ID.system3>NbEX094</ID.system3>
+    <Name.SK>Ochrana a vzužívanie prírodných zdrojov</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>1JJM 092</ID.system2>
+    <ID.system3>1JJM092</ID.system3>
+    <Name.SK>Politické systémy</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SATZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>1JJM 019</ID.system2>
+    <ID.system3>1JJM019</ID.system3>
+    <Name.SK>Médiá a spoločnosť</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>1PRV 347</ID.system2>
+    <ID.system3>1PRV347</ID.system3>
+    <Name.SK>Kriminológia</Name.SK>
+    <Name.EN>Criminology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS470</ID.system2>
+    <ID.system3>1APB470</ID.system3>
+    <Name.SK>Clovek a spolocenstvo v antickej mitolo logii</Name.SK>
+    <Name.EN>Human and Comunity in Ancient Greek Mithology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUC</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS471</ID.system2>
+    <ID.system3>2APM471</ID.system3>
+    <Name.SK>Praktická psychológia založená na vedec-kých znalostiach</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUD</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS472</ID.system2>
+    <ID.system3>2APM472</ID.system3>
+    <Name.SK>Vyhľadávanie a spracovanie vedeckých in-formačných zdrojov</Name.SK>
+    <Name.EN>Searching and Processing Scientific Information Resources</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS473</ID.system2>
+    <ID.system3>1APM473</ID.system3>
+    <Name.SK>Psychohygiena</Name.SK>
+    <Name.EN>Psychohigiene</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUF</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS474</ID.system2>
+    <ID.system3>1APM474</ID.system3>
+    <Name.SK>Žena a práca</Name.SK>
+    <Name.EN>Woman and Work</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUG</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS370</ID.system2>
+    <ID.system3>2APM370</ID.system3>
+    <Name.SK>Ekonomická psychológia</Name.SK>
+    <Name.EN>Economic Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPMS380</ID.system2>
+    <ID.system3>2APM380</ID.system3>
+    <Name.SK>Spotrebiteľské správanie</Name.SK>
+    <Name.EN>Consumer Behaviour</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUI</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS390</ID.system2>
+    <ID.system3>2APM390</ID.system3>
+    <Name.SK>Sucasne smery v psychologii</Name.SK>
+    <Name.EN>Conterporary Movemnts in Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUJ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAPBS460</ID.system2>
+    <ID.system3>1APB460</ID.system3>
+    <Name.SK>Systémy psychológie</Name.SK>
+    <Name.EN>History Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUK</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>AbRU 950</ID.system2>
+    <ID.system3>AbRU950</ID.system3>
+    <Name.SK>Rustina pre zaciatocnikov</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUL</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS330</ID.system2>
+    <ID.system3>2VPM330</ID.system3>
+    <Name.SK>Mediálna politika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUM</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SVPMS335</ID.system2>
+    <ID.system3>2VPM335</ID.system3>
+    <Name.SK>Migračná politika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUN</UIDP>
+    <ID.system1/>
+    <ID.system2>SVPMS340</ID.system2>
+    <ID.system3>2VPM340</ID.system3>
+    <Name.SK>Ekonomicke aspekty verejnej politiky A - Uvod do mikroekonomie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUO</UIDP>
+    <ID.system1/>
+    <ID.system2>SAEMS345</ID.system2>
+    <ID.system3>2AEM345</ID.system3>
+    <Name.SK>Ekonomicke aspekty verejnej politiky B - Mikroekonomicka analyza</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUP</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS350</ID.system2>
+    <ID.system3>2VPM350</ID.system3>
+    <Name.SK>Metódy analýzy a výskumu-kvantitatívne A- Úvod do štatistických metód</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUQ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SAEMS355</ID.system2>
+    <ID.system3>2AEM355</ID.system3>
+    <Name.SK>Metódy analýzy a výskumu-kvalitatívne B - Modelovanie sociál-ekonom. procesov</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUR</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS360</ID.system2>
+    <ID.system3>2VPo360</ID.system3>
+    <Name.SK>Analýza verejnej politiky a jej evaluác-ia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUS</UIDP>
+    <ID.system1/>
+    <ID.system2>SVPMS365</ID.system2>
+    <ID.system3>2VPM365</ID.system3>
+    <Name.SK>Miestna a regionalna politika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUT</UIDP>
+    <ID.system1/>
+    <ID.system2>SVPMS370</ID.system2>
+    <ID.system3>2VPM370</ID.system3>
+    <Name.SK>Techniky akademickeho pisania</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUU</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESBS470</ID.system2>
+    <ID.system3>1ESt470</ID.system3>
+    <Name.SK>Vzdelávacia a vedeckotechnická politika v EÚ</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUV</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SEStv501</ID.system2>
+    <ID.system3>1ESt501</ID.system3>
+    <Name.SK>Úloha mimovládnych organizácií v rozvoj-ovej pomoci</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUW</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SEStv502</ID.system2>
+    <ID.system3>1ESt502</ID.system3>
+    <Name.SK>Ekonómia európskej integrácie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUX</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SEStv503</ID.system2>
+    <ID.system3>1ESt503</ID.system3>
+    <Name.SK>Kampaň za Európu: Vizuálna rétorika sym-bolov politiky EÚ</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUY</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SEStv504</ID.system2>
+    <ID.system3>1ESt504</ID.system3>
+    <Name.SK>Európske politické strany</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAUZ</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS471</ID.system2>
+    <ID.system3>1SPP471</ID.system3>
+    <Name.SK>Človek a spoločenstvo v antickej mytoló-gii</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVA</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS475</ID.system2>
+    <ID.system3>1SPP475</ID.system3>
+    <Name.SK>Prax vo výskume</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVB</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPBS476</ID.system2>
+    <ID.system3>1SPP476</ID.system3>
+    <Name.SK>Experimentálny výskum</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVC</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS375</ID.system2>
+    <ID.system3>2SPP375</ID.system3>
+    <Name.SK>Ekonomická psychológia</Name.SK>
+    <Name.EN>Economic Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVD</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SAPMS395</ID.system2>
+    <ID.system3>2SPP395</ID.system3>
+    <Name.SK>Súčasné smery v psychológii</Name.SK>
+    <Name.EN>Contemporary movements in Psychology</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVE</UIDP>
+    <ID.system1>V</ID.system1>
+    <ID.system2>SAPMS475</ID.system2>
+    <ID.system3>2SPP475</ID.system3>
+    <Name.SK>Medzikultúrna psychológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVF</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2/>
+    <ID.system3/>
+    <Name.SK>aaaaaaaaaaaaaa</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVG</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SVPMS375</ID.system2>
+    <ID.system3>2VPo375</ID.system3>
+    <Name.SK>Komparatívna verejná politika a viacúro-vňová tvorba verejnej politiky</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVH</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SSAMS455</ID.system2>
+    <ID.system3>2SAn455</ID.system3>
+    <Name.SK>Lingvistická antropológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVI</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SSAMS460</ID.system2>
+    <ID.system3>2SAn460</ID.system3>
+    <Name.SK>Súčasné antropologické teórie</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVJ</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SSAMS465</ID.system2>
+    <ID.system3>2SAn465</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN/>
+    <Name.Part>1</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVK</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SSAMS480</ID.system2>
+    <ID.system3>2SAn480</ID.system3>
+    <Name.SK>Vizuálna antropológia</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVL</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SSAMS485</ID.system2>
+    <ID.system3>2SAn485</ID.system3>
+    <Name.SK>Evolučná antropológia a pôvod kultúry</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVM</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SSAMS490</ID.system2>
+    <ID.system3>2SAn490</ID.system3>
+    <Name.SK>Modernizácia a sociálna zmena</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVN</UIDP>
+    <ID.system1>P</ID.system1>
+    <ID.system2>SSAMS495</ID.system2>
+    <ID.system3>2SAn495</ID.system3>
+    <Name.SK>Diplomový seminár</Name.SK>
+    <Name.EN/>
+    <Name.Part>2</Name.Part>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVO</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>APS00500</ID.system2>
+    <ID.system3>1PS0500</ID.system3>
+    <Name.SK>Pamäť a politika</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVP</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SSAMS505</ID.system2>
+    <ID.system3>2SAn505</ID.system3>
+    <Name.SK>Rodové prístupy v antropológii</Name.SK>
+    <Name.EN/>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVQ</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS230</ID.system2>
+    <ID.system3>2ESt230</ID.system3>
+    <Name.SK>Dejiny diplomacie</Name.SK>
+    <Name.EN>History Diplomacy</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVR</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS130</ID.system2>
+    <ID.system3>2ESt130</ID.system3>
+    <Name.SK>Kvalitatívne výskumné metódy</Name.SK>
+    <Name.EN>Qualitative Research Methods</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVS</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS070</ID.system2>
+    <ID.system3>2ESt070</ID.system3>
+    <Name.SK>Vnútorný trh EÚ - prípadová prax</Name.SK>
+    <Name.EN>Le Marché Intérieur-Cas Pratiques EU Common Market-Practical Issues</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+  <Predmet>
+    <UIDP>SAVT</UIDP>
+    <ID.system1>A</ID.system1>
+    <ID.system2>SESMS240</ID.system2>
+    <ID.system3>2ESt240</ID.system3>
+    <Name.SK>Ľudské práva v judikatúre ESĽP</Name.SK>
+    <Name.EN>Human Rights in the Jurisdiction of Echr</Name.EN>
+    <Name.Part/>
+    <exc/>
+    <acc/>
+  </Predmet>
+</Predmety>

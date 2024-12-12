@@ -3,6 +3,11 @@ plugins {
     id 'org.springframework.boot' version '3.3.5'
     id 'io.spring.dependency-management' version '1.1.6'
     id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'application'
+}
+
+application {
+    mainClass = 'com.tis.dbf.JavaFxApp'
 }
 
 group = 'com.tis'
@@ -37,6 +42,11 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+javafx {
+    version = "17.0.8"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 tasks.named('test') {

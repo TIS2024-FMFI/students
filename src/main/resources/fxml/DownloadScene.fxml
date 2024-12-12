@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.control.Button?>
+<AnchorPane fx:id="anchorPane" prefWidth="1920" prefHeight="1080" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.login.DownloadController">
+    <Label fx:id="statusLabel" text="Initializing..." layoutX="100" layoutY="100"/>
+
+    <!-- A loading circle with a visible segment -->
+    <Arc fx:id="spinner" startAngle="90" length="270" radiusX="50" radiusY="50" fill="transparent" stroke="black" strokeWidth="5"/>
+
+    <!-- Button that appears after download completes -->
+    <Button fx:id="nextButton" text="Proceed" layoutX="100" layoutY="200" onAction="#handleProceed" visible="false"/>
+</AnchorPane>
