@@ -40,10 +40,9 @@ public class LoginController {
         String password = passwordField.getText();
 
         if (authenticateUser(username, password)) {
-            showAlert(Alert.AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DownloadScene.fxml"));
-                Scene downloadScene = new Scene(loader.load(), 1920, 1080);
+                Scene downloadScene = new Scene(loader.load(), 1366, 768);
 
                 DownloadController controller = loader.getController();
                 controller.startDownload();
@@ -55,7 +54,7 @@ public class LoginController {
                 e.printStackTrace();
             }
         } else {
-            showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");
+            showAlert(Alert.AlertType.ERROR, "Login Failed/Nesprávne prihlásenie", "Zle meno alebo heslo");
         }
     }
 

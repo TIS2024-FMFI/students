@@ -3,12 +3,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.shape.Arc?>
 <?import javafx.scene.control.Button?>
+<?import java.net.URL?>
 <AnchorPane fx:id="anchorPane" prefWidth="1920" prefHeight="1080" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.login.DownloadController">
-    <Label fx:id="statusLabel" text="Initializing..." layoutX="100" layoutY="100"/>
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <!-- Label s pridanou CSS triedou .status-label -->
+    <Label fx:id="statusLabel" text="Initializing..." styleClass="status-label"/>
 
     <!-- A loading circle with a visible segment -->
-    <Arc fx:id="spinner" startAngle="90" length="270" radiusX="50" radiusY="50" fill="transparent" stroke="black" strokeWidth="5"/>
+    <Arc fx:id="spinner" startAngle="90" length="270" radiusX="50" radiusY="50" fill="transparent" styleClass="spinner"/>
 
     <!-- Button that appears after download completes -->
-    <Button fx:id="nextButton" text="Proceed" layoutX="100" layoutY="200" onAction="#handleProceed" visible="false"/>
+    <Button fx:id="nextButton" text="Vstúp do hlavnej scény" layoutX="100" layoutY="200" onAction="#handleProceed" visible="false" styleClass="green-button"/>
 </AnchorPane>

@@ -33,16 +33,35 @@ public class DownloadController {
     private Timeline timeline; // For continuous spinning
 
     public void initialize() {
-        // Position the spinner arc at the center of the AnchorPane
-        anchorPane.widthProperty().addListener((obs, oldWidth, newWidth) ->
-                spinner.setLayoutX((newWidth.doubleValue() - spinner.getRadiusX() * 2) / 2)
-        );
-        anchorPane.heightProperty().addListener((obs, oldHeight, newHeight) ->
-                spinner.setLayoutY((newHeight.doubleValue() - spinner.getRadiusY() * 2) / 2)
-        );
+        // Umiestnenie pri zmene veľkosti AnchorPane
+        anchorPane.widthProperty().addListener((obs, oldWidth, newWidth) -> updatePositions());
+        anchorPane.heightProperty().addListener((obs, oldHeight, newHeight) -> updatePositions());
 
-        // Initially, hide the proceed button
+        // Skryť tlačidlo na začiatku
         nextButton.setVisible(false);
+
+        // Počiatočná aktualizácia pozícií
+        updatePositions();
+    }
+
+    private void updatePositions() {
+        // Výpočet stredu AnchorPane
+        double centerX = anchorPane.getWidth() / 2;
+        double centerY = anchorPane.getHeight() / 2;
+
+        // Nastavenie pozície spinnera
+        spinner.setLayoutX(centerX);
+        spinner.setLayoutY(centerY);
+
+        // Nastavenie pozície statusLabel (text nad spinnerom)
+        Platform.runLater(() -> {
+            statusLabel.setLayoutX(centerX - statusLabel.getWidth() / 2); // Vycentrovať text horizontálne
+            statusLabel.setLayoutY(centerY - statusLabel.getHeight() - spinner.getRadiusY() - 20);
+        });
+
+        // Nastavenie pozície NextButton (button pod spinnerom)
+        nextButton.setLayoutX(centerX - nextButton.getWidth() / 2); // Vycentrovať tlačidlo horizontálne
+        nextButton.setLayoutY(centerY + spinner.getRadiusY() * 2 + 60); // 60px pod spinnerom
     }
 
     public void updateStatus(String message) {
@@ -50,35 +69,33 @@ public class DownloadController {
     }
 
     public void startDownload() {
-        // Make sure the spinner is visible before starting the download
+        // Zobraziť spinner pred začiatkom sťahovania
         spinner.setVisible(true);
-        statusLabel.setText("Downloading...");
+        updateStatus("Sťahujem XML");
+        updatePositions(); // Zaisti správne umiestnenie
 
-        // Start the continuous spinning when the download begins
+        // Spustiť animáciu spinnera
         timeline = new Timeline(
-                new KeyFrame(Duration.seconds(0.01), e -> spinner.setRotate(spinner.getRotate() + 5)) // Rotate by 5 degrees every frame
+                new KeyFrame(Duration.seconds(0.01), e -> spinner.setRotate(spinner.getRotate() + 5)) // Rotácia o 5 stupňov
         );
-        timeline.setCycleCount(Timeline.INDEFINITE); // Spin indefinitely
+        timeline.setCycleCount(Timeline.INDEFINITE); // Nekonečná rotácia
         timeline.play();
 
-        Task<Void> downloadTask = new Task<Void>() {
+        Task<Void> downloadTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
-                // Simulate downloading by sleeping for 2 seconds
-                Thread.sleep(2000);
+                // Simulácia sťahovania (čakanie 5 sekúnd)
+                Thread.sleep(5000);
 
                 Platform.runLater(() -> {
-                    // Stop the spinning and update the status when download is complete
-                    timeline.stop(); // Stop the spinning animation
-                    spinner.setVisible(false); // Hide the spinner after download
-                    updateStatus("Download complete!"); // Update the status label
+                    // Zastaviť spinner a zobraziť stav
+                    timeline.stop();
+                    spinner.setVisible(false);
+                    updateStatus("Sťahovanie dokončené");
+                    updatePositions();  // Po aktualizácii stavu, vycentruj pozíciu textu
 
-                    // Set the button's position to the same as the spinner's center
-                    nextButton.setLayoutX((anchorPane.getWidth() - nextButton.getWidth()) / 2);
-                    nextButton.setLayoutY((anchorPane.getHeight() - nextButton.getHeight()) / 2);
-
-                    // Show the button after the download is complete
-                    nextButton.setVisible(true); // Make the button visible
+                    // Zobraziť tlačidlo
+                    nextButton.setVisible(true);
                 });
 
                 return null;
@@ -93,14 +110,14 @@ public class DownloadController {
     @FXML
     private void handleProceed() {
         try {
-            // Load the new scene (Main Scene)
-            Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene2.fxml")));
+            // Načítať novú scénu (Main Scene)
+            Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene2.fxml")), 1366, 768);
 
-            // Get the current stage and set the new scene
+            // Nastaviť novú scénu na aktuálne okno
             Stage stage = (Stage) nextButton.getScene().getWindow();
             stage.setScene(newScene);
 
-            // Optionally, update the window title or other settings
+            // Nastaviť titulok okna
             stage.setTitle("Main Scene");
         } catch (IOException e) {
             e.printStackTrace();

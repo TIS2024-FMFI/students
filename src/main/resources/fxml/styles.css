@@ -1,4 +1,6 @@
 /* styles.css */
+
+/* Štýl pre tlačidlo s triedou .green-button */
 .green-button {
     -fx-background-color: green;
     -fx-text-fill: white;
@@ -8,6 +10,26 @@
     -fx-background-radius: 5px;
 }
 
+/* Zmena farby pozadia pri hover */
 .green-button:hover {
     -fx-background-color: #4CAF50; /* Lighter green for hover */
+}
+
+/* Pridaný štýl pre Label */
+.status-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+/* Pridaný štýl pre Spinner */
+.spinner {
+    -fx-stroke: black;
+    -fx-stroke-width: 5px;
+}
+
+/* Štýl pre text pri stiahnutí (downloading) */
+.downloading-text {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ff0000;
 }
