@@ -15,6 +15,20 @@
     -fx-background-color: #4CAF50; /* Lighter green for hover */
 }
 
+.red-button {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Zmena farby pozadia pri hover */
+.red-button:hover {
+    -fx-background-color: #FF6666; /* Lighter red for hover */
+}
+
 /* Pridaný štýl pre Label */
 .status-label {
     -fx-font-weight: bold;
