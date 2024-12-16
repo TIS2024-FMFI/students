@@ -127,7 +127,7 @@ public class DownloadController {
     @FXML
     private void handleProceed() {
         try {
-            Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene2.fxml")), 1366, 768);
+            Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene.fxml")));
             Stage stage = (Stage) nextButton.getScene().getWindow();
             stage.setScene(newScene);
             stage.setTitle("Main Scene");

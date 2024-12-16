@@ -4,6 +4,8 @@ import com.tis.dbf.model.Student;
 import com.tis.dbf.model.Students;
 import com.tis.dbf.model.Subject;
 import com.tis.dbf.model.Subjects;
+import com.tis.dbf.model.Study;
+import com.tis.dbf.model.Studies;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
@@ -42,5 +44,20 @@ public class XMLParsingServes {
             System.out.println(student);
         }
         return students;
+    }
+
+    public Studies parseStudiesXml(String fileName) throws JAXBException {
+        JAXBContext context = JAXBContext.newInstance(Studies.class);
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+
+        String filePath = "src/main/resources/" + fileName;
+        File file = new File(Paths.get(filePath).toUri());
+
+        Studies studies = (Studies) unmarshaller.unmarshal(file);
+
+        for (Study study : studies.getStudies()) {
+            System.out.println(study);
+        }
+        return studies;
     }
 }

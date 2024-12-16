@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Studies>
+	<Study>
+		<id.UPN>42853223</id.UPN>
+		<Start.Date>12.09.2001</Start.Date>
+		<End.Date>17.06.2005</End.Date>
+		<Study.Programme>Aplikovaná ekonómia</Study.Programme>
+		<Study.Field>Ekonómia a manažment</Study.Field>
+		<Faculty>Fakulta sociálnych a ekonomických vied</Faculty>
+		<Level>Prvý</Level>
+		<Degree>Bc</Degree>
+		<Language>Slovenský</Language>
+		<Form>Denná</Form>
+		<Standard.Length>3</Standard.Length>
+		<Total.Credits>180</Total.Credits>
+		<FinalExam>
+			<Exam.Date>17.06.2005</Exam.Date>
+			<Exam.Grade>A</Exam.Grade>
+		</FinalExam>
+		<AR2001-2002>
+			<Registration.Date>12.09.2001</Registration.Date>
+			<Subjects>
+				<Subject>
+					<UIDP>SAAV</UIDP>
+					<Grade>B</Grade>
+					<Type>P</Type>
+					<Attempt>Riadny</Attempt>
+					<End.Subject>Skúška</End.Subject>
+					<End.Subject.Date>11.01.2002</End.Subject.Date>
+					<Credits>6</Credits>
+				</Subject>
+			</Subjects>
+		</AR2001-2002>
+		<Interruptions>
+			<Interruption>
+				<Interruption.Year>2002-2003</Interruption.Year>
+				<Reason>Rodinné dôvody</Reason>
+				<Start.Date>01.03.2003</Start.Date>
+				<End.Date>31.08.2003</End.Date>
+			</Interruption>
+		</Interruptions>
+	</Study>
+</Studies>
