@@ -28,3 +28,4 @@
 
     <!-- Retry button if download fails -->
     <Button fx:id="retryButton" text="Skúsiť znova" layoutX="100" layoutY="250" onAction="#handleRetry" visible="false" styleClass="red-button"/>
+</AnchorPane>
