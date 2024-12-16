@@ -22,7 +22,7 @@ public class JavaFxApp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
         //fxmlLoader.setControllerFactory(springContext::getBean);
         Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 1366, 768);
         primaryStage.setScene(scene);
         primaryStage.setTitle("JavaFX app");
         primaryStage.show();

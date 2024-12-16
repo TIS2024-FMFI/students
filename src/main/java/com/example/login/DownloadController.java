@@ -1,9 +1,12 @@
 package com.example.login;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Arc;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
@@ -18,6 +21,7 @@ import java.io.IOException;
 
 public class DownloadController {
 
+    public StackPane stackPane;
     @FXML
     private Label statusLabel;
 
@@ -28,59 +32,89 @@ public class DownloadController {
     private Button nextButton; // The button that will appear after download
 
     @FXML
+    private Button retryButton; // The button that will appear if download fails
+
+    @FXML
     private AnchorPane anchorPane; // Injected AnchorPane reference
 
     private Timeline timeline; // For continuous spinning
 
     public void initialize() {
-        // Position the spinner arc at the center of the AnchorPane
-        anchorPane.widthProperty().addListener((obs, oldWidth, newWidth) ->
-                spinner.setLayoutX((newWidth.doubleValue() - spinner.getRadiusX() * 2) / 2)
-        );
-        anchorPane.heightProperty().addListener((obs, oldHeight, newHeight) ->
-                spinner.setLayoutY((newHeight.doubleValue() - spinner.getRadiusY() * 2) / 2)
-        );
-
-        // Initially, hide the proceed button
+        // Set initial visibility and positions
         nextButton.setVisible(false);
+        retryButton.setVisible(false);
+
+        // Update positions when the window is resized
+        anchorPane.widthProperty().addListener((obs, oldWidth, newWidth) -> updatePositions());
+        anchorPane.heightProperty().addListener((obs, oldHeight, newHeight) -> updatePositions());
+
+        updatePositions();
+    }
+
+    private void updatePositions() {
+        double centerX = anchorPane.getWidth() / 2;
+        double centerY = anchorPane.getHeight() / 2;
+
+        // Center the spinner
+        spinner.setLayoutX(centerX);
+        spinner.setLayoutY(centerY);
+
+        // Center the status label above the spinner
+
+
+        // Center the next button below the spinner
+        nextButton.setLayoutX(centerX - nextButton.getWidth() / 2);
+        nextButton.setLayoutY(centerY + spinner.getRadiusY() * 2 + 60);
+
+        // Center the retry button below the next button (adjust as necessary)
+        retryButton.setLayoutX(centerX - retryButton.getWidth() / 2);
+        retryButton.setLayoutY(centerY + spinner.getRadiusY() * 2 + 120);
     }
 
     public void updateStatus(String message) {
         statusLabel.setText(message);
+        statusLabel.setTranslateY(-80);
     }
 
     public void startDownload() {
-        // Make sure the spinner is visible before starting the download
         spinner.setVisible(true);
-        statusLabel.setText("Downloading...");
+        updateStatus("Sťahujem XML");
+        updatePositions(); // Ensure proper positioning
 
-        // Start the continuous spinning when the download begins
+        // Start spinner animation
         timeline = new Timeline(
-                new KeyFrame(Duration.seconds(0.01), e -> spinner.setRotate(spinner.getRotate() + 5)) // Rotate by 5 degrees every frame
+                new KeyFrame(Duration.seconds(0.01), e -> spinner.setRotate(spinner.getRotate() + 5))
         );
-        timeline.setCycleCount(Timeline.INDEFINITE); // Spin indefinitely
+        timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
         Task<Void> downloadTask = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                // Simulate downloading by sleeping for 2 seconds
-                Thread.sleep(2000);
+                try {
+                    // Simulate download (this is where you implement actual downloading logic)
+                    Thread.sleep(5000);
 
-                Platform.runLater(() -> {
-                    // Stop the spinning and update the status when download is complete
-                    timeline.stop(); // Stop the spinning animation
-                    spinner.setVisible(false); // Hide the spinner after download
-                    updateStatus("Download complete!"); // Update the status label
-
-                    // Set the button's position to the same as the spinner's center
-                    nextButton.setLayoutX((anchorPane.getWidth() - nextButton.getWidth()) / 2);
-                    nextButton.setLayoutY((anchorPane.getHeight() - nextButton.getHeight()) / 2);
-
-                    // Show the button after the download is complete
-                    nextButton.setVisible(true); // Make the button visible
-                });
-
+                    // If download succeeds
+                    // throw new NullPointerException("demo");
+                    // Show "Proceed" button
+                    Platform.runLater(() -> {
+                        timeline.stop();
+                        spinner.setVisible(false);
+                        updateStatus("Sťahovanie dokončené");
+                        updatePositions();
+                        nextButton.setVisible(true); // Show "Proceed" button
+                    });
+                } catch (Exception e) {
+                    // If download fails
+                    Platform.runLater(() -> {
+                        timeline.stop();
+                        spinner.setVisible(false);
+                        updateStatus("Sťahovanie zlyhalo");
+                        updatePositions();
+                        retryButton.setVisible(true); // Show "Retry" button
+                    });
+                }
                 return null;
             }
         };
@@ -93,17 +127,19 @@ public class DownloadController {
     @FXML
     private void handleProceed() {
         try {
-            // Load the new scene (Main Scene)
             Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene.fxml")));
-
-            // Get the current stage and set the new scene
             Stage stage = (Stage) nextButton.getScene().getWindow();
             stage.setScene(newScene);
-
-            // Optionally, update the window title or other settings
             stage.setTitle("Main Scene");
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void handleRetry() {
+        // Hide retry button and restart the download
+        retryButton.setVisible(false);
+        startDownload(); // Restart the download process
     }
 }
