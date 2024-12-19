@@ -31,6 +31,14 @@ public class Student {
     @XmlElement(name = "Birth.Name")
     private String birthName;
 
+
+    private String studyProgram;
+    private String degree;
+
+
+
+
+
     @Override
     public String toString() {
         return "Student{" +
@@ -43,4 +51,9 @@ public class Student {
     public String getFullName() {
         return firstName + " " + secondName;
     }
+
+    public String getStudyProgramDeg() {
+        return degree + "." + studyProgram;
+    }
+
 }
