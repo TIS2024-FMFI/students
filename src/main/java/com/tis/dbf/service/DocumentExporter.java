@@ -11,11 +11,25 @@ import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Cell;
+import com.tis.dbf.model.Student;
+import com.tis.dbf.model.Study;
 
 public class DocumentExporter {
+    private static Student student = null;
+    private static Study study = null;
+
+    public DocumentExporter(Student student, Study study) {
+        DocumentExporter.student = student;
+        DocumentExporter.study = study;
+    }
 
     public static void socialInsurance() {
         String pdfPath = "student_record.pdf";
+
+        if (student == null || study == null) {
+            System.out.println("Student or study data is missing.");
+            return;
+        }
 
         try {
             PdfWriter writer = new PdfWriter(pdfPath);
@@ -26,12 +40,12 @@ public class DocumentExporter {
             PdfFont italicFont = PdfFontFactory.createFont("Times-Italic");
             PdfFont regularFont = PdfFontFactory.createFont("Times-Roman");
 
-            // Title
+            // Header
             document.add(new Paragraph("Univerzita Komenského v Bratislave")
                     .setTextAlignment(TextAlignment.CENTER)
                     .setFont(boldFont)
                     .setFontSize(14));
-            document.add(new Paragraph("Fakulta matematiky, fyziky a informatiky")
+            document.add(new Paragraph("Fakulta sociálnych a ekonomických vied")
                     .setTextAlignment(TextAlignment.CENTER)
                     .setFont(regularFont)
                     .setFontSize(12));
@@ -41,68 +55,81 @@ public class DocumentExporter {
                     .setFontSize(12));
 
             // Student info
-            document.add(new Paragraph(new Text("Študent: ").setFont(boldFont))
-                    .add(new Text("Jozko Cibula").setFont(regularFont))
-                    .setMultipliedLeading(0.5f));
+            float[] columnWidthsStudent = {300f, 200f};
+            Table studentTable = new Table(columnWidthsStudent);
+            // meno
+            studentTable.addCell(new Cell().add(new Paragraph(new Text("Študent: ").setFont(boldFont))
+                    .add(new Text(student.getFullName()).setFont(regularFont))
+                    .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
 
-            document.add(new Paragraph(new Text("Rodená: ").setFont(boldFont))
-                    .setMultipliedLeading(0.5f));
+            if (!student.getSecondName().equals(student.getBirthName())) {      // ak sa rodne priezvisko nerovna rodnemu priezvisku
+                if (student.getSex().equals("muž")) {                           // format pre muza
+                    // rodeny
+                    studentTable.addCell(new Cell().add(new Paragraph(new Text("Rodený: ").setFont(boldFont))
+                            .add(new Text(student.getBirthName()).setFont(regularFont))
+                            .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
+                } else {                                                        // format pre zenu
+                    // rodena
+                    studentTable.addCell(new Cell().add(new Paragraph(new Text("Rodená: ").setFont(boldFont))
+                            .add(new Text(student.getBirthName()).setFont(regularFont))
+                            .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
+                }
+            }
 
+            studentTable.setBorder(Border.NO_BORDER);
+            document.add(studentTable);
+            // datum a miesto narodenia
             document.add(new Paragraph(new Text("Dátum a miesto narodenia: ").setFont(boldFont))
-                    .add(new Text("32.13.4562").setFont(regularFont))
-                    .setMultipliedLeading(0.5f));
+                    .add(new Text(student.getBirthDate() + " " + student.getBirthdayPlace()).setFont(regularFont))
+                    .setMultipliedLeading(0.8f));
 
             document.add(new Paragraph("\nUKONČENÉ ŠTÚDIÁ").setFont(boldFont).setFontSize(12));
 
             // Table for study program details
-            float[] columnWidths = {100f, 300f};
-            Table table = new Table(columnWidths);
+            float[] columnWidthsStudies = {100f, 300f};
+            Table studyTable = new Table(columnWidthsStudies);
 
-            table.addCell(new Cell().add(new Paragraph("Študijný program:").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("Študijný program:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("matematika").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph(study.getStudyProgramme()).setMultipliedLeading(0.8f)
                     .setFont(boldFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("Forma štúdia:").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("Forma štúdia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("denná").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("PLACEHOLDER").setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("Začiatok štúdia:").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("Začiatok štúdia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("05.09.2008").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("PLACEHOLDER").setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("Koniec štúdia:").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("Koniec štúdia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("29.06.2011").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("PLACEHOLDER").setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("Stupeň štúdia:").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("Stupeň štúdia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("I. bakalársky stupeň").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph(study.getDegree()).setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("Doba štúdia").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("Doba štúdia").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("3").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("PLACEHOLDER").setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("Spôsob ukončenia:").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("Spôsob ukončenia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(new Paragraph("Absolvovanie - riadne ukončenie štúdia (§65)").setMultipliedLeading(0.5f)
+            studyTable.addCell(new Cell().add(new Paragraph("PLACEHOLDER").setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
 
-            // Add table to document
-            table.setBorder(Border.NO_BORDER);
-            document.add(table);
+            studyTable.setBorder(Border.NO_BORDER);
+            document.add(studyTable);
 
-            // Interruptions section
+            // Interruptions
             document.add(new Paragraph("\nPrerušenia:").setFont(boldFont)
-                    .setMultipliedLeading(0.5f));
+                    .setMultipliedLeading(0.8f));
             document.add(new Paragraph("01.09.2015 - 31.08.2016, materská dovolenka").setFont(regularFont)
-                    .setMultipliedLeading(0.5f));
+                    .setMultipliedLeading(0.8f));
             document.add(new Paragraph("01.08.2019 - 31.08.2021, materská dovolenka").setFont(regularFont)
-                    .setMultipliedLeading(0.5f));
+                    .setMultipliedLeading(0.8f));
 
-            // Close document
             document.close();
-
-            System.out.println("PDF created successfully: " + pdfPath);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -110,6 +137,20 @@ public class DocumentExporter {
     }
 
     public static void main(String[] args) {
-        socialInsurance();
+        // need to add args to the class, so it has data
+        Student student = new Student();
+        Study study = new Study();
+        student.setSex("muž");
+        student.setFirstName("Janko");
+        student.setSecondName("Hraško");
+        student.setBirthCountry("Slovesnko");
+        student.setBirthDate("01.01.1990");
+        student.setBirthdayPlace("Bratislava");
+        student.setBirthName("Mrkvicka");
+        student.setDegree("Bakalársky");
+        study.setDegree("Bakalársky");
+        study.setStudyProgramme("Informatika");
+        DocumentExporter exporter = new DocumentExporter(student, study);
+        exporter.socialInsurance();
     }
 }
