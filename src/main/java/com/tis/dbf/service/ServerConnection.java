@@ -46,8 +46,8 @@ public class ServerConnection {
 
     }
 
-    public Subjects downloadAndParseSubjects() throws JSchException, SftpException, JAXBException {
-        String remoteFilePath = "/home/skoruba1/students/fsev/PREDMETY.XML";
+    public Subjects downloadAndParseSubjects(String faculty) throws JSchException, SftpException, JAXBException {
+        String remoteFilePath = "/home/java/students/" + faculty + "/PREDMETY.XML";
 
         JSch jsch = new JSch();
         Session session = jsch.getSession(username, host, port);

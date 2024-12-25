@@ -30,7 +30,7 @@ public class DbfApplication implements CommandLineRunner {
         Students students = xmlParsingServes.parseStudents("studentsExample.xml");
         System.out.println(students);
 
-        Subjects subjects = serverConnection.downloadAndParseSubjects();
+        Subjects subjects = serverConnection.downloadAndParseSubjects("fsev");
 //        Subjects subjects = xmlParsingServes.parseSubjectsXml("predmety.xml");
         System.out.println(subjects);
     }
