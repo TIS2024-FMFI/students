@@ -14,6 +14,8 @@ import com.itextpdf.layout.element.Cell;
 import com.tis.dbf.model.Student;
 import com.tis.dbf.model.Study;
 
+import java.io.IOException;
+
 public class DocumentExporter {
     private static Student student = null;
     private static Study study = null;
@@ -36,52 +38,16 @@ public class DocumentExporter {
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
 
+            // Create fonts for this document
             PdfFont boldFont = PdfFontFactory.createFont("Times-Bold");
             PdfFont italicFont = PdfFontFactory.createFont("Times-Italic");
             PdfFont regularFont = PdfFontFactory.createFont("Times-Roman");
 
             // Header
-            document.add(new Paragraph("Univerzita Komenského v Bratislave")
-                    .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(boldFont)
-                    .setFontSize(14));
-            document.add(new Paragraph("Fakulta sociálnych a ekonomických vied")
-                    .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(regularFont)
-                    .setFontSize(12));
-            document.add(new Paragraph("\nŠTÚDIÁ ŠTUDENTA\n")
-                    .setTextAlignment(TextAlignment.CENTER)
-                    .setFont(boldFont)
-                    .setFontSize(12));
+            header(document, boldFont, regularFont);
 
             // Student info
-            float[] columnWidthsStudent = {300f, 200f};
-            Table studentTable = new Table(columnWidthsStudent);
-            // meno
-            studentTable.addCell(new Cell().add(new Paragraph(new Text("Študent: ").setFont(boldFont))
-                    .add(new Text(student.getFullName()).setFont(regularFont))
-                    .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
-
-            if (!student.getSecondName().equals(student.getBirthName())) {      // ak sa rodne priezvisko nerovna rodnemu priezvisku
-                if (student.getSex().equals("muž")) {                           // format pre muza
-                    // rodeny
-                    studentTable.addCell(new Cell().add(new Paragraph(new Text("Rodený: ").setFont(boldFont))
-                            .add(new Text(student.getBirthName()).setFont(regularFont))
-                            .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
-                } else {                                                        // format pre zenu
-                    // rodena
-                    studentTable.addCell(new Cell().add(new Paragraph(new Text("Rodená: ").setFont(boldFont))
-                            .add(new Text(student.getBirthName()).setFont(regularFont))
-                            .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
-                }
-            }
-
-            studentTable.setBorder(Border.NO_BORDER);
-            document.add(studentTable);
-            // datum a miesto narodenia
-            document.add(new Paragraph(new Text("Dátum a miesto narodenia: ").setFont(boldFont))
-                    .add(new Text(student.getBirthDate() + " " + student.getBirthdayPlace()).setFont(regularFont))
-                    .setMultipliedLeading(0.8f));
+            studentTable(document, boldFont, regularFont);
 
             document.add(new Paragraph("\nUKONČENÉ ŠTÚDIÁ").setFont(boldFont).setFontSize(12));
 
@@ -136,6 +102,92 @@ public class DocumentExporter {
         }
     }
 
+    public static void markExport() {
+        String pdfPath = "mark_record.pdf";
+
+        if (student == null || study == null) {
+            System.out.println("Student or study data is missing.");
+            return;
+        }
+
+        try {
+            PdfWriter writer = new PdfWriter(pdfPath);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+
+            // Create fonts for this document
+            PdfFont boldFont = PdfFontFactory.createFont("Times-Bold");
+            PdfFont italicFont = PdfFontFactory.createFont("Times-Italic");
+            PdfFont regularFont = PdfFontFactory.createFont("Times-Roman");
+
+            // Header
+            header(document, boldFont, regularFont);
+
+            // Student info
+            studentTable(document, boldFont, regularFont);
+
+            document.add(new Paragraph(new Text("Odbor: ").setFont(boldFont))
+                    .add(new Text("PLACEHOLDER").setFont(regularFont))
+                    .setMultipliedLeading(0.8f));
+
+            document.add(new Paragraph(new Text("Zameranie: ").setFont(boldFont))
+                    .add(new Text(student.getStudyProgram()).setFont(regularFont))
+                    .setMultipliedLeading(0.8f));
+
+            document.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void header(Document document, PdfFont boldFont, PdfFont regularFont) {
+        document.add(new Paragraph("Univerzita Komenského v Bratislave")
+                .setTextAlignment(TextAlignment.CENTER)
+                .setFont(boldFont)
+                .setFontSize(14));
+        document.add(new Paragraph("Fakulta sociálnych a ekonomických vied")
+                .setTextAlignment(TextAlignment.CENTER)
+                .setFont(regularFont)
+                .setFontSize(12));
+        document.add(new Paragraph("\nŠTÚDIÁ ŠTUDENTA\n")
+                .setTextAlignment(TextAlignment.CENTER)
+                .setFont(boldFont)
+                .setFontSize(12));
+    }
+
+    private static void studentTable(Document document, PdfFont boldFont, PdfFont regularFont) {
+        // Student info
+        float[] columnWidthsStudent = {300f, 200f};
+        Table studentTable = new Table(columnWidthsStudent);
+        // meno
+        studentTable.addCell(new Cell().add(new Paragraph(new Text("Študent: ").setFont(boldFont))
+                .add(new Text(student.getFullName()).setFont(regularFont))
+                .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
+
+        if (!student.getSecondName().equals(student.getBirthName())) {      // ak sa rodne priezvisko nerovna rodnemu priezvisku
+            if (student.getSex().equals("muž")) {                           // format pre muza
+                // rodeny
+                studentTable.addCell(new Cell().add(new Paragraph(new Text("Rodený: ").setFont(boldFont))
+                        .add(new Text(student.getBirthName()).setFont(regularFont))
+                        .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
+            } else {                                                        // format pre zenu
+                // rodena
+                studentTable.addCell(new Cell().add(new Paragraph(new Text("Rodená: ").setFont(boldFont))
+                        .add(new Text(student.getBirthName()).setFont(regularFont))
+                        .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
+            }
+        }
+
+        // datum a miesto narodenia
+        document.add(new Paragraph(new Text("Dátum a miesto narodenia: ").setFont(boldFont))
+                .add(new Text(student.getBirthDate() + " " + student.getBirthdayPlace()).setFont(regularFont))
+                .setMultipliedLeading(0.8f));
+
+        studentTable.setBorder(Border.NO_BORDER);
+        document.add(studentTable);
+    }
+
     public static void main(String[] args) {
         // need to add args to the class, so it has data
         Student student = new Student();
@@ -148,9 +200,11 @@ public class DocumentExporter {
         student.setBirthdayPlace("Bratislava");
         student.setBirthName("Mrkvicka");
         student.setDegree("Bakalársky");
+        student.setStudyProgram("Informatika");
         study.setDegree("Bakalársky");
         study.setStudyProgramme("Informatika");
         DocumentExporter exporter = new DocumentExporter(student, study);
         exporter.socialInsurance();
+        exporter.markExport();
     }
 }
