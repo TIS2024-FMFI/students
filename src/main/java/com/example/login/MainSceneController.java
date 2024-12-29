@@ -11,6 +11,9 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import java.text.Normalizer;
 import java.util.List;
@@ -93,6 +96,17 @@ public class MainSceneController {
     @FXML
     private Label FixLabelYears;
 
+    @FXML
+    private Label labelStudyStartDate;
+
+    @FXML
+    private Label labelStudyProgramme;
+
+    @FXML
+    private Label labelGraduate;
+
+
+
 
 
     @FXML
@@ -158,6 +172,8 @@ public class MainSceneController {
         labelLastName.setText("");
         labelBirthDate.setText("");
         FixLabelYears.setText("");
+        labelStudyStartDate.setText("");
+        labelStudyProgramme.setText("");
         ButtonSocialnaPoistovna.setVisible(false);
         ButtonVypisZnamok.setVisible(false);
         ButtonDiplom.setVisible(false);
@@ -172,6 +188,7 @@ public class MainSceneController {
                 for (Study study : studyList) {
                     if (study.getUPN() != null
                             && study.getUPN().equals(student.getUPN())) {
+                        System.out.println(study);
                         matchedStudy = study;
                         break;
                     }
@@ -179,9 +196,12 @@ public class MainSceneController {
                 if (matchedStudy != null) {
                     student.setStudyProgram(matchedStudy.getStudyProgramme());
                     student.setDegree(matchedStudy.getDegree());
+                    student.setStudyRegistration(matchedStudy.getStudyRegistration());
+                    student.setStudyStatus(matchedStudy.getStudyStatus());
                 } else {
                     student.setStudyProgram("nenačítané");
                     student.setDegree("nenačítané");
+
                 }
             }
             displayStudents(studentList);
@@ -230,9 +250,28 @@ public class MainSceneController {
             FixLabelStudyStart.setText("Začiatok štúdia");
             FixLabelStudyProgramme.setText("Študijný program");
             FixLabelYears.setText("Priebeh štúdia / akademické roky");
+            labelStudyProgramme.setText(selectedStudent.getStudyProgram());
+            labelStudyStartDate.setText(selectedStudent.getStudyRegistration());
+            labelGraduate.setText(selectedStudent.getStudyStatus());
+//            if (selectedStudent.getStudyStatus()=="Absolvované") {
+//                labelGraduate.setText("Áno");
+//            }
             ButtonSocialnaPoistovna.setVisible(true);
             ButtonVypisZnamok.setVisible(true);
             ButtonDiplom.setVisible(true);
+            Study matchedStudy = studyList.stream()
+                    .filter(study -> study.getUPN().equals(selectedStudent.getUPN()))
+                    .findFirst()
+                    .orElse(null);
+
+//            if (matchedStudy != null) {
+//                // Použijeme predpripravený startDate
+//                String startDate = matchedStudy.getStartDate();
+//                System.out.println(startDate);
+//                labelStudyStartDate.setText(studyRegistration != null ? startDate : "Dátum nezačiatku nenájdený");
+//            } else {
+//                FixLabelGraduate.setText("Štúdium nenájdené");
+//            }
 
         } else {
 
@@ -240,17 +279,61 @@ public class MainSceneController {
         }
     }
 
+//    private String getStudyStartDateUsingElement(String upn) {
+//        for (Study study : studyList) {
+//            if (study.getUPN().equals(upn)) {
+//                // Práca s Element pre získanie dátumu
+//                Element studyElement = study.getElement();
+//                System.out.println(studyElement);
+//                if (studyElement != null) {
+//                    NodeList academicYears = studyElement.getElementsByTagName("Academic.Years");
+//                    if (academicYears.getLength() > 0) {
+//                        Element academicYear = (Element) academicYears.item(0);
+//                        NodeList years = academicYear.getChildNodes();
+//                        for (int i = 0; i < years.getLength(); i++) {
+//                            Node yearNode = years.item(i);
+//                            if (yearNode.getNodeType() == Node.ELEMENT_NODE) {
+//                                Element yearElement = (Element) yearNode;
+//                                Node registrationDateNode = yearElement.getElementsByTagName("Registration.Date").item(0);
+//                                if (registrationDateNode != null) {
+//                                    return registrationDateNode.getTextContent(); // Vrátiť dátum
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        return null; // Ak sa nenašiel dátum
+//    }
+
+
+
 
     private void clearLabels() {
         Label[] labels = {
                 FixLabelFirstName, FixLabelLastName, FixLabelBirthDate,
                 FixLabelStudyData, FixLabelPersonalData, FixLabelDetails,
                 FixLabelGraduate, FixLabelStudyStart, FixLabelStudyProgramme,
-                labelFirstName, labelLastName, labelBirthDate, FixLabelYears
+                labelFirstName, labelLastName, labelBirthDate, FixLabelYears, labelStudyStartDate
         };
 
         for (Label label : labels) {
             label.setText("");
+        }
+    }
+
+    private void updateGraduateStatus(Student selectedStudent) {
+        if (selectedStudent != null) {
+            // Overenie stavu štúdia
+            String studyStatus = selectedStudent.getStudyStatus(); // Napríklad "Absolvované"
+            if ("Absolvované".equalsIgnoreCase(studyStatus)) {
+                labelGraduate.setText("Áno");
+            } else {
+                labelGraduate.setText("Nie");
+            }
+        } else {
+            labelGraduate.setText(""); // Ak nie je vybraný žiadny študent
         }
     }
 

@@ -221,9 +221,9 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="FixLabelGraduate" text="Absolvované štúdium" GridPane.rowIndex="8">
+                        <Label fx:id="FixLabelGraduate" text="Status štúdia" GridPane.rowIndex="8">
                            <font>
-                              <Font size="22.0" />
+                              <Font size="24.0" />
                            </font>
                            <GridPane.margin>
                               <Insets />
@@ -300,7 +300,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="labelBirthDate1" contentDisplay="RIGHT" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="6">
+                        <Label fx:id="labelStudyProgramme" contentDisplay="RIGHT" minWidth="450.0" prefHeight="42.0" prefWidth="407.0" GridPane.rowIndex="6">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -311,7 +311,7 @@
                               <Insets left="220.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label fx:id="labelBirthDate11" contentDisplay="RIGHT" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="7">
+                        <Label fx:id="labelStudyStartDate" contentDisplay="RIGHT" minWidth="450.0" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="7">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -322,7 +322,7 @@
                               <Insets left="220.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label fx:id="labelBirthDate111" contentDisplay="RIGHT" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="8">
+                        <Label fx:id="labelGraduate" contentDisplay="RIGHT" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="8">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>

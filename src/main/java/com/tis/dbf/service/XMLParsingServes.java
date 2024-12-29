@@ -55,9 +55,13 @@ public class XMLParsingServes {
 
         Studies studies = (Studies) unmarshaller.unmarshal(file);
 
-        for (Study study : studies.getStudies()) {
-            System.out.println(study);
-        }
+//        for (Study study : studies.getStudies()) {
+//            if (study.getStudyRegistration() != null) {
+//                study.setStartDate(study.getStudyRegistration());
+//                System.out.println(study.getStudyRegistration());
+//            }
+//            System.out.println(study);
+//        }
         return studies;
     }
 }

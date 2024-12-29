@@ -34,6 +34,9 @@ public class Student {
 
     private String studyProgram;
     private String degree;
+    private String studyRegistration;
+    private String studyStatus;
+
 
 
 
@@ -56,4 +59,11 @@ public class Student {
         return degree + "." + studyProgram;
     }
 
+    public String getStudyStatus() {
+        return studyStatus;
+    }
+
+    public void setStudyStatus(String studyStatus) {
+        this.studyStatus = studyStatus;
+    }
 }
