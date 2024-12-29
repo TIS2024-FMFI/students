@@ -17,8 +17,9 @@
 		</Study.Admission>
 		<Total.Credits>180</Total.Credits>
 		<Academic.Years>
-			<AR2001-2002>
+			<AcademicYear>
 				<Registration.Date>12.09.2001</Registration.Date>
+				<Years>2001-2002</Years>
 				<Subjects>
 					<Subject>
 						<UIDP>SAAV</UIDP>
@@ -26,12 +27,30 @@
 						<Type>P</Type>
 						<Attempt>Riadny</Attempt>
 						<End.Subject>Skúška</End.Subject>
-						<End.Subject.Date>11.01.2002</End.Subject.Date>
+						<End.Subject.Date>11.01.2001</End.Subject.Date>
 						<Credits>6</Credits>
 						<Semester>Z</Semester>
 					</Subject>
 				</Subjects>
-			</AR2001-2002>
+			</AcademicYear>
+			<AcademicYear>
+				<Registration.Date>12.09.2002</Registration.Date>
+				<Years>2002-2003</Years>
+				<Subjects>
+				</Subjects>
+			</AcademicYear>
+			<AcademicYear>
+				<Registration.Date>15.09.2003</Registration.Date>
+				<Years>2003-2004</Years>
+				<Subjects>
+				</Subjects>
+			</AcademicYear>
+			<AcademicYear>
+				<Registration.Date>10.09.2004</Registration.Date>
+				<Years>2004-2005</Years>
+				<Subjects>
+				</Subjects>
+			</AcademicYear>
 		</Academic.Years>
 		<Interruptions>
 			<Interruption>

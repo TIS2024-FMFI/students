@@ -6,6 +6,9 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @XmlRootElement(name = "Student")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -32,12 +35,12 @@ public class Student {
     private String birthName;
 
 
-    private String studyProgram;
+    private String studyProgramme;
     private String degree;
     private String studyRegistration;
     private String studyStatus;
 
-
+    List<String> academicYears = new ArrayList<>();
 
 
 
@@ -56,7 +59,7 @@ public class Student {
     }
 
     public String getStudyProgramDeg() {
-        return degree + "." + studyProgram;
+        return degree + "." + studyProgramme;
     }
 
     public String getStudyStatus() {

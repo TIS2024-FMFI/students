@@ -174,6 +174,7 @@ public class MainSceneController {
         FixLabelYears.setText("");
         labelStudyStartDate.setText("");
         labelStudyProgramme.setText("");
+        labelGraduate.setText("");
         ButtonSocialnaPoistovna.setVisible(false);
         ButtonVypisZnamok.setVisible(false);
         ButtonDiplom.setVisible(false);
@@ -194,13 +195,15 @@ public class MainSceneController {
                     }
                 }
                 if (matchedStudy != null) {
-                    student.setStudyProgram(matchedStudy.getStudyProgramme());
+                    student.setStudyProgramme(matchedStudy.getStudyProgramme());
                     student.setDegree(matchedStudy.getDegree());
                     student.setStudyRegistration(matchedStudy.getStudyRegistration());
                     student.setStudyStatus(matchedStudy.getStudyStatus());
                 } else {
-                    student.setStudyProgram("nenačítané");
+                    student.setStudyProgramme("nenačítané");
                     student.setDegree("nenačítané");
+                    student.setStudyRegistration("nenačítané");
+                    student.setStudyStatus("nenačítané");
 
                 }
             }
@@ -219,6 +222,8 @@ public class MainSceneController {
             e.printStackTrace();
         }
     }
+
+
     //
     private void displayStudents(List<Student> students) {
         studentTable.setItems(FXCollections.observableArrayList(students));
@@ -246,11 +251,11 @@ public class MainSceneController {
             FixLabelBirthDate.setText("Dátum narodenia");
             FixLabelStudyData.setText("ŠTÚDIJNÉ ÚDAJE");
             FixLabelPersonalData.setText("OSOBNÉ ÚDAJE");
-            FixLabelGraduate.setText("Absolvované štúdium");
+            FixLabelGraduate.setText("Status štúdia");
             FixLabelStudyStart.setText("Začiatok štúdia");
             FixLabelStudyProgramme.setText("Študijný program");
             FixLabelYears.setText("Priebeh štúdia / akademické roky");
-            labelStudyProgramme.setText(selectedStudent.getStudyProgram());
+            labelStudyProgramme.setText(selectedStudent.getStudyProgramme());
             labelStudyStartDate.setText(selectedStudent.getStudyRegistration());
             labelGraduate.setText(selectedStudent.getStudyStatus());
 //            if (selectedStudent.getStudyStatus()=="Absolvované") {
@@ -279,33 +284,6 @@ public class MainSceneController {
         }
     }
 
-//    private String getStudyStartDateUsingElement(String upn) {
-//        for (Study study : studyList) {
-//            if (study.getUPN().equals(upn)) {
-//                // Práca s Element pre získanie dátumu
-//                Element studyElement = study.getElement();
-//                System.out.println(studyElement);
-//                if (studyElement != null) {
-//                    NodeList academicYears = studyElement.getElementsByTagName("Academic.Years");
-//                    if (academicYears.getLength() > 0) {
-//                        Element academicYear = (Element) academicYears.item(0);
-//                        NodeList years = academicYear.getChildNodes();
-//                        for (int i = 0; i < years.getLength(); i++) {
-//                            Node yearNode = years.item(i);
-//                            if (yearNode.getNodeType() == Node.ELEMENT_NODE) {
-//                                Element yearElement = (Element) yearNode;
-//                                Node registrationDateNode = yearElement.getElementsByTagName("Registration.Date").item(0);
-//                                if (registrationDateNode != null) {
-//                                    return registrationDateNode.getTextContent(); // Vrátiť dátum
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        return null; // Ak sa nenašiel dátum
-//    }
 
 
 
@@ -315,7 +293,8 @@ public class MainSceneController {
                 FixLabelFirstName, FixLabelLastName, FixLabelBirthDate,
                 FixLabelStudyData, FixLabelPersonalData, FixLabelDetails,
                 FixLabelGraduate, FixLabelStudyStart, FixLabelStudyProgramme,
-                labelFirstName, labelLastName, labelBirthDate, FixLabelYears, labelStudyStartDate
+                labelFirstName, labelLastName, labelBirthDate, FixLabelYears, labelStudyStartDate,
+                labelGraduate
         };
 
         for (Label label : labels) {
@@ -323,18 +302,6 @@ public class MainSceneController {
         }
     }
 
-    private void updateGraduateStatus(Student selectedStudent) {
-        if (selectedStudent != null) {
-            // Overenie stavu štúdia
-            String studyStatus = selectedStudent.getStudyStatus(); // Napríklad "Absolvované"
-            if ("Absolvované".equalsIgnoreCase(studyStatus)) {
-                labelGraduate.setText("Áno");
-            } else {
-                labelGraduate.setText("Nie");
-            }
-        } else {
-            labelGraduate.setText(""); // Ak nie je vybraný žiadny študent
-        }
-    }
+
 
 }
