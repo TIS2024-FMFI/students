@@ -1,53 +1,28 @@
 package com.tis.dbf.service;
-
 import com.jcraft.jsch.*;
 import com.tis.dbf.model.Subjects;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.Properties;
 
-@Component
+
 public class ServerConnection {
 
-    @Value("${server.username}")
     private String username;
-
-    @Value("${server.password}")
+    // doplnit sem udaje
     private String password;
 
-    @Value("${server.host}")
     private String host;
-
-    @Value("${server.port}")
     private int port;
 
-    public void downloadFilesFromServer() throws JSchException, SftpException {
-        String localFilePath = "src/main/resources/predmety.xml";
-        String remoteFilePath = "/home/skoruba1/students/fsev/PREDMETY.XML";
-
-        JSch jsch = new JSch();
-        Session session = jsch.getSession(username, host, port);
-        session.setPassword(password);
-        session.setConfig("StrictHostKeyChecking", "no");
-        session.connect();
-
-        ChannelSftp channelSftp = (ChannelSftp) session.openChannel("sftp");
-        channelSftp.connect();
-
-        channelSftp.get(remoteFilePath, localFilePath);
-
-        channelSftp.exit();
-
-        session.disconnect();
-
-    }
 
     public Subjects downloadAndParseSubjects(String faculty) throws JSchException, SftpException, JAXBException {
-        String remoteFilePath = "/home/java/students/" + faculty + "/PREDMETY.XML";
+        String remoteFilePath = getSubjectsFilePath(faculty);
 
         JSch jsch = new JSch();
         Session session = jsch.getSession(username, host, port);
@@ -64,4 +39,22 @@ public class ServerConnection {
         session.disconnect();
         return subjects;
     }
+
+    private static String getSubjectsFilePath(String faculty) {
+
+        Properties properties = new Properties();
+        try (FileInputStream input = new FileInputStream("config.properties")) {
+            properties.load(input);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load configuration file", e);
+        }
+
+        String filePathTemplate = properties.getProperty("subjectsFilePath");
+        if (filePathTemplate == null || filePathTemplate.isEmpty()) {
+            throw new IllegalArgumentException("subjectsFilePath is not configured in the properties file");
+        }
+
+        return filePathTemplate.replace("${faculty}", faculty);
+    }
+
 }

@@ -9,12 +9,10 @@ import com.tis.dbf.model.Studies;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
-import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.nio.file.Paths;
 
-@Service
 public class XMLParsingServes {
     public Subjects parseSubjectsXml(String fileName) throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(Subjects.class);

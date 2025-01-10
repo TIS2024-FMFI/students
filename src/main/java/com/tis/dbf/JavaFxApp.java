@@ -5,22 +5,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class JavaFxApp extends Application {
 
-    private ApplicationContext springContext;
-
     @Override
     public void init() throws Exception {
-        springContext = new AnnotationConfigApplicationContext(DbfApplication.class);
+        System.out.println("Aplikácia sa inicializuje...");
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
-        //fxmlLoader.setControllerFactory(springContext::getBean);
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root, 1366, 768);
         primaryStage.setScene(scene);
@@ -30,7 +25,7 @@ public class JavaFxApp extends Application {
 
     @Override
     public void stop() throws Exception {
-        ((AnnotationConfigApplicationContext) springContext).close();
+        System.out.println("Aplikácia sa zatvára...");
     }
 
     public static void main(String[] args) {
