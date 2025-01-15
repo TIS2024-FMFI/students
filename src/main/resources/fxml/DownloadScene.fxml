@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import java.net.URL?>
 <?import javafx.scene.layout.StackPane?>
-<AnchorPane fx:id="anchorPane" prefWidth="1920" prefHeight="1080" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.login.DownloadController">
+<AnchorPane fx:id="anchorPane" prefWidth="1920" prefHeight="1080" xmlns:fx="http://javafx.com/fxml" fx:controller="com.controllers.controllers.DownloadController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>

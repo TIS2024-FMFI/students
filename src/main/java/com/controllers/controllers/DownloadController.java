@@ -1,5 +1,6 @@
-package com.example.login;
+package com.controllers.controllers;
 
+import com.tis.dbf.service.DataService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +40,12 @@ public class DownloadController {
 
     private Timeline timeline; // For continuous spinning
 
+    private DataService dataService;
+
+    public void setDataService(DataService dataService) {
+        this.dataService = dataService;
+    }
+
     public void initialize() {
         // Set initial visibility and positions
         nextButton.setVisible(false);
@@ -77,6 +84,7 @@ public class DownloadController {
     }
 
     public void startDownload() {
+        System.out.println(dataService.getUsername());
         spinner.setVisible(true);
         updateStatus("Sťahujem XML");
         updatePositions(); // Ensure proper positioning
@@ -92,12 +100,10 @@ public class DownloadController {
             @Override
             protected Void call() throws Exception {
                 try {
-                    // Simulate download (this is where you implement actual downloading logic)
-                    Thread.sleep(5000);
-
-                    // If download succeeds
-                    // throw new NullPointerException("demo");
-                    // Show "Proceed" button
+                    dataService.setData();
+                    System.out.println(dataService.getSubjects());
+                    System.out.println(dataService.getStudies());
+                    System.out.println(dataService.getStudents());
                     Platform.runLater(() -> {
                         timeline.stop();
                         spinner.setVisible(false);
@@ -106,6 +112,7 @@ public class DownloadController {
                         nextButton.setVisible(true); // Show "Proceed" button
                     });
                 } catch (Exception e) {
+                    System.out.println(e);
                     // If download fails
                     Platform.runLater(() -> {
                         timeline.stop();

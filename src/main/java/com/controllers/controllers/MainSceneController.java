@@ -1,9 +1,10 @@
-package com.example.login;
+package com.controllers.controllers;
 
 import com.tis.dbf.model.Student;
 import com.tis.dbf.model.Students;
 import com.tis.dbf.model.Studies;
 import com.tis.dbf.model.Study;
+import com.tis.dbf.service.DataService;
 import com.tis.dbf.service.XMLParsingServes;
 import jakarta.xml.bind.JAXBException;
 import javafx.collections.FXCollections;
@@ -57,13 +58,19 @@ public class MainSceneController {
 
     private ObservableList<Study> studyList = FXCollections.observableArrayList();
 
+    private DataService dataService;
+
+    public void setDataService(DataService dataService) {
+        this.dataService = dataService;
+    }
+
     @FXML
     public void initialize() {
         columnStudent.setCellValueFactory(new PropertyValueFactory<>("fullName"));
         columnBirthDate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
         columnStudy.setCellValueFactory(new PropertyValueFactory<>("studyProgramDeg"));
-        loadStudiesFromXML();
-        loadStudentsFromXML();
+        //loadStudiesFromXML();
+        //loadStudentsFromXML();
 
 //        displayStudents(studentList);
     }

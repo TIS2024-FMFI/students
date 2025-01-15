@@ -1,8 +1,10 @@
-package com.example.login;
+package com.controllers.controllers;
 
+import com.tis.dbf.service.DataService;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -24,6 +26,13 @@ public class LoginController {
     @FXML
     private Button loginButton;
 
+    private DataService dataService;
+    private Stage stage;
+
+    public void setDataService(DataService dataService) {
+        this.dataService = dataService;
+    }
+
     @FXML
     public void initialize() {
         // Clear focus from all components
@@ -41,15 +50,18 @@ public class LoginController {
 
         if (authenticateUser(username, password)) {
             try {
+                dataService.setUsername(username);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DownloadScene.fxml"));
-                Scene downloadScene = new Scene(loader.load(), 1366, 768);
+                Parent root = loader.load();
 
-                DownloadController controller = loader.getController();
-                controller.startDownload();
+                // Pass DataService to DownloadController
+                DownloadController downloadController = loader.getController();
+                downloadController.setDataService(dataService);
 
-                Stage stage = (Stage) loginButton.getScene().getWindow();
-                stage.setScene(downloadScene);
-                stage.show();
+                // Set the new scene on the same Stage
+                stage.setScene(new Scene(root, 1366, 768));
+                stage.setTitle("Download Scene");
+                downloadController.startDownload();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -96,5 +108,9 @@ public class LoginController {
             hexString.append(Integer.toHexString(0xff & b));
         }
         return hexString.toString();
+    }
+
+    public void setStage(Stage primaryStage) {
+        this.stage = primaryStage;
     }
 }

@@ -1,5 +1,7 @@
 package com.tis.dbf.service;
 import com.jcraft.jsch.*;
+import com.tis.dbf.model.Students;
+import com.tis.dbf.model.Studies;
 import com.tis.dbf.model.Subjects;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
@@ -13,17 +15,16 @@ import java.util.Properties;
 
 public class ServerConnection {
 
-    private String username;
+    private String username = "";
     // doplnit sem udaje
-    private String password;
+    private String password = "";
 
-    private String host;
-    private int port;
+    private String host = "";
+    private int port = 0;
 
 
     public Subjects downloadAndParseSubjects(String faculty) throws JSchException, SftpException, JAXBException {
-        String remoteFilePath = getSubjectsFilePath(faculty);
-
+        String remoteFilePath = getFilePath(faculty, "subjects");
         JSch jsch = new JSch();
         Session session = jsch.getSession(username, host, port);
         session.setPassword(password);
@@ -40,18 +41,58 @@ public class ServerConnection {
         return subjects;
     }
 
-    private static String getSubjectsFilePath(String faculty) {
+    public Studies downloadAndParseStudies(String faculty) throws JSchException, SftpException, JAXBException {
+        String remoteFilePath = getFilePath(faculty, "studies");
+        JSch jsch = new JSch();
+        Session session = jsch.getSession(username, host, port);
+        session.setPassword(password);
+        session.setConfig("StrictHostKeyChecking", "no");
+        session.connect();
+        ChannelSftp channelSftp = (ChannelSftp) session.openChannel("sftp");
+        channelSftp.connect();
+        InputStream inputStream = channelSftp.get(remoteFilePath);
+        JAXBContext jaxbContext = JAXBContext.newInstance(Studies.class);
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        Studies studies = (Studies) unmarshaller.unmarshal(inputStream);
+        channelSftp.exit();
+        session.disconnect();
+        return studies;
+    }
+
+    public Students downloadAndParseStudents(String faculty) throws JSchException, SftpException, JAXBException {
+        String remoteFilePath = getFilePath(faculty, "students");
+        JSch jsch = new JSch();
+        Session session = jsch.getSession(username, host, port);
+        session.setPassword(password);
+        session.setConfig("StrictHostKeyChecking", "no");
+        session.connect();
+        ChannelSftp channelSftp = (ChannelSftp) session.openChannel("sftp");
+        channelSftp.connect();
+        InputStream inputStream = channelSftp.get(remoteFilePath);
+        JAXBContext jaxbContext = JAXBContext.newInstance(Students.class);
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        Students students = (Students) unmarshaller.unmarshal(inputStream);
+        channelSftp.exit();
+        session.disconnect();
+        return students;
+    }
+
+
+
+
+
+    private static String getFilePath(String faculty, String document) {
 
         Properties properties = new Properties();
-        try (FileInputStream input = new FileInputStream("config.properties")) {
+        try (FileInputStream input = new FileInputStream("src/main/resources/config.properties")) {
             properties.load(input);
         } catch (IOException e) {
             throw new RuntimeException("Failed to load configuration file", e);
         }
 
-        String filePathTemplate = properties.getProperty("subjectsFilePath");
+        String filePathTemplate = properties.getProperty(document+"FilePath");
         if (filePathTemplate == null || filePathTemplate.isEmpty()) {
-            throw new IllegalArgumentException("subjectsFilePath is not configured in the properties file");
+            throw new IllegalArgumentException(document+"FilePath is not configured in the properties file");
         }
 
         return filePathTemplate.replace("${faculty}", faculty);

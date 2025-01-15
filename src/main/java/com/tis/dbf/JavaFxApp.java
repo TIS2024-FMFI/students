@@ -1,5 +1,7 @@
 package com.tis.dbf;
 
+import com.controllers.controllers.LoginController;
+import com.tis.dbf.service.DataService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,23 +11,19 @@ import javafx.stage.Stage;
 public class JavaFxApp extends Application {
 
     @Override
-    public void init() throws Exception {
-        System.out.println("Aplikácia sa inicializuje...");
-    }
-
-    @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
-        Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 1366, 768);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("JavaFX app");
-        primaryStage.show();
-    }
+        DataService dataService = DataService.getInstance();
 
-    @Override
-    public void stop() throws Exception {
-        System.out.println("Aplikácia sa zatvára...");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
+        Parent root = loader.load();
+
+        LoginController loginController = loader.getController();
+        loginController.setDataService(dataService);
+        loginController.setStage(primaryStage);
+
+        primaryStage.setScene(new Scene(root, 1366, 768));
+        primaryStage.setTitle("Login");
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
