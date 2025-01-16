@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.text.Normalizer;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MainSceneController {
@@ -68,11 +69,38 @@ public class MainSceneController {
     public void initialize() {
         columnStudent.setCellValueFactory(new PropertyValueFactory<>("fullName"));
         columnBirthDate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
-        columnStudy.setCellValueFactory(new PropertyValueFactory<>("studyProgramDeg"));
-        //loadStudiesFromXML();
-        //loadStudentsFromXML();
+        columnStudy.setCellValueFactory(new PropertyValueFactory<>("studyProgram")); // Use studyProgram column
+    }
 
-//        displayStudents(studentList);
+    private void displayStudents(List<Student> students) {
+        studentTable.setItems(FXCollections.observableArrayList(students));
+        System.out.println("Table has " + students.size() + " students.");
+    }
+
+    public void displayStudies(){
+        try {
+            Map<String, Study> studyMap = dataService.getStudyMap();
+
+            Students students = dataService.getStudents();
+            if (students != null) {
+                studentList = FXCollections.observableArrayList(students.getStudents());
+
+                for (Student student : studentList) {
+                    Study matchedStudy = studyMap.get(student.getUPN());
+                    if (matchedStudy != null) {
+                        student.setStudyProgram(matchedStudy.getStudyProgramme());
+                    } else {
+                        student.setStudyProgram("nenačítané");
+                    }
+                }
+            }
+
+            displayStudents(studentList);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Failed to initialize data: " + e.getMessage());
+        }
     }
 
     @FXML
@@ -143,10 +171,6 @@ private void loadStudentsFromXML() {
         }
     }
 //
-    private void displayStudents(List<Student> students) {
-        studentTable.setItems(FXCollections.observableArrayList(students));
-        System.out.println("tabulka ma: " + students.size());
-    }
     private String normalizeInput(String input) {
         return Normalizer.normalize(input, Normalizer.Form.NFD)
                 .replaceAll("[^\\p{ASCII}]", "")

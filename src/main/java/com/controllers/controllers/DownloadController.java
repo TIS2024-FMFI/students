@@ -4,6 +4,7 @@ import com.tis.dbf.service.DataService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -137,10 +138,22 @@ public class DownloadController {
     @FXML
     private void handleProceed() {
         try {
-            Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene.fxml")));
+            // Load MainScene.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainScene.fxml"));
+            Parent root = loader.load();
+
+            // Get the controller for MainScene
+            MainSceneController mainSceneController = loader.getController();
+
+            // Pass the DataService instance to MainSceneController
+            mainSceneController.setDataService(dataService);
+
+            // Set the scene and show the stage
+            Scene newScene = new Scene(root);
             Stage stage = (Stage) nextButton.getScene().getWindow();
             stage.setScene(newScene);
             stage.setTitle("Main Scene");
+            mainSceneController.displayStudies();
         } catch (IOException e) {
             e.printStackTrace();
         }
