@@ -9,6 +9,7 @@ import com.tis.dbf.service.XMLParsingServes;
 import jakarta.xml.bind.JAXBException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -53,6 +54,30 @@ public class MainSceneController {
     @FXML
     private TableColumn<Student, String> columnStudy;
 
+    @FXML
+    private Label labelDetail;
+
+    @FXML
+    private Label labelPersonal;
+
+    @FXML
+    private Label labelFirstName;
+
+    @FXML
+    private Label labelLastName;
+
+    @FXML
+    private Label labelBirthDate;
+
+    @FXML
+    private Label labelStudyProgram;
+
+    @FXML
+    private Label labelStudyStart;
+
+    @FXML
+    private Label labelStudyEnd;
+
     private final XMLParsingServes xmlParsingService = new XMLParsingServes();
 
     private ObservableList<Student> studentList = FXCollections.observableArrayList();
@@ -90,7 +115,7 @@ public class MainSceneController {
                     if (matchedStudy != null) {
                         student.setStudyProgram(matchedStudy.getStudyProgramme());
                     } else {
-                        student.setStudyProgram("nenačítané");
+                        student.setStudyProgram("student nema studium");
                     }
                 }
             }
@@ -177,4 +202,27 @@ private void loadStudentsFromXML() {
                 .toLowerCase();
     }
 
+    public void showStudyDetail(ActionEvent actionEvent) {
+        Student selectedStudent = studentTable.getSelectionModel().getSelectedItem();
+        if (selectedStudent != null) {
+            showStudentDetails(selectedStudent);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Žiadny študent vybraný");
+            alert.setHeaderText(null);
+            alert.setContentText("Vyberte študenta v tabuľke, aby sa zobrazili jeho údaje.");
+            alert.showAndWait();
+        }
+    }
+
+    private void showStudentDetails(Student student) {
+        if (student != null) {
+            labelFirstName.setText("First Name: " + student.getFirstName());
+            labelLastName.setText("Last Name: " + student.getSecondName());
+            labelBirthDate.setText("Date of Birth: " + student.getBirthDate());
+            labelStudyProgram.setText("Study Program: " + student.getStudyProgram());
+            //labelStudyStart.setText("Start Date: " + (student.getStartDate() != null ? student.getStartDate() : "N/A"));
+            //labelStudyEnd.setText("Completed Study: " + (student.isStudyCompleted() ? "Yes" : "No"));
+        }
+    }
 }

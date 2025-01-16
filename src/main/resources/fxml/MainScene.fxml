@@ -109,7 +109,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="411.0" prefWidth="352.0">
                <children>
-                  <Button defaultButton="true" layoutX="218.0" layoutY="298.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: green;" text="ZOBRAZ" textFill="WHITE">
+                  <Button defaultButton="true" layoutX="218.0" layoutY="298.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: green;" text="ZOBRAZ" textFill="WHITE" onAction="#showStudyDetail">
                      <font>
                         <Font name="System Italic" size="24.0" />
                      </font>
@@ -157,7 +157,7 @@
                         <RowConstraints maxHeight="126.33331298828125" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label text="DETAIL" underline="true">
+                        <Label fx:id="labelDetail" text="DETAIL" underline="true">
                            <font>
                               <Font name="System Bold" size="48.0" />
                            </font>
@@ -165,7 +165,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label text="OSOBNÉ ÚDAJE" GridPane.rowIndex="1">
+                        <Label fx:id="labelPersonal" text="OSOBNÉ ÚDAJE" GridPane.rowIndex="1">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -173,7 +173,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label text="Meno" GridPane.rowIndex="2">
+                        <Label fx:id="labelFirstName" text="Meno" GridPane.rowIndex="2">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -181,7 +181,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label text="Priezvisko" GridPane.rowIndex="3">
+                        <Label fx:id="labelLastName" text="Priezvisko" GridPane.rowIndex="3">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -189,7 +189,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label prefHeight="45.0" prefWidth="201.0" text="Dátum narodenia" GridPane.rowIndex="4">
+                        <Label fx:id="labelBirthDate" text="Dátum narodenia" GridPane.rowIndex="4">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -197,15 +197,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label prefHeight="34.0" prefWidth="257.0" text="ŠTÚDIJNÉ ÚDAJE" GridPane.rowIndex="5">
-                           <font>
-                              <Font name="System Bold" size="28.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label text="Študijný program" GridPane.rowIndex="6">
+                        <Label fx:id="labelStudyProgram" text="Študijný program" GridPane.rowIndex="6">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -213,7 +205,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label text="Začiatok štúdia" GridPane.rowIndex="7">
+                        <Label fx:id="labelStudyStart" text="Začiatok štúdia" GridPane.rowIndex="7">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -221,18 +213,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label text="Absolvované štúdium" GridPane.rowIndex="8">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets />
-                           </GridPane.margin>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label prefHeight="29.0" prefWidth="340.0" text="Priebeh štúdia / akademické roky" GridPane.rowIndex="9">
+                        <Label fx:id="labelStudyEnd" text="Absolvované štúdium" GridPane.rowIndex="8">
                            <font>
                               <Font size="24.0" />
                            </font>
