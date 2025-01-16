@@ -2,11 +2,17 @@ package com.tis.dbf.service;
 
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.SftpException;
-import com.tis.dbf.model.Students;
-import com.tis.dbf.model.Studies;
-import com.tis.dbf.service.ServerConnection;
-import com.tis.dbf.model.Subjects;
+import com.tis.dbf.model.*;
 import jakarta.xml.bind.JAXBException;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DataService {
     private String sharedData;
@@ -15,6 +21,10 @@ public class DataService {
     private Subjects subjects;
     private Students students;
     private Studies studies;
+
+    private Map<String, Study> studyMap; // Map to store UPN to Study mapping
+
+    private String serverPassword;
 
     public static DataService getInstance() {
         if (instance == null) {
@@ -39,17 +49,41 @@ public class DataService {
         username = username_input;
     }
 
-    public void setData() throws JSchException, SftpException, JAXBException {
-        ServerConnection serverConnection = new ServerConnection();
+    public void setServerPassword(String server_password) {
+        this.serverPassword = server_password;
+    }
+
+    public String getServerPassword() {
+        return this.serverPassword;
+    }
+
+    public void startDownload() throws JSchException, SftpException, JAXBException {
+        ServerConnection serverConnection = new ServerConnection("java", serverPassword, "student.int.uniba.sk", 22);
         subjects = serverConnection.downloadAndParseSubjects(username);
         studies = serverConnection.downloadAndParseStudies(username);
         students = serverConnection.downloadAndParseStudents(username);
+
+        buildStudyMap();
+        System.out.println(studyMap);
+    }
+
+    private void buildStudyMap() {
+        if (studies != null) {
+            studyMap = studies.getStudies().stream()
+                    .filter(study -> study.getUPN() != null)
+                    .collect(Collectors.toMap(Study::getUPN, study -> study));
+        } else {
+            studyMap = new HashMap<>(); // Initialize empty map if no studies are available
+        }
+    }
+
+    public Map<String, Study> getStudyMap() {
+        return studyMap;
     }
 
     public Subjects getSubjects() {
         return subjects;
     }
-
 
     public Studies getStudies() {
         return studies;
@@ -59,3 +93,5 @@ public class DataService {
         return students;
     }
 }
+
+

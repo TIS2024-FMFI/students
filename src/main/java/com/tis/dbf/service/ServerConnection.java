@@ -15,12 +15,19 @@ import java.util.Properties;
 
 public class ServerConnection {
 
-    private String username = "";
+    private String username = "java";
     // doplnit sem udaje
     private String password = "";
 
     private String host = "";
     private int port = 0;
+
+    public ServerConnection(String username, String password, String host, int port) {
+        this.username = username;
+        this.password = password;
+        this.host = host;
+        this.port = port;
+    }
 
 
     public Subjects downloadAndParseSubjects(String faculty) throws JSchException, SftpException, JAXBException {

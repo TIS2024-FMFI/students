@@ -4,9 +4,9 @@ import com.tis.dbf.service.DataService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Arc;
 import javafx.application.Platform;
@@ -37,6 +37,12 @@ public class DownloadController {
 
     @FXML
     private AnchorPane anchorPane; // Injected AnchorPane reference
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private Button startDownloadButton;
 
     private Timeline timeline; // For continuous spinning
 
@@ -100,10 +106,7 @@ public class DownloadController {
             @Override
             protected Void call() throws Exception {
                 try {
-                    dataService.setData();
-                    System.out.println(dataService.getSubjects());
-                    System.out.println(dataService.getStudies());
-                    System.out.println(dataService.getStudents());
+                    dataService.startDownload();
                     Platform.runLater(() -> {
                         timeline.stop();
                         spinner.setVisible(false);
@@ -148,5 +151,18 @@ public class DownloadController {
         // Hide retry button and restart the download
         retryButton.setVisible(false);
         startDownload(); // Restart the download process
+    }
+
+    public void handlePasswordAndStartDownload() {
+        String password = passwordField.getText();
+        if (password.isEmpty()) {
+            updateStatus("Password cannot be empty!");
+        } else {
+            passwordField.setVisible(false);
+            startDownloadButton.setVisible(false);
+            dataService.setServerPassword(password);
+            updateStatus("Starting download...");
+            startDownload();
+        }
     }
 }

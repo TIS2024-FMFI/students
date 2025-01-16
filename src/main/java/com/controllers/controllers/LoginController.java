@@ -61,7 +61,7 @@ public class LoginController {
                 // Set the new scene on the same Stage
                 stage.setScene(new Scene(root, 1366, 768));
                 stage.setTitle("Download Scene");
-                downloadController.startDownload();
+                //downloadController.startDownload();
             } catch (Exception e) {
                 e.printStackTrace();
             }

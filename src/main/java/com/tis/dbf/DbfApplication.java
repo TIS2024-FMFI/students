@@ -22,7 +22,7 @@ public class DbfApplication {
 
     public void init() {
         xmlParsingServes = new XMLParsingServes();
-        serverConnection = new ServerConnection();
+        //serverConnection = new ServerConnection();
     }
 
     public void run(String... args) throws Exception {
