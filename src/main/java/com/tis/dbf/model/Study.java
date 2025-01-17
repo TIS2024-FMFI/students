@@ -67,6 +67,8 @@ public class Study {
     // New fields for dynamic association
     private String studentName;  // For displaying the student's full name
     private String birthDate;    // For displaying the student's birth date
+    private String firstName;
+    private String lastName;
 
     // Getters and setters for the new fields
     public String getStudentName() {
@@ -83,6 +85,14 @@ public class Study {
 
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Data

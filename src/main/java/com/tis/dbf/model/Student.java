@@ -17,7 +17,7 @@ public class Student {
     @XmlElement(name = "Name.Given")
     private String firstName;
     @XmlElement(name = "Name.Family")
-    private String secondName;
+    private String lastName;
     @XmlElement(name = "Birth.Number")
     private String birthNumber;
     @XmlElement(name = "id.Sex")
@@ -43,13 +43,13 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "first name=" + firstName +
-                ", second name='" + secondName + '\'' +
+                ", second name='" + lastName + '\'' +
                 ", birthday day='" + birthDate + '\'' +
                 '}';
     }
 
     public String getFullName() {
-        return firstName + " " + secondName;
+        return firstName + " " + lastName;
     }
 
     public String getStudyProgramDeg() {

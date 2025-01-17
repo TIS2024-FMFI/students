@@ -20,10 +20,7 @@ public class MainSceneController {
     private TextField firstNameField;
 
     @FXML
-    private TextField secondNameField;
-
-    @FXML
-    private TextField secondOriginNameField;
+    private TextField lastNameField;
 
     @FXML
     private DatePicker birthDateField;
@@ -94,6 +91,8 @@ public class MainSceneController {
                                 return matchedStudies.stream().peek(study -> {
                                     study.setStudentName(student.getFullName());
                                     study.setBirthDate(student.getBirthDate());
+                                    study.setFirstName(student.getFirstName());
+                                    study.setLastName(student.getLastName());
                                 });
                             }
                             return Stream.empty();
@@ -108,16 +107,14 @@ public class MainSceneController {
     @FXML
     private void handleSearch() {
         String firstName = firstNameField.getText().trim().toLowerCase();
-        String lastName = secondNameField.getText().trim().toLowerCase();
-        String lastOrigName = secondOriginNameField.getText().trim().toLowerCase();
+        String lastName = lastNameField.getText().trim().toLowerCase();
         String birthDate = birthDateField.getValue() != null ? birthDateField.getValue().toString() : "";
         String birthPlace = birthPlaceField.getText().trim().toLowerCase();
 
         // Filter students based on search criteria
         List<Student> filteredStudents = dataService.getStudents().getStudents().stream()
                 .filter(student -> (firstName.isEmpty() || student.getFirstName().toLowerCase().contains(firstName)) &&
-                        (lastName.isEmpty() || student.getSecondName().toLowerCase().contains(lastName)) &&
-                        (lastOrigName.isEmpty() || student.getBirthName().toLowerCase().contains(lastOrigName)) &&
+                        (lastName.isEmpty() || student.getLastName().toLowerCase().contains(lastName)) &&
                         (birthDate.isEmpty() || student.getBirthDate().equals(birthDate)) &&
                         (birthPlace.isEmpty() || student.getBirthdayPlace().toLowerCase().contains(birthPlace)))
                 .collect(Collectors.toList());
@@ -152,8 +149,7 @@ public class MainSceneController {
     @FXML
     private void handleReset() {
         firstNameField.clear();
-        secondNameField.clear();
-        secondOriginNameField.clear();
+        lastNameField.clear();
         birthDateField.setValue(null);
         birthPlaceField.clear();
 
@@ -166,14 +162,14 @@ public class MainSceneController {
 
         if (selectedStudy != null) {
             // Update labels with study details
-            labelDetail.setText("DETAIL: " + selectedStudy.getUPN());
-            labelFirstName.setText("Meno: " + selectedStudy.getStudentName());
-            labelLastName.setText("Priezvisko: " + selectedStudy.getStudentName().split(" ")[1]); // Assuming "First Last" format
-            labelBirthDate.setText("Dátum narodenia: " + selectedStudy.getBirthDate());
-            labelStudyProgram.setText("Študijný program: " + selectedStudy.getStudyProgramme());
-            labelStudyStart.setText("Začiatok štúdia: " + (selectedStudy.getStudyAdmission() != null
+            labelDetail.setText(selectedStudy.getUPN());
+            labelFirstName.setText(selectedStudy.getStudentName());
+            labelLastName.setText(selectedStudy.getStudentName().split(" ")[1]); // Assuming "First Last" format
+            labelBirthDate.setText(selectedStudy.getBirthDate());
+            labelStudyProgram.setText(selectedStudy.getStudyProgramme());
+            labelStudyStart.setText((selectedStudy.getStudyAdmission() != null
                     ? selectedStudy.getStudyAdmission().getDate() : "N/A"));
-            labelStudyEnd.setText("Absolvované štúdium: " + (selectedStudy.getStudyEnd() != null
+            labelStudyEnd.setText((selectedStudy.getStudyEnd() != null
                     ? selectedStudy.getStudyEnd().getThesis().getDefenceDate() : "N/A"));
         } else {
             // Show alert if no study is selected
