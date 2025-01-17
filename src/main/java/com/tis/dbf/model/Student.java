@@ -56,4 +56,8 @@ public class Student {
         return degree + "." + studyProgram;
     }
 
+    public void setStudyProgram(String studyProgram) {
+        this.studyProgram = studyProgram;
+    }
+
 }

@@ -22,8 +22,7 @@ public class DataService {
     private Students students;
     private Studies studies;
 
-    private Map<String, Study> studyMap; // Map to store UPN to Study mapping
-
+    private Map<String, List<Study>> studyMap;
     private String serverPassword;
 
     public static DataService getInstance() {
@@ -71,13 +70,13 @@ public class DataService {
         if (studies != null) {
             studyMap = studies.getStudies().stream()
                     .filter(study -> study.getUPN() != null)
-                    .collect(Collectors.toMap(Study::getUPN, study -> study));
+                    .collect(Collectors.groupingBy(Study::getUPN));
         } else {
-            studyMap = new HashMap<>(); // Initialize empty map if no studies are available
+            studyMap = new HashMap<>();
         }
     }
 
-    public Map<String, Study> getStudyMap() {
+    public Map<String, List<Study>> getStudyMap() {
         return studyMap;
     }
 

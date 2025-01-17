@@ -117,11 +117,11 @@
                         <ColorAdjust brightness="0.52" contrast="1.0" hue="-0.05" saturation="0.19" />
                      </effect>
                   </Button>
-                  <TableView fx:id="studentTable" layoutX="24.0" layoutY="14.0" prefHeight="279.0" prefWidth="653.0">
+                  <TableView fx:id="studiesTable" layoutX="24.0" layoutY="14.0" prefHeight="279.0" prefWidth="653.0">
                      <columns>
-                        <TableColumn fx:id="columnStudent" prefWidth="273.3333435058594" text="ŠTUDENT" />
-                        <TableColumn fx:id="columnBirthDate" prefWidth="175.0" text="DÁTUM NARODENIA" />
-                        <TableColumn fx:id="columnStudy" prefWidth="203.0" text="ŠTÚD. PROGRAM" />
+                        <TableColumn fx:id="columnStudentName" text="Student Name" />
+                        <TableColumn fx:id="columnBirthDate" text="Birthdate" />
+                        <TableColumn fx:id="columnStudyProgramme" text="Study Programme" />
                      </columns>
                   </TableView>
                </children>

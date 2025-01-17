@@ -64,6 +64,27 @@ public class Study {
     @XmlElement(name = "Study.Status")
     private String studyStatus;
 
+    // New fields for dynamic association
+    private String studentName;  // For displaying the student's full name
+    private String birthDate;    // For displaying the student's birth date
+
+    // Getters and setters for the new fields
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
     @Data
     @XmlAccessorType(XmlAccessType.FIELD)
     public static class Admission {
