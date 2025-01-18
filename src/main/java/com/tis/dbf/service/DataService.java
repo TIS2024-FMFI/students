@@ -63,7 +63,7 @@ public class DataService {
         students = serverConnection.downloadAndParseStudents(username);
 
         buildStudyMap();
-        System.out.println(studyMap);
+        //System.out.println(studyMap);
     }
 
     private void buildStudyMap() {

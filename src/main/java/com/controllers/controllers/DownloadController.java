@@ -91,7 +91,7 @@ public class DownloadController {
     }
 
     public void startDownload() {
-        System.out.println(dataService.getUsername());
+        //System.out.println(dataService.getUsername());
         spinner.setVisible(true);
         updateStatus("Sťahujem XML");
         updatePositions(); // Ensure proper positioning
