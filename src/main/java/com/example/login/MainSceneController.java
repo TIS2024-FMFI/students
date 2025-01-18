@@ -1,20 +1,22 @@
 package com.example.login;
 
-import com.tis.dbf.model.Student;
-import com.tis.dbf.model.Students;
-import com.tis.dbf.model.Studies;
-import com.tis.dbf.model.Study;
+import com.tis.dbf.model.*;
+import com.tis.dbf.model.Event;
 import com.tis.dbf.service.XMLParsingServes;
 import jakarta.xml.bind.JAXBException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.awt.*;
 import java.text.Normalizer;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -105,6 +107,37 @@ public class MainSceneController {
     @FXML
     private Label labelGraduate;
 
+    @FXML
+    private Label labelCountYears;
+
+    @FXML
+    private Label FixLabelTo;
+
+    @FXML
+    private Label labelFinishStudy;
+
+    @FXML
+    private Label labelStartStudy;
+
+    @FXML
+    private Label FixLabelFrom;
+
+    @FXML
+    private Label FixLabelCountYears;
+
+    @FXML
+    private TableView<Event> eventsTable;
+
+    @FXML
+    private TableColumn<Event, String> columnReason;
+
+    @FXML
+    private TableColumn<Event, String> columnStartDate;
+
+    @FXML
+    private TableColumn<Event, String> columnEndDate;
+
+    private ObservableList<Event> extraList = FXCollections.observableArrayList();
 
 
 
@@ -125,6 +158,9 @@ public class MainSceneController {
         columnStudy.setCellValueFactory(new PropertyValueFactory<>("studyProgramDeg"));
         loadStudiesFromXML();
         loadStudentsFromXML();
+        columnReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
+        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         handleReset();
 
 //        displayStudents(studentList);
@@ -175,9 +211,17 @@ public class MainSceneController {
         labelStudyStartDate.setText("");
         labelStudyProgramme.setText("");
         labelGraduate.setText("");
+        labelCountYears.setText("");
+        FixLabelFrom.setText("");
+        FixLabelCountYears.setText("");
+        FixLabelTo.setText("");
+        labelCountYears.setText("");
+        labelStartStudy.setText("");
+        labelFinishStudy.setText("");
         ButtonSocialnaPoistovna.setVisible(false);
         ButtonVypisZnamok.setVisible(false);
         ButtonDiplom.setVisible(false);
+        eventsTable.setVisible(false);
     }
     //
     private void loadStudentsFromXML() {
@@ -199,11 +243,20 @@ public class MainSceneController {
                     student.setDegree(matchedStudy.getDegree());
                     student.setStudyRegistration(matchedStudy.getStudyRegistration());
                     student.setStudyStatus(matchedStudy.getStudyStatus());
+                    student.setNumOfYears(matchedStudy.getNumOfYears());
+                    student.setStudyStartYear(matchedStudy.getStudyStartYear());
+                    student.setStudyEndYear(matchedStudy.getStudyEndYear());
+                    student.setInterruptions(matchedStudy.getInterruptions());
+                    student.setAbroadProgrammes(matchedStudy.getAbroadProgrammes());
+    //                student.setAcademicYears(matchedStudy.getAcademicYears());
                 } else {
                     student.setStudyProgramme("nenačítané");
                     student.setDegree("nenačítané");
                     student.setStudyRegistration("nenačítané");
                     student.setStudyStatus("nenačítané");
+                    student.setNumOfYears(-1);
+                    student.setStudyStartYear("nenačítané");
+                    student.setStudyEndYear("nenačítané");
 
                 }
             }
@@ -258,32 +311,65 @@ public class MainSceneController {
             labelStudyProgramme.setText(selectedStudent.getStudyProgramme());
             labelStudyStartDate.setText(selectedStudent.getStudyRegistration());
             labelGraduate.setText(selectedStudent.getStudyStatus());
+
 //            if (selectedStudent.getStudyStatus()=="Absolvované") {
 //                labelGraduate.setText("Áno");
 //            }
             ButtonSocialnaPoistovna.setVisible(true);
             ButtonVypisZnamok.setVisible(true);
             ButtonDiplom.setVisible(true);
+            FixLabelFrom.setText("Od");
+            FixLabelCountYears.setText("Doba štúdia študenta: ");
+            FixLabelTo.setText("Do");
+            if (selectedStudent.getNumOfYears() == 1) {
+                labelCountYears.setText(String.valueOf(selectedStudent.getNumOfYears()) + " rok");
+            } else if (selectedStudent.getNumOfYears() == 2 || selectedStudent.getNumOfYears() == 3 || selectedStudent.getNumOfYears() == 4) {
+                labelCountYears.setText(String.valueOf(selectedStudent.getNumOfYears()) + " roky");
+            } else if (selectedStudent.getNumOfYears() > 4) {
+                labelCountYears.setText(String.valueOf(selectedStudent.getNumOfYears()) + " rokov");
+            } else labelCountYears.setText("nenacitane");
+            labelStartStudy.setText(selectedStudent.getStudyStartYear());
+            labelFinishStudy.setText(selectedStudent.getStudyEndYear());
             Study matchedStudy = studyList.stream()
                     .filter(study -> study.getUPN().equals(selectedStudent.getUPN()))
                     .findFirst()
                     .orElse(null);
+            extraList.clear();
 
-//            if (matchedStudy != null) {
-//                // Použijeme predpripravený startDate
-//                String startDate = matchedStudy.getStartDate();
-//                System.out.println(startDate);
-//                labelStudyStartDate.setText(studyRegistration != null ? startDate : "Dátum nezačiatku nenájdený");
-//            } else {
-//                FixLabelGraduate.setText("Štúdium nenájdené");
-//            }
+            // prerusenie
+            if (selectedStudent.getInterruptions() != null && !selectedStudent.getInterruptions().isEmpty()) {
+                for (Interruption interruption : selectedStudent.getInterruptions()) {
+                    if (interruption.getReason() != null && !interruption.getReason().contains("PRERUŠENIE")) {
+                        String combinedReason = "PRERUŠENIE: " + interruption.getReason();
+                        interruption.setReason(combinedReason);
+                    }
+                    extraList.add(new Event(interruption));
+                }
+            }
 
+            // studium zahranicie
+            if (selectedStudent.getAbroadProgrammes() != null && !selectedStudent.getAbroadProgrammes().isEmpty()) {
+                for (AbroadProgramme abroadProgramme : selectedStudent.getAbroadProgrammes()) {
+                    if (abroadProgramme.getUniversity() != null && !abroadProgramme.getUniversity().contains("ERAZMUS")) {
+                        String combinedReason = "ERAZMUS: " + abroadProgramme.getUniversity();
+                        abroadProgramme.setUniversity(combinedReason);
+                    }
+                    extraList.add(new Event(abroadProgramme));
+                }
+            }
+            eventsTable.setItems(extraList);
+
+            if (extraList.isEmpty()) {
+                eventsTable.setVisible(false);
+            } else {
+                eventsTable.setVisible(true);
+            }
         } else {
-
             clearLabels();
+            eventsTable.setVisible(false);
         }
-    }
 
+    }
 
 
 
@@ -301,6 +387,8 @@ public class MainSceneController {
             label.setText("");
         }
     }
+
+
 
 
 

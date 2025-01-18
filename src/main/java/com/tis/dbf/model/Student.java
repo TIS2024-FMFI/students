@@ -39,8 +39,12 @@ public class Student {
     private String degree;
     private String studyRegistration;
     private String studyStatus;
-
+    private int numOfYears;
+    private String studyStartYear;
+    private String studyEndYear;
     List<String> academicYears = new ArrayList<>();
+    private List<Interruption> interruptions = new ArrayList<>();
+    private List<AbroadProgramme> abroadProgrammes = new ArrayList<>();
 
 
 
@@ -62,11 +66,4 @@ public class Student {
         return degree + "." + studyProgramme;
     }
 
-    public String getStudyStatus() {
-        return studyStatus;
-    }
-
-    public void setStudyStatus(String studyStatus) {
-        this.studyStatus = studyStatus;
-    }
 }
