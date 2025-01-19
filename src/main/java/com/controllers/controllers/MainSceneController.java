@@ -1,19 +1,18 @@
 package com.controllers.controllers;
 
 import com.tis.dbf.model.*;
-import com.tis.dbf.model.Event;
 import com.tis.dbf.service.DataService;
+import com.tis.dbf.service.XMLParsingServes;
+import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.text.Normalizer;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -136,54 +135,66 @@ public class MainSceneController {
 
     private ObservableList<Event> extraList = FXCollections.observableArrayList();
 
-
     @FXML
     private Button showDetailsButton;
+
     private DataService dataService;
+    private XMLParsingServes xmlParsingService = new XMLParsingServes();
+    private ObservableList<Study> studyList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        // Set up the study program column (direct property in Study)
+        // Nastavenie stĺpcov tabuľky
         columnStudy.setCellValueFactory(new PropertyValueFactory<>("studyProgramme"));
 
-        // Set up the student name column (nested property in Student)
         columnStudent.setCellValueFactory(cellData -> {
-            Student student = cellData.getValue().getStudent(); // Access the nested Student object
+            Student student = cellData.getValue().getStudent();
             return student != null
-                    ? new SimpleStringProperty(student.getFullName()) // Extract fullName from Student
+                    ? new SimpleStringProperty(student.getFullName())
+                    : new SimpleStringProperty("Unknown");
+        });
+        columnBirthDate.setCellValueFactory(cellData -> {
+            Student student = cellData.getValue().getStudent();
+            return student != null
+                    ? new SimpleStringProperty(student.getBirthDate())
                     : new SimpleStringProperty("Unknown");
         });
 
-        // Set up the birth date column (nested property in Student)
-        columnBirthDate.setCellValueFactory(cellData -> {
-            Student student = cellData.getValue().getStudent(); // Access the nested Student object
-            return student != null
-                    ? new SimpleStringProperty(student.getBirthDate()) // Extract birthDate from Student
-                    : new SimpleStringProperty("Unknown");
-        });
+        columnReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
+        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+
+        // Načítanie údajov
+        loadAllStudies();
+        clearLabels();
     }
 
-    public void loadAllStudies(){
-        Map<String, List<Study>> studyMap = dataService.getStudyMap();
-        List<Student> students = dataService.getStudents().getStudents();
+    public void loadAllStudies() {
+        try {
+            // Načítanie štúdií zo služby DataService
+            Map<String, List<Study>> studyMap = dataService.getStudyMap();
+            List<Student> students = dataService.getStudents().getStudents();
 
-        // Create a map of UPN to Student for efficient lookup
-        Map<String, Student> studentMap = students.stream()
-                .collect(Collectors.toMap(Student::getUPN, student -> student));
+            // Vytvorenie mapy UPN -> Student
+            Map<String, Student> studentMap = students.stream()
+                    .collect(Collectors.toMap(Student::getUPN, student -> student));
 
-        // Flatten the studies and link each study to its corresponding student
-        List<Study> allStudiesWithStudents = studyMap.values().stream()
-                .flatMap(List::stream)
-                .peek(study -> {
-                    if (studentMap.containsKey(study.getUPN())) {
-                        study.setStudent(studentMap.get(study.getUPN()));
-                    }
-                })
-                .collect(Collectors.toList());
+            // Spracovanie štúdií a priradenie študentov
+            List<Study> allStudiesWithStudents = studyMap.values().stream()
+                    .flatMap(List::stream)
+                    .peek(study -> {
+                        if (studentMap.containsKey(study.getUPN())) {
+                            study.setStudent(studentMap.get(study.getUPN()));
+                        }
+                    })
+                    .collect(Collectors.toList());
 
-        // Update the TableView
-        ObservableList<Study> observableStudies = FXCollections.observableArrayList(allStudiesWithStudents);
-        studiesTable.setItems(observableStudies);
+            // Aktualizácia tabuľky
+            studyList.setAll(allStudiesWithStudents);
+            studiesTable.setItems(studyList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setDataService(DataService dataService) {
@@ -194,58 +205,85 @@ public class MainSceneController {
         Study selectedStudy = studiesTable.getSelectionModel().getSelectedItem();
 
         if (selectedStudy != null) {
-            // Populate Study details
             labelStudyProgramme.setText(selectedStudy.getStudyProgramme());
             labelGraduate.setText(selectedStudy.getDegree());
             labelStudyStartDate.setText(selectedStudy.getStudyAdmission().getDate());
             labelCountYears.setText(String.valueOf(selectedStudy.getStandardLength()));
             labelStartStudy.setText(selectedStudy.getStudyAdmission().getDate());
-            //labelFinishStudy.setText(selectedStudy.getStudyEnd());
 
-            // Populate Student details (nested in Study)
             Student student = selectedStudy.getStudent();
             if (student != null) {
+                FixLabelDetails.setText("DETAIL");
+                FixLabelFirstName.setText("Meno");
+                FixLabelLastName.setText("Priezvisko");
+                FixLabelBirthDate.setText("Dátum narodenia");
+                FixLabelStudyData.setText("ŠTÚDIJNÉ ÚDAJE");
+                FixLabelPersonalData.setText("OSOBNÉ ÚDAJE");
+                FixLabelGraduate.setText("Status štúdia");
+                FixLabelStudyStart.setText("Začiatok štúdia");
+                FixLabelStudyProgramme.setText("Študijný program");
+                FixLabelYears.setText("Priebeh štúdia / akademické roky");
                 labelFirstName.setText(student.getFirstName());
                 labelLastName.setText(student.getLastName());
                 labelBirthDate.setText(student.getBirthDate());
+                ButtonSocialnaPoistovna.setVisible(true);
+                ButtonVypisZnamok.setVisible(true);
+                ButtonDiplom.setVisible(true);
+                FixLabelFrom.setText("Od");
+                FixLabelCountYears.setText("Doba štúdia študenta: ");
+                FixLabelTo.setText("Do");
+
+                extraList.clear();
+
+                // prerusenie
+                if (selectedStudy.getInterruptions() != null && !selectedStudy.getInterruptions().isEmpty()) {
+                    for (Interruption interruption : selectedStudy.getInterruptions()) {
+                        if (interruption.getReason() != null && !interruption.getReason().contains("PRERUŠENIE")) {
+                            String combinedReason = "PRERUŠENIE: " + interruption.getReason();
+                            interruption.setReason(combinedReason);
+                        }
+                        extraList.add(new Event(interruption));
+                    }
+                }
+
+                // studium zahranicie
+                if (selectedStudy.getAbroadProgrammes() != null && !selectedStudy.getAbroadProgrammes().isEmpty()) {
+                    for (AbroadProgramme abroadProgramm : selectedStudy.getAbroadProgrammes()) {
+                        if (abroadProgramm.getUniversity() != null && !abroadProgramm.getUniversity().contains("ERAZMUS")) {
+                            String combinedReason = "ERAZMUS: " + abroadProgramm.getUniversity();
+                            abroadProgramm.setUniversity(combinedReason);
+                        }
+                        extraList.add(new Event(abroadProgramm));
+                    }
+                }
+                eventsTable.setItems(extraList);
+
+                if (extraList.isEmpty()) {
+                    eventsTable.setVisible(false);
+                } else {
+                    eventsTable.setVisible(true);
+                }
+
             } else {
-                // Clear Student-related labels if no Student is linked
-                labelFirstName.setText("Unknown");
-                labelLastName.setText("Unknown");
-                labelBirthDate.setText("Unknown");
+                clearLabels();
             }
         } else {
-            // Clear all labels if no Study is selected
             clearLabels();
         }
     }
 
-    private void clearLabels() {
-        labelStudyProgramme.setText("");
-        labelGraduate.setText("");
-        labelStudyStartDate.setText("");
-        labelCountYears.setText("");
-        labelStartStudy.setText("");
-        labelFinishStudy.setText("");
-
-        labelFirstName.setText("");
-        labelLastName.setText("");
-        labelBirthDate.setText("");
-    }
-
     public void handleSearch(ActionEvent actionEvent) {
-        String firstName = firstNameField.getText().trim().toLowerCase();
-        String secondName = secondNameField.getText().trim().toLowerCase();
-        String birthPlace = birthPlaceField.getText().trim().toLowerCase();
+        String firstName = normalizeInput(firstNameField.getText());
+        String secondName = normalizeInput(secondNameField.getText());
+        String birthPlace = normalizeInput(birthPlaceField.getText());
         String birthDate = birthDateField.getValue() != null ? birthDateField.getValue().toString() : "";
-        //String secondOriginName = secondOriginNameField.getText().trim().toLowerCase(); // chyba v students xml
 
-        List<Study> filteredStudies = dataService.getStudies().getStudies().stream()
+        List<Study> filteredStudies = studyList.stream()
                 .filter(study -> {
                     Student student = study.getStudent();
-                    return (firstName.isEmpty() || (student != null && student.getFirstName().toLowerCase().contains(firstName))) &&
-                            (secondName.isEmpty() || (student != null && student.getLastName().toLowerCase().contains(secondName))) &&
-                            (birthPlace.isEmpty() || (student != null && student.getBirthPlace().toLowerCase().contains(birthPlace))) &&
+                    return (firstName.isEmpty() || (student != null && normalizeInput(student.getFirstName()).contains(firstName))) &&
+                            (secondName.isEmpty() || (student != null && normalizeInput(student.getLastName()).contains(secondName))) &&
+                            (birthPlace.isEmpty() || (student != null && normalizeInput(student.getBirthPlace()).contains(birthPlace))) &&
                             (birthDate.isEmpty() || (student != null && student.getBirthDate().equals(birthDate)));
                 })
                 .collect(Collectors.toList());
@@ -254,6 +292,59 @@ public class MainSceneController {
     }
 
     public void handleReset(ActionEvent actionEvent) {
+        firstNameField.clear();
+        secondNameField.clear();
+        secondOriginNameField.clear();
+        birthDateField.setValue(null);
+        birthPlaceField.clear();
+        //displayStudents(studentList);
+        FixLabelFirstName.setText("");
+        FixLabelLastName.setText("");
+        FixLabelBirthDate.setText("");
+        FixLabelStudyData.setText("");
+        FixLabelPersonalData.setText("");
+        FixLabelDetails.setText("");
+        FixLabelGraduate.setText("");
+        FixLabelStudyStart.setText("");
+        FixLabelStudyProgramme.setText("");
+        labelFirstName.setText("");
+        labelLastName.setText("");
+        labelBirthDate.setText("");
+        FixLabelYears.setText("");
+        labelStudyStartDate.setText("");
+        labelStudyProgramme.setText("");
+        labelGraduate.setText("");
+        labelCountYears.setText("");
+        FixLabelFrom.setText("");
+        FixLabelCountYears.setText("");
+        FixLabelTo.setText("");
+        labelCountYears.setText("");
+        labelStartStudy.setText("");
+        labelFinishStudy.setText("");
+        ButtonSocialnaPoistovna.setVisible(false);
+        ButtonVypisZnamok.setVisible(false);
+        ButtonDiplom.setVisible(false);
+        eventsTable.setVisible(false);
+    }
 
+    private void clearLabels() {
+        Label[] labels = {
+                FixLabelFirstName, FixLabelLastName, FixLabelBirthDate,
+                FixLabelStudyData, FixLabelPersonalData, FixLabelDetails,
+                FixLabelGraduate, FixLabelStudyStart, FixLabelStudyProgramme,
+                labelFirstName, labelLastName, labelBirthDate, FixLabelYears, labelStudyStartDate,
+                labelGraduate
+        };
+
+        for (Label label : labels) {
+            label.setText("");
+        }
+    }
+
+    private String normalizeInput(String input) {
+        return Normalizer.normalize(input != null ? input.trim().toLowerCase() : "", Normalizer.Form.NFD)
+                .replaceAll("[^\\p{ASCII}]", "");
     }
 }
+
+
