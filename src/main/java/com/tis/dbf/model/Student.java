@@ -17,7 +17,7 @@ public class Student {
     @XmlElement(name = "Name.Given")
     private String firstName;
     @XmlElement(name = "Name.Family")
-    private String secondName;
+    private String lastName;
     @XmlElement(name = "Birth.Number")
     private String birthNumber;
     @XmlElement(name = "id.Sex")
@@ -25,35 +25,24 @@ public class Student {
     @XmlElement(name = "Birth.Date")
     private String birthDate;
     @XmlElement(name = "Birth.Place")
-    private String birthdayPlace;
+    private String birthPlace;
     @XmlElement(name = "Birth.Country")
     private String birthCountry;
-    @XmlElement(name = "Birth.Name")
-    private String birthName;
-
-
-    private String studyProgram;
-    private String degree;
-
-
-
-
 
     @Override
     public String toString() {
         return "Student{" +
                 "first name=" + firstName +
-                ", second name='" + secondName + '\'' +
+                ", second name='" + lastName + '\'' +
                 ", birthday day='" + birthDate + '\'' +
                 '}';
     }
 
     public String getFullName() {
-        return firstName + " " + secondName;
+        return firstName + " " + lastName;
     }
 
-    public String getStudyProgramDeg() {
-        return degree + "." + studyProgram;
+    public Student getStudent() {
+        return this;
     }
-
 }

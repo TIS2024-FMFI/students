@@ -1,36 +1,29 @@
 package com.tis.dbf;
 
+import com.controllers.controllers.LoginController;
+import com.tis.dbf.service.DataService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class JavaFxApp extends Application {
 
-    private ApplicationContext springContext;
-
-    @Override
-    public void init() throws Exception {
-        springContext = new AnnotationConfigApplicationContext(DbfApplication.class);
-    }
-
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
-        //fxmlLoader.setControllerFactory(springContext::getBean);
-        Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 1366, 768);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("JavaFX app");
-        primaryStage.show();
-    }
+        DataService dataService = DataService.getInstance();
 
-    @Override
-    public void stop() throws Exception {
-        ((AnnotationConfigApplicationContext) springContext).close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
+        Parent root = loader.load();
+
+        LoginController loginController = loader.getController();
+        loginController.setDataService(dataService);
+        loginController.setStage(primaryStage);
+
+        primaryStage.setScene(new Scene(root, 1366, 768));
+        primaryStage.setTitle("Login");
+        primaryStage.show();
     }
 
     public static void main(String[] args) {

@@ -1,11 +1,13 @@
-package com.example.login;
+package com.controllers.controllers;
 
+import com.tis.dbf.service.DataService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Arc;
 import javafx.application.Platform;
@@ -37,7 +39,19 @@ public class DownloadController {
     @FXML
     private AnchorPane anchorPane; // Injected AnchorPane reference
 
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private Button startDownloadButton;
+
     private Timeline timeline; // For continuous spinning
+
+    private DataService dataService;
+
+    public void setDataService(DataService dataService) {
+        this.dataService = dataService;
+    }
 
     public void initialize() {
         // Set initial visibility and positions
@@ -77,6 +91,7 @@ public class DownloadController {
     }
 
     public void startDownload() {
+        //System.out.println(dataService.getUsername());
         spinner.setVisible(true);
         updateStatus("Sťahujem XML");
         updatePositions(); // Ensure proper positioning
@@ -92,12 +107,7 @@ public class DownloadController {
             @Override
             protected Void call() throws Exception {
                 try {
-                    // Simulate download (this is where you implement actual downloading logic)
-                    Thread.sleep(5000);
-
-                    // If download succeeds
-                    // throw new NullPointerException("demo");
-                    // Show "Proceed" button
+                    dataService.startDownload();
                     Platform.runLater(() -> {
                         timeline.stop();
                         spinner.setVisible(false);
@@ -106,6 +116,7 @@ public class DownloadController {
                         nextButton.setVisible(true); // Show "Proceed" button
                     });
                 } catch (Exception e) {
+                    System.out.println(e);
                     // If download fails
                     Platform.runLater(() -> {
                         timeline.stop();
@@ -127,10 +138,23 @@ public class DownloadController {
     @FXML
     private void handleProceed() {
         try {
-            Scene newScene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/MainScene.fxml")));
+            // Load MainScene.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainScene.fxml"));
+            Parent root = loader.load();
+
+            // Get the controller for MainScene
+            MainSceneController mainSceneController = loader.getController();
+
+            // Pass the DataService instance to MainSceneController
+            mainSceneController.setDataService(dataService);
+
+            // Set the scene and show the stage
+            Scene newScene = new Scene(root);
             Stage stage = (Stage) nextButton.getScene().getWindow();
             stage.setScene(newScene);
             stage.setTitle("Main Scene");
+            // tu bude ta funkcia co zavolat
+            mainSceneController.loadAllStudies();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -141,5 +165,18 @@ public class DownloadController {
         // Hide retry button and restart the download
         retryButton.setVisible(false);
         startDownload(); // Restart the download process
+    }
+
+    public void handlePasswordAndStartDownload() {
+        String password = passwordField.getText();
+        if (password.isEmpty()) {
+            updateStatus("Password cannot be empty!");
+        } else {
+            passwordField.setVisible(false);
+            startDownloadButton.setVisible(false);
+            dataService.setServerPassword(password);
+            updateStatus("Starting download...");
+            startDownload();
+        }
     }
 }
