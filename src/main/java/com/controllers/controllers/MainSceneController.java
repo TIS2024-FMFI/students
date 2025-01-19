@@ -1,18 +1,22 @@
 package com.controllers.controllers;
 
-import com.tis.dbf.model.Student;
-import com.tis.dbf.model.Study;
+import com.tis.dbf.model.*;
+import com.tis.dbf.model.Event;
 import com.tis.dbf.service.DataService;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class MainSceneController {
 
@@ -20,7 +24,10 @@ public class MainSceneController {
     private TextField firstNameField;
 
     @FXML
-    private TextField lastNameField;
+    private TextField secondNameField;
+
+    @FXML
+    private TextField secondOriginNameField;
 
     @FXML
     private DatePicker birthDateField;
@@ -29,155 +36,166 @@ public class MainSceneController {
     private TextField birthPlaceField;
 
     @FXML
-    private Button searchButton;
+    private Button ButtonSocialnaPoistovna;
 
     @FXML
-    private Button resetButton;
+    private Button ButtonVypisZnamok;
+
+    @FXML
+    private Button ButtonDiplom;
 
     @FXML
     private TableView<Study> studiesTable;
 
     @FXML
-    private TableColumn<Study, String> columnStudentName;
+    private TableColumn<Study, String> columnStudent;
 
     @FXML
     private TableColumn<Study, String> columnBirthDate;
 
     @FXML
-    private TableColumn<Study, String> columnStudyProgramme;
+    private TableColumn<Study, String> columnStudy;
 
-    private ObservableList<Study> allStudies = FXCollections.observableArrayList();
+    @FXML
+    private Label labelFirstName;
+
+    @FXML
+    private Label labelLastName;
+
+    @FXML
+    private Label labelBirthDate;
+
+    @FXML
+    private Label FixLabelFirstName;
+
+    @FXML
+    private Label FixLabelDetails;
+
+    @FXML
+    private Label FixLabelPersonalData;
+
+    @FXML
+    private Label FixLabelLastName;
+
+    @FXML
+    private Label FixLabelBirthDate;
+
+    @FXML
+    private Label FixLabelStudyData;
+
+    @FXML
+    private Label FixLabelStudyProgramme;
+
+    @FXML
+    private Label FixLabelStudyStart;
+
+    @FXML
+    private Label FixLabelGraduate;
+
+    @FXML
+    private Label FixLabelYears;
+
+    @FXML
+    private Label labelStudyStartDate;
+
+    @FXML
+    private Label labelStudyProgramme;
+
+    @FXML
+    private Label labelGraduate;
+
+    @FXML
+    private Label labelCountYears;
+
+    @FXML
+    private Label FixLabelTo;
+
+    @FXML
+    private Label labelFinishStudy;
+
+    @FXML
+    private Label labelStartStudy;
+
+    @FXML
+    private Label FixLabelFrom;
+
+    @FXML
+    private Label FixLabelCountYears;
+
+    @FXML
+    private TableView<Event> eventsTable;
+
+    @FXML
+    private TableColumn<Event, String> columnReason;
+
+    @FXML
+    private TableColumn<Event, String> columnStartDate;
+
+    @FXML
+    private TableColumn<Event, String> columnEndDate;
+
+    private ObservableList<Event> extraList = FXCollections.observableArrayList();
+
+
+    @FXML
+    private Button showDetailsButton;
     private DataService dataService;
 
     @FXML
-    private Label labelDetail;
-    @FXML
-    private Label labelFirstName;
-    @FXML
-    private Label labelLastName;
-    @FXML
-    private Label labelBirthDate;
-    @FXML
-    private Label labelStudyProgram;
-    @FXML
-    private Label labelStudyStart;
-    @FXML
-    private Label labelStudyEnd;
+    public void initialize() {
+        // Set up the study program column (direct property in Study)
+        columnStudy.setCellValueFactory(new PropertyValueFactory<>("studyProgramme"));
+
+        // Set up the student name column (nested property in Student)
+        columnStudent.setCellValueFactory(cellData -> {
+            Student student = cellData.getValue().getStudent(); // Access the nested Student object
+            return student != null
+                    ? new SimpleStringProperty(student.getFullName()) // Extract fullName from Student
+                    : new SimpleStringProperty("Unknown");
+        });
+
+        // Set up the birth date column (nested property in Student)
+        columnBirthDate.setCellValueFactory(cellData -> {
+            Student student = cellData.getValue().getStudent(); // Access the nested Student object
+            return student != null
+                    ? new SimpleStringProperty(student.getBirthDate()) // Extract birthDate from Student
+                    : new SimpleStringProperty("Unknown");
+        });
+    }
+
+    public void loadAllStudies(){
+        Map<String, List<Study>> studyMap = dataService.getStudyMap();
+        List<Student> students = dataService.getStudents().getStudents();
+
+        // Create a map of UPN to Student for efficient lookup
+        Map<String, Student> studentMap = students.stream()
+                .collect(Collectors.toMap(Student::getUPN, student -> student));
+
+        // Flatten the studies and link each study to its corresponding student
+        List<Study> allStudiesWithStudents = studyMap.values().stream()
+                .flatMap(List::stream)
+                .peek(study -> {
+                    if (studentMap.containsKey(study.getUPN())) {
+                        study.setStudent(studentMap.get(study.getUPN()));
+                    }
+                })
+                .collect(Collectors.toList());
+
+        // Update the TableView
+        ObservableList<Study> observableStudies = FXCollections.observableArrayList(allStudiesWithStudents);
+        studiesTable.setItems(observableStudies);
+    }
 
     public void setDataService(DataService dataService) {
         this.dataService = dataService;
     }
 
-    @FXML
-    public void initialize() {
-        studiesTable.getColumns().clear();
-        studiesTable.getColumns().addAll(columnStudentName, columnBirthDate, columnStudyProgramme);
-        columnStudentName.setCellValueFactory(new PropertyValueFactory<>("studentName"));
-        columnBirthDate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
-        columnStudyProgramme.setCellValueFactory(new PropertyValueFactory<>("studyProgramme"));
+    public void handleDetails(ActionEvent actionEvent) {
     }
 
-    public void loadAllStudies() {
-        // Get the map of UPN to list of studies
-        Map<String, List<Study>> studyMap = dataService.getStudyMap();
-        List<Student> students = dataService.getStudents().getStudents();
-
-        // Enrich studies with student details
-        allStudies = FXCollections.observableArrayList(
-                students.stream()
-                        .flatMap(student -> {
-                            List<Study> matchedStudies = studyMap.get(student.getUPN());
-                            if (matchedStudies != null) {
-                                return matchedStudies.stream().peek(study -> {
-                                    study.setStudentName(student.getFullName());
-                                    study.setBirthDate(student.getBirthDate());
-                                    study.setFirstName(student.getFirstName());
-                                    study.setLastName(student.getLastName());
-                                });
-                            }
-                            return Stream.empty();
-                        })
-                        .collect(Collectors.toList())
-        );
-
-        // Populate the TableView with all studies
-        studiesTable.setItems(allStudies);
+    public void handleSearch(ActionEvent actionEvent) {
     }
 
-    @FXML
-    private void handleSearch() {
-        String firstName = firstNameField.getText().trim().toLowerCase();
-        String lastName = lastNameField.getText().trim().toLowerCase();
-        String birthDate = birthDateField.getValue() != null ? birthDateField.getValue().toString() : "";
-        String birthPlace = birthPlaceField.getText().trim().toLowerCase();
-
-        // Filter students based on search criteria
-        List<Student> filteredStudents = dataService.getStudents().getStudents().stream()
-                .filter(student -> (firstName.isEmpty() || student.getFirstName().toLowerCase().contains(firstName)) &&
-                        (lastName.isEmpty() || student.getLastName().toLowerCase().contains(lastName)) &&
-                        (birthDate.isEmpty() || student.getBirthDate().equals(birthDate)) &&
-                        (birthPlace.isEmpty() || student.getBirthdayPlace().toLowerCase().contains(birthPlace)))
-                .collect(Collectors.toList());
-
-        // Display relevant studies
-        displayRelevantStudies(filteredStudents);
-    }
-
-    private void displayRelevantStudies(List<Student> filteredStudents) {
-        Map<String, List<Study>> studyMap = dataService.getStudyMap();
-
-        // Enrich and flatten studies from filtered students
-        ObservableList<Study> relevantStudies = FXCollections.observableArrayList(
-                filteredStudents.stream()
-                        .flatMap(student -> {
-                            List<Study> matchedStudies = studyMap.get(student.getUPN());
-                            if (matchedStudies != null) {
-                                return matchedStudies.stream().peek(study -> {
-                                    study.setStudentName(student.getFullName());
-                                    study.setBirthDate(student.getBirthDate());
-                                });
-                            }
-                            return Stream.empty();
-                        })
-                        .collect(Collectors.toList())
-        );
-
-        // Populate the TableView with relevant studies
-        studiesTable.setItems(relevantStudies);
-    }
-
-    @FXML
-    private void handleReset() {
-        firstNameField.clear();
-        lastNameField.clear();
-        birthDateField.setValue(null);
-        birthPlaceField.clear();
-
-        // Reset the TableView to display all studies
-        studiesTable.setItems(allStudies);
-    }
-
-    public void showStudyDetail(javafx.event.ActionEvent actionEvent) {
-        Study selectedStudy = studiesTable.getSelectionModel().getSelectedItem();
-
-        if (selectedStudy != null) {
-            // Update labels with study details
-            labelDetail.setText(selectedStudy.getUPN());
-            labelFirstName.setText(selectedStudy.getStudentName());
-            labelLastName.setText(selectedStudy.getStudentName().split(" ")[1]); // Assuming "First Last" format
-            labelBirthDate.setText(selectedStudy.getBirthDate());
-            labelStudyProgram.setText(selectedStudy.getStudyProgramme());
-            labelStudyStart.setText((selectedStudy.getStudyAdmission() != null
-                    ? selectedStudy.getStudyAdmission().getDate() : "N/A"));
-            labelStudyEnd.setText((selectedStudy.getStudyEnd() != null
-                    ? selectedStudy.getStudyEnd().getThesis().getDefenceDate() : "N/A"));
-        } else {
-            // Show alert if no study is selected
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("No Study Selected");
-            alert.setHeaderText(null);
-            alert.setContentText("Please select a study to view details.");
-            alert.showAndWait();
-        }
+    public void handleReset(ActionEvent actionEvent) {
     }
 }

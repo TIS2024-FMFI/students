@@ -28,16 +28,6 @@ public class Student {
     private String birthdayPlace;
     @XmlElement(name = "Birth.Country")
     private String birthCountry;
-    @XmlElement(name = "Birth.Name")
-    private String birthName;
-
-
-    private String studyProgram;
-    private String degree;
-
-
-
-
 
     @Override
     public String toString() {
@@ -52,12 +42,7 @@ public class Student {
         return firstName + " " + lastName;
     }
 
-    public String getStudyProgramDeg() {
-        return degree + "." + studyProgram;
+    public Student getStudent() {
+        return this;
     }
-
-    public void setStudyProgram(String studyProgram) {
-        this.studyProgram = studyProgram;
-    }
-
 }

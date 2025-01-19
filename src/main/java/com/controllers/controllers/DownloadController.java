@@ -153,6 +153,7 @@ public class DownloadController {
             Stage stage = (Stage) nextButton.getScene().getWindow();
             stage.setScene(newScene);
             stage.setTitle("Main Scene");
+            // tu bude ta funkcia co zavolat
             mainSceneController.loadAllStudies();
         } catch (IOException e) {
             e.printStackTrace();
