@@ -25,7 +25,7 @@ public class Student {
     @XmlElement(name = "Birth.Date")
     private String birthDate;
     @XmlElement(name = "Birth.Place")
-    private String birthdayPlace;
+    private String birthPlace;
     @XmlElement(name = "Birth.Country")
     private String birthCountry;
 

@@ -191,11 +191,69 @@ public class MainSceneController {
     }
 
     public void handleDetails(ActionEvent actionEvent) {
+        Study selectedStudy = studiesTable.getSelectionModel().getSelectedItem();
+
+        if (selectedStudy != null) {
+            // Populate Study details
+            labelStudyProgramme.setText(selectedStudy.getStudyProgramme());
+            labelGraduate.setText(selectedStudy.getDegree());
+            labelStudyStartDate.setText(selectedStudy.getStudyAdmission().getDate());
+            labelCountYears.setText(String.valueOf(selectedStudy.getStandardLength()));
+            labelStartStudy.setText(selectedStudy.getStudyAdmission().getDate());
+            //labelFinishStudy.setText(selectedStudy.getStudyEnd());
+
+            // Populate Student details (nested in Study)
+            Student student = selectedStudy.getStudent();
+            if (student != null) {
+                labelFirstName.setText(student.getFirstName());
+                labelLastName.setText(student.getLastName());
+                labelBirthDate.setText(student.getBirthDate());
+            } else {
+                // Clear Student-related labels if no Student is linked
+                labelFirstName.setText("Unknown");
+                labelLastName.setText("Unknown");
+                labelBirthDate.setText("Unknown");
+            }
+        } else {
+            // Clear all labels if no Study is selected
+            clearLabels();
+        }
+    }
+
+    private void clearLabels() {
+        labelStudyProgramme.setText("");
+        labelGraduate.setText("");
+        labelStudyStartDate.setText("");
+        labelCountYears.setText("");
+        labelStartStudy.setText("");
+        labelFinishStudy.setText("");
+
+        labelFirstName.setText("");
+        labelLastName.setText("");
+        labelBirthDate.setText("");
     }
 
     public void handleSearch(ActionEvent actionEvent) {
+        String firstName = firstNameField.getText().trim().toLowerCase();
+        String secondName = secondNameField.getText().trim().toLowerCase();
+        String birthPlace = birthPlaceField.getText().trim().toLowerCase();
+        String birthDate = birthDateField.getValue() != null ? birthDateField.getValue().toString() : "";
+        //String secondOriginName = secondOriginNameField.getText().trim().toLowerCase(); // chyba v students xml
+
+        List<Study> filteredStudies = dataService.getStudies().getStudies().stream()
+                .filter(study -> {
+                    Student student = study.getStudent();
+                    return (firstName.isEmpty() || (student != null && student.getFirstName().toLowerCase().contains(firstName))) &&
+                            (secondName.isEmpty() || (student != null && student.getLastName().toLowerCase().contains(secondName))) &&
+                            (birthPlace.isEmpty() || (student != null && student.getBirthPlace().toLowerCase().contains(birthPlace))) &&
+                            (birthDate.isEmpty() || (student != null && student.getBirthDate().equals(birthDate)));
+                })
+                .collect(Collectors.toList());
+
+        studiesTable.setItems(FXCollections.observableArrayList(filteredStudies));
     }
 
     public void handleReset(ActionEvent actionEvent) {
+
     }
 }
