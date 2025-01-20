@@ -363,7 +363,7 @@ public class MainSceneController {
         firstNameField.clear();
         secondNameField.clear();
         secondOriginNameField.clear();
-        //birthDateField.setValue(null);
+        birthDateField.setValue(null);
         birthPlaceField.clear();
         labelFirstName.setText("");
         labelLastName.setText("");
