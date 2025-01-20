@@ -2,7 +2,6 @@ package com.controllers.controllers;
 
 import com.tis.dbf.model.*;
 import com.tis.dbf.service.DataService;
-import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,11 +11,15 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.text.Normalizer;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MainSceneController {
+
+    private static final DateTimeFormatter INPUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
 
     @FXML
     private TextField firstNameField;
@@ -132,7 +135,7 @@ public class MainSceneController {
     @FXML
     private TableColumn<Event, String> columnEndDate;
 
-    private ObservableList<Event> extraList = FXCollections.observableArrayList();
+    private ObservableList<Event> eventsList = FXCollections.observableArrayList();
 
     @FXML
     private Button showDetailsButton;
@@ -157,11 +160,10 @@ public class MainSceneController {
                     : new SimpleStringProperty("Unknown");
         });
 
-        //columnReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
-        //columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-        //columnEndDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+        columnReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
+        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
 
-        //clearLabels();
     }
 
     public void loadAllStudies() {
@@ -202,8 +204,10 @@ public class MainSceneController {
             labelCountYears.setText(String.valueOf(selectedStudy.getStandardLength()));
             labelStartStudy.setText(selectedStudy.getStudyAdmission().getDate());
 
+
             Student student = selectedStudy.getStudent();
             if (student != null) {
+                /*
                 FixLabelDetails.setText("DETAIL");
                 FixLabelFirstName.setText("Meno");
                 FixLabelLastName.setText("Priezvisko");
@@ -214,9 +218,6 @@ public class MainSceneController {
                 FixLabelStudyStart.setText("Začiatok štúdia");
                 FixLabelStudyProgramme.setText("Študijný program");
                 FixLabelYears.setText("Priebeh štúdia / akademické roky");
-                labelFirstName.setText(student.getFirstName());
-                labelLastName.setText(student.getLastName());
-                labelBirthDate.setText(student.getBirthDate());
                 ButtonSocialnaPoistovna.setVisible(true);
                 ButtonVypisZnamok.setVisible(true);
                 ButtonDiplom.setVisible(true);
@@ -224,35 +225,45 @@ public class MainSceneController {
                 FixLabelCountYears.setText("Doba štúdia študenta: ");
                 FixLabelTo.setText("Do");
 
-                extraList.clear();
+                 */
+                labelFirstName.setText(student.getFirstName());
+                labelLastName.setText(student.getLastName());
+                labelBirthDate.setText(student.getBirthDate());
+
+                eventsList.clear();
 
                 // prerusenie
                 if (selectedStudy.getInterruptions() != null && !selectedStudy.getInterruptions().isEmpty()) {
+                    System.out.println("Interruptions: " + selectedStudy.getInterruptions());
                     for (Interruption interruption : selectedStudy.getInterruptions()) {
                         if (interruption.getReason() != null && !interruption.getReason().contains("PRERUŠENIE")) {
+                            System.out.println("aj tu bolo");
                             String combinedReason = "PRERUŠENIE: " + interruption.getReason();
                             interruption.setReason(combinedReason);
                         }
-                        extraList.add(new Event(interruption));
+                        eventsList.add(new Event(interruption));
                     }
                 }
 
                 // studium zahranicie
                 if (selectedStudy.getAbroadProgrammes() != null && !selectedStudy.getAbroadProgrammes().isEmpty()) {
+                    System.out.println("Abroad Programs: " + selectedStudy.getAbroadProgrammes());
                     for (AbroadProgramme abroadProgramm : selectedStudy.getAbroadProgrammes()) {
                         if (abroadProgramm.getUniversity() != null && !abroadProgramm.getUniversity().contains("ERAZMUS")) {
                             String combinedReason = "ERAZMUS: " + abroadProgramm.getUniversity();
                             abroadProgramm.setUniversity(combinedReason);
                         }
-                        extraList.add(new Event(abroadProgramm));
+                        eventsList.add(new Event(abroadProgramm));
                     }
                 }
-                eventsTable.setItems(extraList);
+                eventsTable.setItems(eventsList);
 
-                if (extraList.isEmpty()) {
+                if (eventsList.isEmpty()) {
                     eventsTable.setVisible(false);
+                    System.out.println("xxx");
                 } else {
                     eventsTable.setVisible(true);
+                    System.out.println("yyy");
                 }
 
             } else {
@@ -267,7 +278,9 @@ public class MainSceneController {
         String firstName = normalizeInput(firstNameField.getText());
         String secondName = normalizeInput(secondNameField.getText());
         String birthPlace = normalizeInput(birthPlaceField.getText());
-        String birthDate = birthDateField.getValue() != null ? birthDateField.getValue().toString() : "";
+        String birthDate = birthDateField.getValue() != null
+                ? birthDateField.getValue().format(INPUT_DATE_FORMATTER)
+                : "";
 
         List<Study> filteredStudies = studyList.stream()
                 .filter(study -> {
@@ -287,43 +300,32 @@ public class MainSceneController {
         firstNameField.clear();
         secondNameField.clear();
         secondOriginNameField.clear();
-        birthDateField.setValue(null);
+        //birthDateField.setValue(null);
         birthPlaceField.clear();
-        FixLabelFirstName.setText("");
-        FixLabelLastName.setText("");
-        FixLabelBirthDate.setText("");
-        FixLabelStudyData.setText("");
-        FixLabelPersonalData.setText("");
-        FixLabelDetails.setText("");
-        FixLabelGraduate.setText("");
-        FixLabelStudyStart.setText("");
-        FixLabelStudyProgramme.setText("");
         labelFirstName.setText("");
         labelLastName.setText("");
         labelBirthDate.setText("");
-        FixLabelYears.setText("");
+        //FixLabelYears.setText("");
         labelStudyStartDate.setText("");
         labelStudyProgramme.setText("");
         labelGraduate.setText("");
         labelCountYears.setText("");
-        FixLabelFrom.setText("");
-        FixLabelCountYears.setText("");
-        FixLabelTo.setText("");
+        //FixLabelFrom.setText("");
+        //FixLabelCountYears.setText("");
+        //FixLabelTo.setText("");
         labelCountYears.setText("");
         labelStartStudy.setText("");
         labelFinishStudy.setText("");
-        ButtonSocialnaPoistovna.setVisible(false);
-        ButtonVypisZnamok.setVisible(false);
-        ButtonDiplom.setVisible(false);
-        eventsTable.setVisible(false);
+        //ButtonSocialnaPoistovna.setVisible(false);
+        //ButtonVypisZnamok.setVisible(false);
+        //ButtonDiplom.setVisible(false);
+        //eventsTable.setVisible(false);
+        eventsList.clear();
         loadAllStudies();
     }
 
     private void clearLabels() {
         Label[] labels = {
-                FixLabelFirstName, FixLabelLastName, FixLabelBirthDate,
-                FixLabelStudyData, FixLabelPersonalData, FixLabelDetails,
-                FixLabelGraduate, FixLabelStudyStart, FixLabelStudyProgramme,
                 labelFirstName, labelLastName, labelBirthDate, FixLabelYears, labelStudyStartDate,
                 labelGraduate
         };
