@@ -2,7 +2,6 @@ package com.controllers.controllers;
 
 import com.tis.dbf.model.*;
 import com.tis.dbf.service.DataService;
-import com.tis.dbf.service.XMLParsingServes;
 import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -139,12 +138,10 @@ public class MainSceneController {
     private Button showDetailsButton;
 
     private DataService dataService;
-    private XMLParsingServes xmlParsingService = new XMLParsingServes();
     private ObservableList<Study> studyList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        // Nastavenie stĺpcov tabuľky
         columnStudy.setCellValueFactory(new PropertyValueFactory<>("studyProgramme"));
 
         columnStudent.setCellValueFactory(cellData -> {
@@ -160,26 +157,21 @@ public class MainSceneController {
                     : new SimpleStringProperty("Unknown");
         });
 
-        columnReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
-        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+        //columnReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
+        //columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+        //columnEndDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
 
-        // Načítanie údajov
-        loadAllStudies();
-        clearLabels();
+        //clearLabels();
     }
 
     public void loadAllStudies() {
         try {
-            // Načítanie štúdií zo služby DataService
             Map<String, List<Study>> studyMap = dataService.getStudyMap();
             List<Student> students = dataService.getStudents().getStudents();
 
-            // Vytvorenie mapy UPN -> Student
             Map<String, Student> studentMap = students.stream()
                     .collect(Collectors.toMap(Student::getUPN, student -> student));
 
-            // Spracovanie štúdií a priradenie študentov
             List<Study> allStudiesWithStudents = studyMap.values().stream()
                     .flatMap(List::stream)
                     .peek(study -> {
@@ -189,7 +181,6 @@ public class MainSceneController {
                     })
                     .collect(Collectors.toList());
 
-            // Aktualizácia tabuľky
             studyList.setAll(allStudiesWithStudents);
             studiesTable.setItems(studyList);
         } catch (Exception e) {
@@ -292,12 +283,12 @@ public class MainSceneController {
     }
 
     public void handleReset(ActionEvent actionEvent) {
+        studiesTable.getSelectionModel().clearSelection();
         firstNameField.clear();
         secondNameField.clear();
         secondOriginNameField.clear();
         birthDateField.setValue(null);
         birthPlaceField.clear();
-        //displayStudents(studentList);
         FixLabelFirstName.setText("");
         FixLabelLastName.setText("");
         FixLabelBirthDate.setText("");
@@ -325,6 +316,7 @@ public class MainSceneController {
         ButtonVypisZnamok.setVisible(false);
         ButtonDiplom.setVisible(false);
         eventsTable.setVisible(false);
+        loadAllStudies();
     }
 
     private void clearLabels() {
