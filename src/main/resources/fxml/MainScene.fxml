@@ -342,7 +342,7 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label fx:id="FixLabelCountYears" prefHeight="45.0" prefWidth="236.0" text="Doba štúdia študenta: ">
+                              <Label fx:id="FixLabelCountYears" prefHeight="45.0" prefWidth="236.0" text="Štand. dĺžka štúdia ">
                                  <font>
                                     <Font size="20.0" />
                                  </font>

@@ -66,6 +66,7 @@ public class Study {
 
     @XmlElement(name = "Study.Status")
     private String studyStatus;
+
     @Data
     @XmlAccessorType(XmlAccessType.FIELD)
     public static class Admission {
@@ -76,87 +77,11 @@ public class Study {
         private String date;
     }
 
-//    @Data
-//    @XmlAccessorType(XmlAccessType.FIELD)
-//    public static class AcademicYears {
-//        @XmlElement(name = "AR2001-2002")
-//        private List<AcademicYear> academicYearDetails;
-//
-//        @Data
-//        @XmlAccessorType(XmlAccessType.FIELD)
-//        public static class AcademicYear {
-//            @XmlElement(name = "Registration.Date")
-//            private String registrationDate;
-//
-//            @XmlElement(name = "Subjects")
-//            private List<Subject> subjects;
-//
-//            @Data
-//            @XmlAccessorType(XmlAccessType.FIELD)
-//            public static class Subject {
-//                @XmlElement(name = "UIDP")
-//                private String uidp;
-//
-//                @XmlElement(name = "Grade")
-//                private String grade;
-//
-//                @XmlElement(name = "Type")
-//                private String type;
-//
-//                @XmlElement(name = "Attempt")
-//                private String attempt;
-//
-//                @XmlElement(name = "End.Subject")
-//                private String endSubject;
-//
-//                @XmlElement(name = "End.Subject.Date")
-//                private String endSubjectDate;
-//
-//                @XmlElement(name = "Credits")
-//                private int credits;
-//
-//                @XmlElement(name = "Semester")
-//                private String semester;
-//            }
-//        }
-//    }
-
-//    @Data
-//    @XmlAccessorType(XmlAccessType.FIELD)
-//    public static class Interruption {
-//        @XmlElement(name = "Reason")
-//        private String reason;
-//
-//        @XmlElement(name = "Start.Date")
-//        private String startDate;
-//
-//        @XmlElement(name = "End.Date")
-//        private String endDate;
-//    }
-
-//    @Data
-//    @XmlAccessorType(XmlAccessType.FIELD)
-//    public static class AbroadProgramme {
-//        @XmlElement(name = "Start.Date")
-//        private String startDate;
-//
-//        @XmlElement(name = "End.Date")
-//        private String endDate;
-//
-//        @XmlElement(name = "Semester")
-//        private String semester;
-//
-//        @XmlElement(name = "University")
-//        private String university;
-//
-//        @XmlElement(name = "Country")
-//        private String country;
-//    }
-
     @Data
     @XmlAccessorType(XmlAccessType.FIELD)
     public static class StudyEnd {
-        @XmlElement(name = "State.Exams")
+        @XmlElementWrapper(name = "State.Exams")
+        @XmlElement(name = "State.Exam")
         private List<StateExam> stateExams;
 
         @XmlElement(name = "Thesis")

@@ -45,8 +45,4 @@ public class Student {
     public String getBirthDate() {
         return birthDate != null ? birthDate.trim() : "";
     }
-
-    public Student getStudent() {
-        return this;
-    }
 }

@@ -11,7 +11,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.text.Normalizer;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -199,10 +201,19 @@ public class MainSceneController {
 
         if (selectedStudy != null) {
             labelStudyProgramme.setText(selectedStudy.getStudyProgramme());
-            labelGraduate.setText(selectedStudy.getDegree());
+            labelGraduate.setText(selectedStudy.getDegree() + " " + selectedStudy.getStudyStatus());
             labelStudyStartDate.setText(selectedStudy.getStudyAdmission().getDate());
             labelCountYears.setText(String.valueOf(selectedStudy.getStandardLength()));
-            labelStartStudy.setText(selectedStudy.getStudyAdmission().getDate());
+            if (selectedStudy.getAcademicYears() != null && !selectedStudy.getAcademicYears().isEmpty()) {
+                String firstAcademicYearStartDate = selectedStudy.getAcademicYears()
+                        .get(0)
+                        .getRegistrationDate();
+                labelStartStudy.setText(firstAcademicYearStartDate != null ? firstAcademicYearStartDate : "Unknown");
+            } else {
+                labelStartStudy.setText("Unknown");
+            }
+            String finishDate = getNewestFinishDate(selectedStudy);
+            labelFinishStudy.setText(finishDate);
 
 
             Student student = selectedStudy.getStudent();
@@ -272,6 +283,58 @@ public class MainSceneController {
         } else {
             clearLabels();
         }
+    }
+
+    private String getNewestFinishDate(Study study) {
+        if (study == null || study.getStudyEnd() == null) {
+            return "Unknown";
+        }
+
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate newestDate = null;
+
+        // Collect all dates
+        List<String> allDates = new ArrayList<>();
+
+        // Add state exam dates
+        if (study.getStudyEnd().getStateExams() != null) {
+            for (Study.StudyEnd.StateExam exam : study.getStudyEnd().getStateExams()) {
+                System.out.println("StateExam found: " + exam);
+                if (exam.getDate() != null && !exam.getDate().isEmpty()) {
+                    System.out.println("Adding StateExam date: " + exam.getDate());
+                    allDates.add(exam.getDate());
+                }
+            }
+        }
+
+        // Add thesis defense date
+        if (study.getStudyEnd().getThesis() != null) {
+            String thesisDate = study.getStudyEnd().getThesis().getDefenceDate();
+            if (thesisDate != null && !thesisDate.isEmpty()) {
+                allDates.add(thesisDate);
+            }
+        }
+
+        // Debug: Print collected dates
+        System.out.println("Collected dates: " + allDates);
+
+        // Parse and find the newest date
+        for (String dateString : allDates) {
+            try {
+                LocalDate parsedDate = LocalDate.parse(dateString, dateFormatter);
+                System.out.println("Parsed date: " + parsedDate);
+                if (newestDate == null || parsedDate.isAfter(newestDate)) {
+                    newestDate = parsedDate;
+                    System.out.println("Updated newest date: " + newestDate);
+                }
+            } catch (Exception e) {
+                System.err.println("Invalid date format: " + dateString);
+                e.printStackTrace();
+            }
+        }
+
+        // Return the newest date as a string or "Unknown" if none found
+        return newestDate != null ? newestDate.format(dateFormatter) : "Unknown";
     }
 
     public void handleSearch(ActionEvent actionEvent) {
