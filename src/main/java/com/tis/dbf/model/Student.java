@@ -42,7 +42,7 @@ public class Student {
         return firstName + " " + lastName;
     }
 
-    public Student getStudent() {
-        return this;
+    public String getBirthDate() {
+        return birthDate != null ? birthDate.trim() : "";
     }
 }

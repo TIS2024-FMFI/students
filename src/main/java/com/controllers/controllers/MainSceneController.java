@@ -1,7 +1,6 @@
 package com.controllers.controllers;
 
 import com.tis.dbf.model.*;
-import com.tis.dbf.model.Event;
 import com.tis.dbf.service.DataService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -9,16 +8,20 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.text.Normalizer;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MainSceneController {
+
+    private static final DateTimeFormatter INPUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
 
     @FXML
     private TextField firstNameField;
@@ -134,56 +137,59 @@ public class MainSceneController {
     @FXML
     private TableColumn<Event, String> columnEndDate;
 
-    private ObservableList<Event> extraList = FXCollections.observableArrayList();
-
+    private ObservableList<Event> eventsList = FXCollections.observableArrayList();
 
     @FXML
     private Button showDetailsButton;
+
     private DataService dataService;
+    private ObservableList<Study> studyList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        // Set up the study program column (direct property in Study)
         columnStudy.setCellValueFactory(new PropertyValueFactory<>("studyProgramme"));
 
-        // Set up the student name column (nested property in Student)
         columnStudent.setCellValueFactory(cellData -> {
-            Student student = cellData.getValue().getStudent(); // Access the nested Student object
+            Student student = cellData.getValue().getStudent();
             return student != null
-                    ? new SimpleStringProperty(student.getFullName()) // Extract fullName from Student
+                    ? new SimpleStringProperty(student.getFullName())
+                    : new SimpleStringProperty("Unknown");
+        });
+        columnBirthDate.setCellValueFactory(cellData -> {
+            Student student = cellData.getValue().getStudent();
+            return student != null
+                    ? new SimpleStringProperty(student.getBirthDate())
                     : new SimpleStringProperty("Unknown");
         });
 
-        // Set up the birth date column (nested property in Student)
-        columnBirthDate.setCellValueFactory(cellData -> {
-            Student student = cellData.getValue().getStudent(); // Access the nested Student object
-            return student != null
-                    ? new SimpleStringProperty(student.getBirthDate()) // Extract birthDate from Student
-                    : new SimpleStringProperty("Unknown");
-        });
+        columnReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
+        columnStartDate.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+        columnEndDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+
     }
 
-    public void loadAllStudies(){
-        Map<String, List<Study>> studyMap = dataService.getStudyMap();
-        List<Student> students = dataService.getStudents().getStudents();
+    public void loadAllStudies() {
+        try {
+            Map<String, List<Study>> studyMap = dataService.getStudyMap();
+            List<Student> students = dataService.getStudents().getStudents();
 
-        // Create a map of UPN to Student for efficient lookup
-        Map<String, Student> studentMap = students.stream()
-                .collect(Collectors.toMap(Student::getUPN, student -> student));
+            Map<String, Student> studentMap = students.stream()
+                    .collect(Collectors.toMap(Student::getUPN, student -> student));
 
-        // Flatten the studies and link each study to its corresponding student
-        List<Study> allStudiesWithStudents = studyMap.values().stream()
-                .flatMap(List::stream)
-                .peek(study -> {
-                    if (studentMap.containsKey(study.getUPN())) {
-                        study.setStudent(studentMap.get(study.getUPN()));
-                    }
-                })
-                .collect(Collectors.toList());
+            List<Study> allStudiesWithStudents = studyMap.values().stream()
+                    .flatMap(List::stream)
+                    .peek(study -> {
+                        if (studentMap.containsKey(study.getUPN())) {
+                            study.setStudent(studentMap.get(study.getUPN()));
+                        }
+                    })
+                    .collect(Collectors.toList());
 
-        // Update the TableView
-        ObservableList<Study> observableStudies = FXCollections.observableArrayList(allStudiesWithStudents);
-        studiesTable.setItems(observableStudies);
+            studyList.setAll(allStudiesWithStudents);
+            studiesTable.setItems(studyList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setDataService(DataService dataService) {
@@ -194,58 +200,157 @@ public class MainSceneController {
         Study selectedStudy = studiesTable.getSelectionModel().getSelectedItem();
 
         if (selectedStudy != null) {
-            // Populate Study details
             labelStudyProgramme.setText(selectedStudy.getStudyProgramme());
-            labelGraduate.setText(selectedStudy.getDegree());
+            labelGraduate.setText(selectedStudy.getDegree() + " " + selectedStudy.getStudyStatus());
             labelStudyStartDate.setText(selectedStudy.getStudyAdmission().getDate());
             labelCountYears.setText(String.valueOf(selectedStudy.getStandardLength()));
-            labelStartStudy.setText(selectedStudy.getStudyAdmission().getDate());
-            //labelFinishStudy.setText(selectedStudy.getStudyEnd());
+            if (selectedStudy.getAcademicYears() != null && !selectedStudy.getAcademicYears().isEmpty()) {
+                String firstAcademicYearStartDate = selectedStudy.getAcademicYears()
+                        .get(0)
+                        .getRegistrationDate();
+                labelStartStudy.setText(firstAcademicYearStartDate != null ? firstAcademicYearStartDate : "Unknown");
+            } else {
+                labelStartStudy.setText("Unknown");
+            }
+            String finishDate = getNewestFinishDate(selectedStudy);
+            labelFinishStudy.setText(finishDate);
 
-            // Populate Student details (nested in Study)
+
             Student student = selectedStudy.getStudent();
             if (student != null) {
+                /*
+                FixLabelDetails.setText("DETAIL");
+                FixLabelFirstName.setText("Meno");
+                FixLabelLastName.setText("Priezvisko");
+                FixLabelBirthDate.setText("Dátum narodenia");
+                FixLabelStudyData.setText("ŠTÚDIJNÉ ÚDAJE");
+                FixLabelPersonalData.setText("OSOBNÉ ÚDAJE");
+                FixLabelGraduate.setText("Status štúdia");
+                FixLabelStudyStart.setText("Začiatok štúdia");
+                FixLabelStudyProgramme.setText("Študijný program");
+                FixLabelYears.setText("Priebeh štúdia / akademické roky");
+                ButtonSocialnaPoistovna.setVisible(true);
+                ButtonVypisZnamok.setVisible(true);
+                ButtonDiplom.setVisible(true);
+                FixLabelFrom.setText("Od");
+                FixLabelCountYears.setText("Doba štúdia študenta: ");
+                FixLabelTo.setText("Do");
+
+                 */
                 labelFirstName.setText(student.getFirstName());
                 labelLastName.setText(student.getLastName());
                 labelBirthDate.setText(student.getBirthDate());
+
+                eventsList.clear();
+
+                // prerusenie
+                if (selectedStudy.getInterruptions() != null && !selectedStudy.getInterruptions().isEmpty()) {
+                    System.out.println("Interruptions: " + selectedStudy.getInterruptions());
+                    for (Interruption interruption : selectedStudy.getInterruptions()) {
+                        if (interruption.getReason() != null && !interruption.getReason().contains("PRERUŠENIE")) {
+                            System.out.println("aj tu bolo");
+                            String combinedReason = "PRERUŠENIE: " + interruption.getReason();
+                            interruption.setReason(combinedReason);
+                        }
+                        eventsList.add(new Event(interruption));
+                    }
+                }
+
+                // studium zahranicie
+                if (selectedStudy.getAbroadProgrammes() != null && !selectedStudy.getAbroadProgrammes().isEmpty()) {
+                    System.out.println("Abroad Programs: " + selectedStudy.getAbroadProgrammes());
+                    for (AbroadProgramme abroadProgramm : selectedStudy.getAbroadProgrammes()) {
+                        if (abroadProgramm.getUniversity() != null && !abroadProgramm.getUniversity().contains("ERAZMUS")) {
+                            String combinedReason = "ERAZMUS: " + abroadProgramm.getUniversity();
+                            abroadProgramm.setUniversity(combinedReason);
+                        }
+                        eventsList.add(new Event(abroadProgramm));
+                    }
+                }
+                eventsTable.setItems(eventsList);
+
+                if (eventsList.isEmpty()) {
+                    eventsTable.setVisible(false);
+                    System.out.println("xxx");
+                } else {
+                    eventsTable.setVisible(true);
+                    System.out.println("yyy");
+                }
+
             } else {
-                // Clear Student-related labels if no Student is linked
-                labelFirstName.setText("Unknown");
-                labelLastName.setText("Unknown");
-                labelBirthDate.setText("Unknown");
+                clearLabels();
             }
         } else {
-            // Clear all labels if no Study is selected
             clearLabels();
         }
     }
 
-    private void clearLabels() {
-        labelStudyProgramme.setText("");
-        labelGraduate.setText("");
-        labelStudyStartDate.setText("");
-        labelCountYears.setText("");
-        labelStartStudy.setText("");
-        labelFinishStudy.setText("");
+    private String getNewestFinishDate(Study study) {
+        if (study == null || study.getStudyEnd() == null) {
+            return "Unknown";
+        }
 
-        labelFirstName.setText("");
-        labelLastName.setText("");
-        labelBirthDate.setText("");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate newestDate = null;
+
+        // Collect all dates
+        List<String> allDates = new ArrayList<>();
+
+        // Add state exam dates
+        if (study.getStudyEnd().getStateExams() != null) {
+            for (Study.StudyEnd.StateExam exam : study.getStudyEnd().getStateExams()) {
+                System.out.println("StateExam found: " + exam);
+                if (exam.getDate() != null && !exam.getDate().isEmpty()) {
+                    System.out.println("Adding StateExam date: " + exam.getDate());
+                    allDates.add(exam.getDate());
+                }
+            }
+        }
+
+        // Add thesis defense date
+        if (study.getStudyEnd().getThesis() != null) {
+            String thesisDate = study.getStudyEnd().getThesis().getDefenceDate();
+            if (thesisDate != null && !thesisDate.isEmpty()) {
+                allDates.add(thesisDate);
+            }
+        }
+
+        // Debug: Print collected dates
+        System.out.println("Collected dates: " + allDates);
+
+        // Parse and find the newest date
+        for (String dateString : allDates) {
+            try {
+                LocalDate parsedDate = LocalDate.parse(dateString, dateFormatter);
+                System.out.println("Parsed date: " + parsedDate);
+                if (newestDate == null || parsedDate.isAfter(newestDate)) {
+                    newestDate = parsedDate;
+                    System.out.println("Updated newest date: " + newestDate);
+                }
+            } catch (Exception e) {
+                System.err.println("Invalid date format: " + dateString);
+                e.printStackTrace();
+            }
+        }
+
+        // Return the newest date as a string or "Unknown" if none found
+        return newestDate != null ? newestDate.format(dateFormatter) : "Unknown";
     }
 
     public void handleSearch(ActionEvent actionEvent) {
-        String firstName = firstNameField.getText().trim().toLowerCase();
-        String secondName = secondNameField.getText().trim().toLowerCase();
-        String birthPlace = birthPlaceField.getText().trim().toLowerCase();
-        String birthDate = birthDateField.getValue() != null ? birthDateField.getValue().toString() : "";
-        //String secondOriginName = secondOriginNameField.getText().trim().toLowerCase(); // chyba v students xml
+        String firstName = normalizeInput(firstNameField.getText());
+        String secondName = normalizeInput(secondNameField.getText());
+        String birthPlace = normalizeInput(birthPlaceField.getText());
+        String birthDate = birthDateField.getValue() != null
+                ? birthDateField.getValue().format(INPUT_DATE_FORMATTER)
+                : "";
 
-        List<Study> filteredStudies = dataService.getStudies().getStudies().stream()
+        List<Study> filteredStudies = studyList.stream()
                 .filter(study -> {
                     Student student = study.getStudent();
-                    return (firstName.isEmpty() || (student != null && student.getFirstName().toLowerCase().contains(firstName))) &&
-                            (secondName.isEmpty() || (student != null && student.getLastName().toLowerCase().contains(secondName))) &&
-                            (birthPlace.isEmpty() || (student != null && student.getBirthPlace().toLowerCase().contains(birthPlace))) &&
+                    return (firstName.isEmpty() || (student != null && normalizeInput(student.getFirstName()).contains(firstName))) &&
+                            (secondName.isEmpty() || (student != null && normalizeInput(student.getLastName()).contains(secondName))) &&
+                            (birthPlace.isEmpty() || (student != null && normalizeInput(student.getBirthPlace()).contains(birthPlace))) &&
                             (birthDate.isEmpty() || (student != null && student.getBirthDate().equals(birthDate)));
                 })
                 .collect(Collectors.toList());
@@ -254,6 +359,49 @@ public class MainSceneController {
     }
 
     public void handleReset(ActionEvent actionEvent) {
+        studiesTable.getSelectionModel().clearSelection();
+        firstNameField.clear();
+        secondNameField.clear();
+        secondOriginNameField.clear();
+        birthDateField.setValue(null);
+        birthPlaceField.clear();
+        labelFirstName.setText("");
+        labelLastName.setText("");
+        labelBirthDate.setText("");
+        //FixLabelYears.setText("");
+        labelStudyStartDate.setText("");
+        labelStudyProgramme.setText("");
+        labelGraduate.setText("");
+        labelCountYears.setText("");
+        //FixLabelFrom.setText("");
+        //FixLabelCountYears.setText("");
+        //FixLabelTo.setText("");
+        labelCountYears.setText("");
+        labelStartStudy.setText("");
+        labelFinishStudy.setText("");
+        //ButtonSocialnaPoistovna.setVisible(false);
+        //ButtonVypisZnamok.setVisible(false);
+        //ButtonDiplom.setVisible(false);
+        //eventsTable.setVisible(false);
+        eventsList.clear();
+        loadAllStudies();
+    }
 
+    private void clearLabels() {
+        Label[] labels = {
+                labelFirstName, labelLastName, labelBirthDate, FixLabelYears, labelStudyStartDate,
+                labelGraduate
+        };
+
+        for (Label label : labels) {
+            label.setText("");
+        }
+    }
+
+    private String normalizeInput(String input) {
+        return Normalizer.normalize(input != null ? input.trim().toLowerCase() : "", Normalizer.Form.NFD)
+                .replaceAll("[^\\p{ASCII}]", "");
     }
 }
+
+
