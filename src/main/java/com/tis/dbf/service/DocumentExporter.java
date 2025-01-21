@@ -11,6 +11,7 @@ import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Cell;
+import com.tis.dbf.model.AcademicYear;
 import com.tis.dbf.model.Interruption;
 import com.tis.dbf.model.Student;
 import com.tis.dbf.model.Study;
@@ -40,6 +41,7 @@ public class DocumentExporter {
             Document document = new Document(pdf);
 
             // Create fonts for this document
+            // TODO find correct encoding
             PdfFont boldFont = PdfFontFactory.createFont("Times-Bold", "ISO-8859-2");
             PdfFont italicFont = PdfFontFactory.createFont("Times-Italic", "ISO-8859-2");
             PdfFont regularFont = PdfFontFactory.createFont("Times-Roman", "ISO-8859-2");
@@ -60,30 +62,38 @@ public class DocumentExporter {
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
             studyTable.addCell(new Cell().add(new Paragraph(study.getStudyProgramme()).setMultipliedLeading(0.8f)
                     .setFont(boldFont)).setBorder(Border.NO_BORDER));
+
             studyTable.addCell(new Cell().add(new Paragraph("Forma štúdia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
             studyTable.addCell(new Cell().add(new Paragraph(study.getForm()).setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
+
             studyTable.addCell(new Cell().add(new Paragraph("Začiatok štúdia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-//            studyTable.addCell(new Cell().add(new Paragraph(study.getStudyStartYear()).setMultipliedLeading(0.8f)
-//                    .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph("study.getStudyStartYear()").setMultipliedLeading(0.8f)
+            studyTable.addCell(new Cell().add(new Paragraph(study.getAcademicYears().get(0).getRegistrationDate()).setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
+
             studyTable.addCell(new Cell().add(new Paragraph("Koniec štúdia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-//            studyTable.addCell(new Cell().add(new Paragraph(study.getStudyEndYear()).setMultipliedLeading(0.8f)
-//                    .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph("study.getStudyEndYear()").setMultipliedLeading(0.8f)
-                    .setFont(regularFont)).setBorder(Border.NO_BORDER));
+            List<Study.StudyEnd.StateExam> stateExams = study.getStudyEnd().getStateExams();
+            if (!stateExams.isEmpty()) {
+                studyTable.addCell(new Cell().add(new Paragraph(stateExams.get(stateExams.size() - 1).getDate()).setMultipliedLeading(0.8f)
+                        .setFont(regularFont)).setBorder(Border.NO_BORDER));
+            } else {
+                // TODO - what to do in this case?
+                studyTable.addCell(new Cell().add(new Paragraph("štúdium neukončné štátnou skúškou").setMultipliedLeading(0.8f)
+                        .setFont(regularFont)).setBorder(Border.NO_BORDER));
+            }
             studyTable.addCell(new Cell().add(new Paragraph("Stupeň štúdia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
             studyTable.addCell(new Cell().add(new Paragraph(study.getDegree()).setMultipliedLeading(0.8f)
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
+
             studyTable.addCell(new Cell().add(new Paragraph("Doba štúdia").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph(String.valueOf(getStudyLength()) + " need to calculate").setMultipliedLeading(0.8f)
+            studyTable.addCell(new Cell().add(new Paragraph(String.valueOf(getStudyLength()) + " need to calculate").setMultipliedLeading(0.8f) // TODO need to calculate
                     .setFont(regularFont)).setBorder(Border.NO_BORDER));
+
             studyTable.addCell(new Cell().add(new Paragraph("Spôsob ukončenia:").setMultipliedLeading(0.8f)
                     .setFont(italicFont)).setBorder(Border.NO_BORDER));
             studyTable.addCell(new Cell().add(new Paragraph("PLACEHOLDER").setMultipliedLeading(0.8f)
@@ -102,10 +112,6 @@ public class DocumentExporter {
                         study.getInterruptions().get(i).getReason()).setFont(regularFont)
                         .setMultipliedLeading(0.8f));
             }
-//            document.add(new Paragraph("01.09.2015 - 31.08.2016, materská dovolenka").setFont(regularFont)
-//                    .setMultipliedLeading(0.8f));
-//            document.add(new Paragraph("01.08.2019 - 31.08.2021, materská dovolenka").setFont(regularFont)
-//                    .setMultipliedLeading(0.8f));
 
             document.close();
 
@@ -230,6 +236,21 @@ public class DocumentExporter {
         study.setFaculty("Fakulta Socialnych a Ekonomickych Vied");
         study.setForm("Denná");
         study.setStudyField("Informatika");
+
+        AcademicYear a1 = new AcademicYear();
+        AcademicYear a2 = new AcademicYear();
+        a1.setRegistrationDate("01.09.2015");
+        a1.setYears("2015/2016");
+        a2.setRegistrationDate("01.09.2016");
+        a2.setYears("2016/2017");
+
+        Study.StudyEnd.StateExam SE1 = new Study.StudyEnd.StateExam();
+        SE1.setDate("01.06.2019");
+        Study.StudyEnd studyEnd = new Study.StudyEnd();
+        studyEnd.setStateExams(List.of(SE1));
+        study.setStudyEnd(studyEnd);
+
+        study.setAcademicYears(List.of(a1, a2));
         DocumentExporter exporter = new DocumentExporter(student, study);
         exporter.socialInsurance();
         exporter.markExport();
