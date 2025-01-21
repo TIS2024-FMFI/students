@@ -2,25 +2,25 @@ package com.tis.dbf.service;
 
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.Border;
+import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Cell;
-import com.tis.dbf.model.AcademicYear;
-import com.tis.dbf.model.Interruption;
-import com.tis.dbf.model.Student;
-import com.tis.dbf.model.Study;
+import com.itextpdf.layout.properties.UnitValue;
+import com.tis.dbf.model.*;
 
 import java.util.List;
 
 public class DocumentExporter {
-    private static Student student = null;
-    private static Study study = null;
+    private static Student student;
+    private static Study study;
 
     public DocumentExporter(Student student, Study study) {
         DocumentExporter.student = student;
@@ -35,89 +35,67 @@ public class DocumentExporter {
             return;
         }
 
-        try {
-            PdfWriter writer = new PdfWriter(pdfPath);
-            PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf);
+        try (PdfWriter writer = new PdfWriter(pdfPath);
+             PdfDocument pdf = new PdfDocument(writer);
+             Document document = new Document(pdf, PageSize.A4)) {
 
             // Create fonts for this document
             // TODO find correct encoding
-            PdfFont boldFont = PdfFontFactory.createFont("Times-Bold", "ISO-8859-2");
-            PdfFont italicFont = PdfFontFactory.createFont("Times-Italic", "ISO-8859-2");
-            PdfFont regularFont = PdfFontFactory.createFont("Times-Roman", "ISO-8859-2");
+            PdfFont boldFont = PdfFontFactory.createFont("Times-Bold", "ISO-8859-1");
+            PdfFont italicFont = PdfFontFactory.createFont("Times-Italic", "ISO-8859-1");
+            PdfFont regularFont = PdfFontFactory.createFont("Times-Roman", "ISO-8859-1");
 
             // Header
             header(document, boldFont, regularFont);
 
+            document.add(new Paragraph("UKONČENÉ ŠTÚDIUM\n\n")
+                    .setTextAlignment(TextAlignment.CENTER)
+                    .setFont(boldFont)
+                    .setFontSize(12));
 
-            document.add(new Paragraph("UKONČENÉ ŠTÚDIUM\n\n").setTextAlignment(TextAlignment.CENTER).setFont(boldFont).setFontSize(12));
             // Student info
             studentTable(document, boldFont, regularFont);
 
-            // Table for study program details
-            float[] columnWidthsStudies = {100f, 300f};
-            Table studyTable = new Table(columnWidthsStudies);
-
-            studyTable.addCell(new Cell().add(new Paragraph("Študijný program:").setMultipliedLeading(0.8f)
-                    .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph(study.getStudyProgramme()).setMultipliedLeading(0.8f)
-                    .setFont(boldFont)).setBorder(Border.NO_BORDER));
-
-            studyTable.addCell(new Cell().add(new Paragraph("Forma štúdia:").setMultipliedLeading(0.8f)
-                    .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph(study.getForm()).setMultipliedLeading(0.8f)
-                    .setFont(regularFont)).setBorder(Border.NO_BORDER));
-
-            studyTable.addCell(new Cell().add(new Paragraph("Začiatok štúdia:").setMultipliedLeading(0.8f)
-                    .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph(study.getAcademicYears().get(0).getRegistrationDate()).setMultipliedLeading(0.8f)
-                    .setFont(regularFont)).setBorder(Border.NO_BORDER));
-
-            studyTable.addCell(new Cell().add(new Paragraph("Koniec štúdia:").setMultipliedLeading(0.8f)
-                    .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            List<Study.StudyEnd.StateExam> stateExams = study.getStudyEnd().getStateExams();
-            if (!stateExams.isEmpty()) {
-                studyTable.addCell(new Cell().add(new Paragraph(stateExams.get(stateExams.size() - 1).getDate()).setMultipliedLeading(0.8f)
-                        .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            } else {
-                // TODO - what to do in this case?
-                studyTable.addCell(new Cell().add(new Paragraph("štúdium neukončné štátnou skúškou").setMultipliedLeading(0.8f)
-                        .setFont(regularFont)).setBorder(Border.NO_BORDER));
-            }
-            studyTable.addCell(new Cell().add(new Paragraph("Stupeň štúdia:").setMultipliedLeading(0.8f)
-                    .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph(study.getDegree()).setMultipliedLeading(0.8f)
-                    .setFont(regularFont)).setBorder(Border.NO_BORDER));
-
-            studyTable.addCell(new Cell().add(new Paragraph("Doba štúdia").setMultipliedLeading(0.8f)
-                    .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph(String.valueOf(getStudyLength()) + " need to calculate").setMultipliedLeading(0.8f) // TODO need to calculate
-                    .setFont(regularFont)).setBorder(Border.NO_BORDER));
-
-            studyTable.addCell(new Cell().add(new Paragraph("Spôsob ukončenia:").setMultipliedLeading(0.8f)
-                    .setFont(italicFont)).setBorder(Border.NO_BORDER));
-            studyTable.addCell(new Cell().add(new Paragraph("PLACEHOLDER").setMultipliedLeading(0.8f)
-                    .setFont(regularFont)).setBorder(Border.NO_BORDER));
-
-            studyTable.setBorder(Border.NO_BORDER);
-            document.add(studyTable);
+            // Study program details
+            document.add(createStudyTable(boldFont, italicFont, regularFont));
 
             // Interruptions
-            document.add(new Paragraph("\nPrerušenia:").setFont(boldFont)
-                    .setMultipliedLeading(0.8f));
-
-            for (int i = 0; i < study.getInterruptions().size(); i++) {
-                document.add(new Paragraph(study.getInterruptions().get(i).getStartDate() + " - " +
-                        study.getInterruptions().get(i).getEndDate() + ", " +
-                        study.getInterruptions().get(i).getReason()).setFont(regularFont)
-                        .setMultipliedLeading(0.8f));
+            document.add(new Paragraph("\nPrerušenia:").setFont(boldFont).setMultipliedLeading(0.8f));
+            for (Interruption interruption : study.getInterruptions()) {
+                document.add(new Paragraph(interruption.getStartDate() + " - " +
+                        interruption.getEndDate() + ", " +
+                        interruption.getReason()).setFont(regularFont).setMultipliedLeading(0.8f));
             }
-
-            document.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static Table createStudyTable(PdfFont boldFont, PdfFont italicFont, PdfFont regularFont) {
+        float[] columnWidths = {100f, 300f};
+        Table table = new Table(columnWidths);
+
+        addTableRow(table, "Študijný program:", study.getStudyProgramme(), italicFont, boldFont);
+        addTableRow(table, "Forma štúdia:", study.getForm(), italicFont, regularFont);
+        addTableRow(table, "Začiatok štúdia:", study.getAcademicYears().get(0).getRegistrationDate(), italicFont, regularFont);
+        addTableRow(table, "Koniec štúdia:", getStudyEndDate(), italicFont, regularFont);
+        addTableRow(table, "Stupeň štúdia:", study.getDegree(), italicFont, regularFont);
+        addTableRow(table, "Doba štúdia:", getStudyLength() + " need to calculate", italicFont, regularFont); // TODO need to calculate
+        addTableRow(table, "Spôsob ukončenia:", "PLACEHOLDER", italicFont, regularFont);
+
+        table.setBorder(Border.NO_BORDER);
+        return table;
+    }
+
+    private static void addTableRow(Table table, String label, String value, PdfFont labelFont, PdfFont valueFont) {
+        table.addCell(new Cell().add(new Paragraph(label).setMultipliedLeading(0.8f).setFont(labelFont)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph(value).setMultipliedLeading(0.8f).setFont(valueFont)).setBorder(Border.NO_BORDER));
+    }
+
+    private static String getStudyEndDate() {
+        List<Study.StudyEnd.StateExam> stateExams = study.getStudyEnd().getStateExams();
+        return stateExams.isEmpty() ? "štúdium neukončné štátnou skúškou" : stateExams.get(stateExams.size() - 1).getDate();
     }
 
     public static void markExport() {
@@ -128,38 +106,82 @@ public class DocumentExporter {
             return;
         }
 
-        try {
-            PdfWriter writer = new PdfWriter(pdfPath);
-            PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf);
+        try (PdfWriter writer = new PdfWriter(pdfPath);
+             PdfDocument pdf = new PdfDocument(writer);
+             Document document = new Document(pdf, PageSize.A4)) {
 
-            // Create fonts for this document
             PdfFont boldFont = PdfFontFactory.createFont("Times-Bold", "ISO-8859-2");
             PdfFont italicFont = PdfFontFactory.createFont("Times-Italic", "ISO-8859-2");
             PdfFont regularFont = PdfFontFactory.createFont("Times-Roman", "ISO-8859-2");
 
-            // Header
             header(document, boldFont, regularFont);
 
-            document.add(new Paragraph("VÝPIS ZNÁMOK\n\n").setTextAlignment(TextAlignment.CENTER).setFont(boldFont).setFontSize(12));
+            document.add(new Paragraph("VÝPIS ZNÁMOK\n\n")
+                    .setTextAlignment(TextAlignment.CENTER)
+                    .setFont(boldFont)
+                    .setFontSize(12));
 
-            // Student info
             studentTable(document, boldFont, regularFont);
 
             document.add(new Paragraph(new Text("Odbor: ").setFont(boldFont))
-                    .add(new Text(study.getStudyField()).setFont(regularFont))
-                    .setMultipliedLeading(0.8f));
+                    .add(new Text(study.getStudyField()).setFont(regularFont)).setMultipliedLeading(0.8f));
 
             document.add(new Paragraph(new Text("Zameranie: ").setFont(boldFont))
-                    .add(new Text(study.getStudyProgramme()).setFont(regularFont))
-                    .setMultipliedLeading(0.8f));
+                    .add(new Text(study.getStudyProgramme()).setFont(regularFont)).setMultipliedLeading(0.8f));
 
-            document.close();
+            // Table for study subjects
+            Table table = new Table(5);
+            table.setWidth(UnitValue.createPercentValue(100));
 
+            // Adding headers to the table
+            String[] headers = {"Zimný + Letný semester:", "Povinnosť:", "Dátum:", "Výsledok:", "Termín:"};
+            for (String headerText : headers) {
+                table.addCell(createTableCell(headerText, italicFont, true));
+            }
+
+            // Populate table with academic years and subjects
+            for (AcademicYear year : study.getAcademicYears()) {
+                for (Subject subject : year.getSubjects().getSubjectList()) {
+                    table.addCell(createTableCell(stringSubjectName(subject), italicFont, false));
+
+                    table.addCell(createTableCell(subject.getId1(), regularFont, false)
+                            .setTextAlignment(TextAlignment.CENTER));
+
+                    table.addCell(createTableCell("placeH", regularFont, false) // TODO: replace with actual date
+                            .setTextAlignment(TextAlignment.CENTER));
+
+                    table.addCell(createTableCell("placeH", regularFont, false) // TODO: replace with actual result
+                            .setTextAlignment(TextAlignment.CENTER));
+
+                    table.addCell(createTableCell("placeH", regularFont, false) // TODO: replace with actual term
+                            .setTextAlignment(TextAlignment.CENTER));
+                }
+            }
+
+            // Add bottom border to the table
+            for (int i = 0; i < 5; i++) {
+                table.addCell(new Cell().setBorder(Border.NO_BORDER).setBorderTop(new SolidBorder(1)));
+            }
+
+            document.add(table);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    private static String stringSubjectName(Subject subject) {
+        return subject.getSlovakName() + (subject.getPartName() != null ? " " + subject.getPartName() : "");
+    }
+
+    private static Cell createTableCell(String content, PdfFont font, boolean isHeader) {
+        Cell cell = new Cell().add(new Paragraph(content).setMultipliedLeading(0.8f).setFont(font));
+        cell.setBorder(Border.NO_BORDER);
+        if (isHeader) {
+            cell.setBorderBottom(new SolidBorder(1));
+        }
+        return cell;
+    }
+
 
     private static void header(Document document, PdfFont boldFont, PdfFont regularFont) {
         document.add(new Paragraph("Univerzita Komenského v Bratislave")
@@ -173,40 +195,32 @@ public class DocumentExporter {
     }
 
     private static void studentTable(Document document, PdfFont boldFont, PdfFont regularFont) {
-        // Student info
         float[] columnWidthsStudent = {300f, 200f};
-        Table studentTable = new Table(columnWidthsStudent);
-        // meno
-        studentTable.addCell(new Cell().add(new Paragraph(new Text("Študent: ").setFont(boldFont))
-                .add(new Text(student.getFullName()).setFont(regularFont))
-                .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
+        Table table = new Table(columnWidthsStudent);
 
-        if (!student.getLastName().equals(student.getBirthName())) {      // ak sa rodne priezvisko nerovna rodnemu priezvisku
-            if (student.getSex().equals("muž")) {                           // format pre muza
-                // rodeny
-                studentTable.addCell(new Cell().add(new Paragraph(new Text("Rodený: ").setFont(boldFont))
-                        .add(new Text(student.getBirthName()).setFont(regularFont))
-                        .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
-            } else {                                                        // format pre zenu
-                // rodena
-                studentTable.addCell(new Cell().add(new Paragraph(new Text("Rodená: ").setFont(boldFont))
-                        .add(new Text(student.getBirthName()).setFont(regularFont))
-                        .setMultipliedLeading(0.8f)).setBorder(Border.NO_BORDER));
-            }
+        table.addCell(new Cell().add(new Paragraph(new Text("Študent: ").setFont(boldFont))
+                        .add(new Text(student.getFullName()).setFont(regularFont)).setMultipliedLeading(0.8f))
+                .setBorder(Border.NO_BORDER));
+
+        if (!student.getLastName().equals(student.getBirthName())) {
+            String label = student.getSex().equals("muž") ? "Rodený: " : "Rodená: ";
+            table.addCell(new Cell().add(new Paragraph(new Text(label).setFont(boldFont))
+                            .add(new Text(student.getBirthName()).setFont(regularFont)).setMultipliedLeading(0.8f))
+                    .setBorder(Border.NO_BORDER));
         }
-        studentTable.setBorder(Border.NO_BORDER);
-        document.add(studentTable);
 
-        // datum a miesto narodenia
+        table.setBorder(Border.NO_BORDER);
+        document.add(table);
+
         document.add(new Paragraph(new Text("Dátum a miesto narodenia: ").setFont(boldFont))
-                .add(new Text(student.getBirthDate() + " " + student.getBirthPlace() + "\n\n").setFont(regularFont))
+                .add(new Text(student.getBirthDate() + ", " + student.getBirthPlace() + "\n\n").setFont(regularFont))
                 .setMultipliedLeading(0.8f));
-
     }
 
     private static int getStudyLength() {
-        return 0;
+        return 0; // TODO Placeholder value
     }
+
 
     public static void main(String[] args) {
         Student student = new Student();
@@ -249,6 +263,39 @@ public class DocumentExporter {
         Study.StudyEnd studyEnd = new Study.StudyEnd();
         studyEnd.setStateExams(List.of(SE1));
         study.setStudyEnd(studyEnd);
+
+
+        Subject subject1 = new Subject();
+        subject1.setSlovakName("Calculus");
+        subject1.setPartName("1");
+        subject1.setId1("A");
+
+
+        Subject subject2 = new Subject();
+        subject2.setSlovakName("Introduction to Programming");
+        subject2.setId1("B");
+
+        Subject subject3 = new Subject();
+        subject3.setSlovakName("Physics");
+        subject3.setPartName("1");
+        subject3.setId1("A");
+
+        Subject subject4 = new Subject();
+        subject4.setSlovakName("English Composition");
+        subject4.setId1("C");
+
+        Subjects subjects1 = new Subjects();
+        subjects1.setSubjectList(List.of(subject1, subject2));
+
+
+        Subjects subjects2 = new Subjects();
+        subjects2.setSubjectList(List.of(subject3, subject4));
+
+        a1.setYears("2023/2024");
+        a1.setSubjects(subjects1);
+
+        a2.setYears("2024/2025");
+        a2.setSubjects(subjects2);
 
         study.setAcademicYears(List.of(a1, a2));
         DocumentExporter exporter = new DocumentExporter(student, study);
