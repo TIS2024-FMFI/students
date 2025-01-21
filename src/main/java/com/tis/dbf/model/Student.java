@@ -5,6 +5,7 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
+import lombok.Getter;
 
 @Data
 @XmlRootElement(name = "Student")
@@ -17,6 +18,7 @@ public class Student {
     @XmlElement(name = "Name.Given")
     private String firstName;
     @XmlElement(name = "Name.Family")
+    @Getter
     private String lastName;
     @XmlElement(name = "Birth.Number")
     private String birthNumber;
@@ -26,8 +28,12 @@ public class Student {
     private String birthDate;
     @XmlElement(name = "Birth.Place")
     private String birthPlace;
+    @Getter
     @XmlElement(name = "Birth.Country")
     private String birthCountry;
+    @XmlElement(name = "Birth.Name")
+    @Getter
+    private String birthName;
 
     @Override
     public String toString() {
