@@ -1,8 +1,8 @@
 package others.model;
 
 public class Event {
-    private Interruption interruption;
-    private AbroadProgramme abroadProgramme;
+    private final Interruption interruption;
+    private final AbroadProgramme abroadProgramme;
 
     // Constructor for Interruption
     public Event(Interruption interruption) {

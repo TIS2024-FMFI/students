@@ -3,8 +3,6 @@ package others.model;
 import jakarta.xml.bind.annotation.*;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AcademicYear {

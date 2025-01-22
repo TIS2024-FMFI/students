@@ -16,12 +16,12 @@ import java.util.Properties;
 
 public class ServerConnection {
 
-    private String username = "java";
-    // doplnit sem udaje
-    private String password = "";
+    private final String username;
 
-    private String host = "";
-    private int port = 0;
+    private final String password;
+
+    private final String host;
+    private final int port;
 
     public ServerConnection(String username, String password, String host, int port) {
         this.username = username;

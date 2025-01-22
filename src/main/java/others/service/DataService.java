@@ -30,17 +30,7 @@ public class DataService {
         return instance;
     }
 
-    public String getSharedData() {
-        return sharedData;
-    }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setSharedData(String sharedData) {
-        this.sharedData = sharedData;
-    }
 
     public void setUsername(String username_input) {
         username = username_input;
@@ -50,9 +40,6 @@ public class DataService {
         this.serverPassword = server_password;
     }
 
-    public String getServerPassword() {
-        return this.serverPassword;
-    }
 
     public void startDownload() throws JSchException, SftpException, JAXBException {
         ServerConnection serverConnection = new ServerConnection("java", serverPassword, "student.int.uniba.sk", 22);

@@ -16,11 +16,4 @@ public class StudySubjects {
 
     @XmlElement(name = "Subject")
     private List<StudySubject.SubjectDetail> studySubjectList = new ArrayList<>();
-
-    /**
-     * Returns a list of all SubjectDetail objects.
-     */
-    public List<StudySubject.SubjectDetail> getSubjects() {
-        return studySubjectList == null ? new ArrayList<>() : studySubjectList;
-    }
 }

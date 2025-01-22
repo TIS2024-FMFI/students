@@ -266,11 +266,7 @@ public class MainSceneController {
                 }
                 eventsTable.setItems(eventsList);
 
-                if (eventsList.isEmpty()) {
-                    eventsTable.setVisible(false);
-                } else {
-                    eventsTable.setVisible(true);
-                }
+                eventsTable.setVisible(!eventsList.isEmpty());
 
             } else {
                 clearLabels();
@@ -327,7 +323,7 @@ public class MainSceneController {
 
     private void clearLabels() {
         Label[] labels = {
-                labelFirstName, labelLastName, labelBirthDate, FixLabelYears, labelStudyStartDate,
+                labelFirstName, labelLastName, labelBirthDate, labelStudyStartDate,
                 labelGraduate
         };
 
