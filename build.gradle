@@ -7,7 +7,7 @@ plugins {
 }
 
 application {
-    mainClass = 'com.tis.dbf.JavaFxApp'
+    mainClass = 'others.JavaFxApp'
 }
 
 group = 'com.tis'
@@ -30,7 +30,6 @@ repositories {
 }
 
 dependencies {
-    //implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.openjfx:javafx-controls:17.0.8'
     implementation 'org.openjfx:javafx-fxml:17.0.8'
     implementation 'org.openjfx:javafx-graphics:17.0.8'
