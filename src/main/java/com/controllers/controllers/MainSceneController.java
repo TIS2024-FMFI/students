@@ -2,6 +2,7 @@ package com.controllers.controllers;
 
 import com.tis.dbf.model.*;
 import com.tis.dbf.service.DataService;
+import com.tis.dbf.service.DocumentExporter;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -212,7 +213,7 @@ public class MainSceneController {
             } else {
                 labelStartStudy.setText("Unknown");
             }
-            String finishDate = getNewestFinishDate(selectedStudy);
+            String finishDate = selectedStudy.getNewestFinishDate();
             labelFinishStudy.setText(finishDate);
 
 
@@ -285,57 +286,6 @@ public class MainSceneController {
         }
     }
 
-    private String getNewestFinishDate(Study study) {
-        if (study == null || study.getStudyEnd() == null) {
-            return "Unknown";
-        }
-
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        LocalDate newestDate = null;
-
-        // Collect all dates
-        List<String> allDates = new ArrayList<>();
-
-        // Add state exam dates
-        if (study.getStudyEnd().getStateExams() != null) {
-            for (Study.StudyEnd.StateExam exam : study.getStudyEnd().getStateExams()) {
-                System.out.println("StateExam found: " + exam);
-                if (exam.getDate() != null && !exam.getDate().isEmpty()) {
-                    System.out.println("Adding StateExam date: " + exam.getDate());
-                    allDates.add(exam.getDate());
-                }
-            }
-        }
-
-        // Add thesis defense date
-        if (study.getStudyEnd().getThesis() != null) {
-            String thesisDate = study.getStudyEnd().getThesis().getDefenceDate();
-            if (thesisDate != null && !thesisDate.isEmpty()) {
-                allDates.add(thesisDate);
-            }
-        }
-
-        // Debug: Print collected dates
-        System.out.println("Collected dates: " + allDates);
-
-        // Parse and find the newest date
-        for (String dateString : allDates) {
-            try {
-                LocalDate parsedDate = LocalDate.parse(dateString, dateFormatter);
-                System.out.println("Parsed date: " + parsedDate);
-                if (newestDate == null || parsedDate.isAfter(newestDate)) {
-                    newestDate = parsedDate;
-                    System.out.println("Updated newest date: " + newestDate);
-                }
-            } catch (Exception e) {
-                System.err.println("Invalid date format: " + dateString);
-                e.printStackTrace();
-            }
-        }
-
-        // Return the newest date as a string or "Unknown" if none found
-        return newestDate != null ? newestDate.format(dateFormatter) : "Unknown";
-    }
 
     public void handleSearch(ActionEvent actionEvent) {
         String firstName = normalizeInput(firstNameField.getText());
@@ -401,6 +351,16 @@ public class MainSceneController {
     private String normalizeInput(String input) {
         return Normalizer.normalize(input != null ? input.trim().toLowerCase() : "", Normalizer.Form.NFD)
                 .replaceAll("[^\\p{ASCII}]", "");
+    }
+
+    public void handleMarkExport(ActionEvent actionEvent) {
+        DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem());
+        documentExporter.markExport();
+    }
+
+    public void handleSocialInsuranceExport(ActionEvent actionEvent) {
+        DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem());
+        documentExporter.socialInsurance();
     }
 }
 

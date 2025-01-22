@@ -243,7 +243,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Button fx:id="ButtonVypisZnamok" defaultButton="true" mnemonicParsing="false" prefHeight="42.0" prefWidth="233.0" style="-fx-background-color: ORANGE;" text="VÝPIS ZNÁMOK" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                        <Button fx:id="ButtonVypisZnamok" onAction="#handleMarkExport" defaultButton="true" mnemonicParsing="false" prefHeight="42.0" prefWidth="233.0" style="-fx-background-color: ORANGE;" text="VÝPIS ZNÁMOK" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -251,7 +251,7 @@
                               <ColorAdjust brightness="-0.17" contrast="1.0" hue="-1.0" saturation="0.19" />
                            </effect>
                         </Button>
-                        <Button fx:id="ButtonSocialnaPoistovna" defaultButton="true" mnemonicParsing="false" prefHeight="39.0" prefWidth="234.0" style="-fx-background-color: green;" text="SOCIÁLNA POISŤOVŇA" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                        <Button fx:id="ButtonSocialnaPoistovna" onAction="#handleSocialInsuranceExport" defaultButton="true" mnemonicParsing="false" prefHeight="39.0" prefWidth="234.0" style="-fx-background-color: green;" text="SOCIÁLNA POISŤOVŇA" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
