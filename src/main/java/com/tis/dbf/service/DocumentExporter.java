@@ -39,10 +39,8 @@ public class DocumentExporter {
     public void socialInsurance() {
         int randomNumber = 1000 + (int) (Math.random() * 4001);
         String pdfPath = getDownloadsPath(student.getNameForFile() + "-" + randomNumber +"soc_poist.pdf");
-        System.out.println("som v soc poist");
 
         if (study == null) {
-            System.out.println("Student or study data is missing.");
             return;
         }
 
@@ -110,7 +108,6 @@ public class DocumentExporter {
         String pdfPath = getDownloadsPath(student.getNameForFile() + "-" + randomNumber +"vypis_znamok.pdf");
 
         if (study == null) {
-            System.out.println("Student or study data is missing.");
             return;
         }
 
@@ -160,7 +157,6 @@ public class DocumentExporter {
                 // Overenie, či StudySubjects existuje a nie je null
                 StudySubjects studySubjects = academicYear.getStudySubjects();
                 if (studySubjects == null || studySubjects.getStudySubjectList() == null) {
-                    System.out.println("StudySubjects alebo jeho zoznam je null pre akademický rok: " + academicYear.getYears());
                     continue; // Preskočí tento akademický rok, ak chýbajú údaje
                 }
 
@@ -168,7 +164,6 @@ public class DocumentExporter {
                 for (StudySubject.SubjectDetail studySubject : studySubjects.getStudySubjectList()) {
                     // Overenie, či UIDP nie je null
                     if (studySubject.getUIDP() == null) {
-                        System.out.println("UIDP je null pre predmet v akademickom roku: " + academicYear.getYears());
                         continue; // Preskočí tento predmet, ak chýba UIDP
                     }
 

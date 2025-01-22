@@ -247,10 +247,8 @@ public class MainSceneController {
 
                 // prerusenie
                 if (selectedStudy.getInterruptions() != null && !selectedStudy.getInterruptions().isEmpty()) {
-                    System.out.println("Interruptions: " + selectedStudy.getInterruptions());
                     for (Interruption interruption : selectedStudy.getInterruptions()) {
                         if (interruption.getReason() != null && !interruption.getReason().contains("PRERUŠENIE")) {
-                            System.out.println("aj tu bolo");
                             String combinedReason = "PRERUŠENIE: " + interruption.getReason();
                             interruption.setReason(combinedReason);
                         }
@@ -260,7 +258,6 @@ public class MainSceneController {
 
                 // studium zahranicie
                 if (selectedStudy.getAbroadProgrammes() != null && !selectedStudy.getAbroadProgrammes().isEmpty()) {
-                    System.out.println("Abroad Programs: " + selectedStudy.getAbroadProgrammes());
                     for (AbroadProgramme abroadProgramm : selectedStudy.getAbroadProgrammes()) {
                         if (abroadProgramm.getUniversity() != null && !abroadProgramm.getUniversity().contains("ERAZMUS")) {
                             String combinedReason = "ERAZMUS: " + abroadProgramm.getUniversity();
@@ -273,10 +270,8 @@ public class MainSceneController {
 
                 if (eventsList.isEmpty()) {
                     eventsTable.setVisible(false);
-                    System.out.println("xxx");
                 } else {
                     eventsTable.setVisible(true);
-                    System.out.println("yyy");
                 }
 
             } else {

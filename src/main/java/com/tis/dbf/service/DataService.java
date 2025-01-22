@@ -62,7 +62,6 @@ public class DataService {
 
         buildStudyMap();
         buildSubjectMap();
-        //System.out.println(studyMap);
     }
 
     private void buildStudyMap() {
