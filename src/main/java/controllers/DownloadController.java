@@ -94,9 +94,16 @@ public class DownloadController {
         updateStatus("Sťahujem XML");
         updatePositions();
 
+        // Start spinner animation
+        timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0.01), e -> spinner.setRotate(spinner.getRotate() + 5))
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+
         Task<Void> downloadTask = new Task<>() {
             @Override
-            protected Void call(){
+            protected Void call() {
                 try {
                     dataService.startDownload();
                     Platform.runLater(() -> {
@@ -104,7 +111,7 @@ public class DownloadController {
                         spinner.setVisible(false);
                         updateStatus("Sťahovanie dokončené");
                         updatePositions();
-                        nextButton.setVisible(true);
+                        nextButton.setVisible(true); // Show "Proceed" button
                     });
                 } catch (Exception e) {
                     System.out.println(e);
