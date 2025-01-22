@@ -291,6 +291,7 @@ public class MainSceneController {
     public void handleSearch(ActionEvent actionEvent) {
         String firstName = normalizeInput(firstNameField.getText());
         String secondName = normalizeInput(secondNameField.getText());
+        String marriedName = normalizeInput(secondOriginNameField.getText());
         String birthPlace = normalizeInput(birthPlaceField.getText());
         String birthDate = birthDateField.getValue() != null
                 ? birthDateField.getValue().format(INPUT_DATE_FORMATTER)
@@ -301,6 +302,7 @@ public class MainSceneController {
                     Student student = study.getStudent();
                     return (firstName.isEmpty() || (student != null && normalizeInput(student.getFirstName()).contains(firstName))) &&
                             (secondName.isEmpty() || (student != null && normalizeInput(student.getLastName()).contains(secondName))) &&
+                            (marriedName.isEmpty() || (student != null && normalizeInput(student.getMarriedName()).contains(marriedName))) &&
                             (birthPlace.isEmpty() || (student != null && normalizeInput(student.getBirthPlace()).contains(birthPlace))) &&
                             (birthDate.isEmpty() || (student != null && student.getBirthDate().equals(birthDate)));
                 })
@@ -319,21 +321,13 @@ public class MainSceneController {
         labelFirstName.setText("");
         labelLastName.setText("");
         labelBirthDate.setText("");
-        //FixLabelYears.setText("");
         labelStudyStartDate.setText("");
         labelStudyProgramme.setText("");
         labelGraduate.setText("");
         labelCountYears.setText("");
-        //FixLabelFrom.setText("");
-        //FixLabelCountYears.setText("");
-        //FixLabelTo.setText("");
         labelCountYears.setText("");
         labelStartStudy.setText("");
         labelFinishStudy.setText("");
-        //ButtonSocialnaPoistovna.setVisible(false);
-        //ButtonVypisZnamok.setVisible(false);
-        //ButtonDiplom.setVisible(false);
-        //eventsTable.setVisible(false);
         eventsList.clear();
         loadAllStudies();
     }
@@ -355,13 +349,17 @@ public class MainSceneController {
     }
 
     public void handleMarkExport(ActionEvent actionEvent) throws IOException {
-        DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem(), dataService.getSubjectMap());
-        documentExporter.markExport();
+        if (studiesTable.getSelectionModel().getSelectedItem() != null) {
+            DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem(), dataService.getSubjectMap());
+            documentExporter.markExport();
+        }
     }
 
     public void handleSocialInsuranceExport(ActionEvent actionEvent) throws IOException {
-        DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem(), dataService.getSubjectMap());
-        documentExporter.socialInsurance();
+        if (studiesTable.getSelectionModel().getSelectedItem() != null) {
+            DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem(), dataService.getSubjectMap());
+            documentExporter.socialInsurance();
+        }
     }
 }
 
