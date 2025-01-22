@@ -31,9 +31,9 @@ public class Student {
     @Getter
     @XmlElement(name = "Birth.Country")
     private String birthCountry;
-    @XmlElement(name = "Birth.Name")
+    @XmlElement(name = "Married.Name")
     @Getter
-    private String birthName;
+    private String marriedName;
 
     @Override
     public String toString() {
@@ -50,5 +50,9 @@ public class Student {
 
     public String getBirthDate() {
         return birthDate != null ? birthDate.trim() : "";
+    }
+
+    public String getNameForFile(){
+        return firstName.toLowerCase()+"_"+lastName.toLowerCase();
     }
 }

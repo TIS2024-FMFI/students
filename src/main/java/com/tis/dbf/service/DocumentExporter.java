@@ -17,9 +17,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.properties.UnitValue;
 import com.tis.dbf.model.*;
 
-import javax.swing.*;
 import java.io.File;
-import java.util.List;
 
 public class DocumentExporter {
     private final Study study;
@@ -31,10 +29,11 @@ public class DocumentExporter {
     }
 
     public void socialInsurance() {
-        String pdfPath = getDownloadsPath("social_poistovna.pdf");
+        int randomNumber = 1000 + (int) (Math.random() * 4001);
+        String pdfPath = getDownloadsPath(student.getNameForFile() + "-" + randomNumber +"soc_poist.pdf");
         System.out.println("som v soc poist");
 
-        if (student == null || study == null) {
+        if (study == null) {
             System.out.println("Student or study data is missing.");
             return;
         }
@@ -43,9 +42,9 @@ public class DocumentExporter {
              PdfDocument pdf = new PdfDocument(writer);
              Document document = new Document(pdf, PageSize.A4)) {
 
-            PdfFont boldFont = PdfFontFactory.createFont("C:/Windows/Fonts/arialbd.ttf", PdfEncodings.IDENTITY_H);
-            PdfFont italicFont = PdfFontFactory.createFont("C:/Windows/Fonts/ariali.ttf", PdfEncodings.IDENTITY_H);
-            PdfFont regularFont = PdfFontFactory.createFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
+            PdfFont boldFont = PdfFontFactory.createFont("C:/Windows/Fonts/timesbd.ttf", PdfEncodings.IDENTITY_H);
+            PdfFont italicFont = PdfFontFactory.createFont("C:/Windows/Fonts/timesi.ttf", PdfEncodings.IDENTITY_H);
+            PdfFont regularFont = PdfFontFactory.createFont("C:/Windows/Fonts/times.ttf", PdfEncodings.IDENTITY_H);
 
 
             header(document, boldFont, regularFont);
@@ -59,6 +58,12 @@ public class DocumentExporter {
 
             document.add(createStudyTable(boldFont, italicFont, regularFont));
 
+            document.add(new Paragraph("\nAkademické roky:").setFont(boldFont).setMultipliedLeading(0.8f));
+            for (AcademicYear academicYear : study.getAcademicYears()) {
+                document.add(new Paragraph(academicYear.getYears() + ", zápis " +
+                        academicYear.getRegistrationDate()).setFont(regularFont).setMultipliedLeading(0.8f));
+            }
+
             document.add(new Paragraph("\nPrerušenia:").setFont(boldFont).setMultipliedLeading(0.8f));
             for (Interruption interruption : study.getInterruptions()) {
                 document.add(new Paragraph(interruption.getStartDate() + " - " +
@@ -66,15 +71,37 @@ public class DocumentExporter {
                         interruption.getReason()).setFont(regularFont).setMultipliedLeading(0.8f));
             }
 
+            document.add(new Paragraph("\nŠtúdium v zahraničí:").setFont(boldFont).setMultipliedLeading(0.8f));
+            for (AbroadProgramme abroadProgramme : study.getAbroadProgrammes()) {
+                document.add(new Paragraph(abroadProgramme.getStartDate() + " - " +
+                        abroadProgramme.getEndDate() + ", " + abroadProgramme.getUniversity() + ", " + abroadProgramme.getCountry() + ", " +
+                        abroadProgramme.getSemester()).setFont(regularFont).setMultipliedLeading(0.8f));
+            }
+
+            document.add(new Paragraph("\nŠtátne skúšky:").setFont(boldFont).setMultipliedLeading(0.8f));
+            for (Study.StudyEnd.StateExam stateExam : study.getStudyEnd().getStateExams()) {
+                document.add(new Paragraph("Hodnotenie: " + stateExam.getGrade()).setFont(regularFont).setMultipliedLeading(0.8f));
+                document.add(new Paragraph("Dátum obhajoby: " + stateExam.getDate()).setFont(regularFont).setMultipliedLeading(0.8f));
+            }
+
+            document.add(new Paragraph("\nZaverečna práca:").setFont(boldFont).setMultipliedLeading(0.8f));
+            Study.StudyEnd.Thesis thesis = study.getStudyEnd().getThesis();
+            if (thesis != null) {
+                document.add(new Paragraph("Hodnotenie: " + thesis.getGrade()).setFont(regularFont).setMultipliedLeading(0.8f));
+                document.add(new Paragraph("Dátum obhajoby: " + thesis.getDefenceDate()).setFont(regularFont).setMultipliedLeading(0.8f));
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void markExport() {
-        String pdfPath = getDownloadsPath("vypis_znamok.pdf");
+        int randomNumber = 1000 + (int) (Math.random() * 4001);
+        String pdfPath = getDownloadsPath(student.getNameForFile() + "-" + randomNumber +"vypis_znamok.pdf");
 
-        if (student == null || study == null) {
+        if (study == null) {
             System.out.println("Student or study data is missing.");
             return;
         }
@@ -83,9 +110,9 @@ public class DocumentExporter {
              PdfDocument pdf = new PdfDocument(writer);
              Document document = new Document(pdf, PageSize.A4)) {
 
-            PdfFont boldFont = PdfFontFactory.createFont("Times-Bold", "ISO-8859-2");
-            PdfFont italicFont = PdfFontFactory.createFont("Times-Italic", "ISO-8859-2");
-            PdfFont regularFont = PdfFontFactory.createFont("Times-Roman", "ISO-8859-2");
+            PdfFont boldFont = PdfFontFactory.createFont("C:/Windows/Fonts/timesbd.ttf", PdfEncodings.IDENTITY_H);
+            PdfFont italicFont = PdfFontFactory.createFont("C:/Windows/Fonts/timesi.ttf", PdfEncodings.IDENTITY_H);
+            PdfFont regularFont = PdfFontFactory.createFont("C:/Windows/Fonts/times.ttf", PdfEncodings.IDENTITY_H);
 
             header(document, boldFont, regularFont);
 
@@ -149,7 +176,7 @@ public class DocumentExporter {
         addTableRow(table, "Koniec štúdia:", study.getNewestFinishDate(), italicFont, regularFont);
         addTableRow(table, "Stupeň štúdia:", study.getDegree(), italicFont, regularFont);
         addTableRow(table, "Doba štúdia:", getStudyLength(), italicFont, regularFont);
-        addTableRow(table, "Spôsob ukončenia:", "PLACEHOLDER", italicFont, regularFont);
+        addTableRow(table, "Status štúdia:", study.getStudyStatus(), italicFont, regularFont);
 
         table.setBorder(Border.NO_BORDER);
         return table;
@@ -191,14 +218,6 @@ public class DocumentExporter {
         table.addCell(new Cell().add(new Paragraph(new Text("Študent: ").setFont(boldFont))
                         .add(new Text(student.getFullName()).setFont(regularFont)).setMultipliedLeading(0.8f))
                 .setBorder(Border.NO_BORDER));
-
-        if (student.getLastName() != null) {
-            String label = "muž".equals(student.getSex()) ? "Rodený: " : "Rodená: ";
-            String birthName = student.getBirthName() != null ? student.getBirthName() : ""; // Use empty string for null
-            table.addCell(new Cell().add(new Paragraph(new Text(label).setFont(boldFont))
-                            .add(new Text(birthName).setFont(regularFont)).setMultipliedLeading(0.8f))
-                    .setBorder(Border.NO_BORDER));
-        }
 
         table.setBorder(Border.NO_BORDER);
         document.add(table);
