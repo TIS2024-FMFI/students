@@ -15,4 +15,6 @@ public class AcademicYear {
     @XmlElement(name = "Years")
     private String years;
 
+    @XmlElement(name = "Subjects")
+    private StudySubjects studySubjects;
 }

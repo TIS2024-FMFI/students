@@ -71,10 +71,10 @@
                                  </font>
                               </Label>
                               <TextField fx:id="firstNameField" minHeight="30.0" promptText="Meno" GridPane.columnIndex="1" />
-                              <TextField fx:id="secondNameField" minHeight="30.0" prefHeight="30.0" prefWidth="336.0" promptText="Priezvisko" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="secondNameField" minHeight="30.0" prefHeight="30.0" prefWidth="336.0" promptText="Rodné riezvisko" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="birthPlaceField" minHeight="30.0" prefHeight="30.0" prefWidth="359.0" promptText="Mesto narodnia" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <DatePicker fx:id="birthDateField" minHeight="30.0" prefHeight="30.0" prefWidth="226.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField fx:id="secondOriginNameField" minHeight="28.0" minWidth="30.0" prefHeight="28.0" prefWidth="341.0" promptText="Rodné piezvisko" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="secondOriginNameField" minHeight="28.0" minWidth="30.0" prefHeight="28.0" prefWidth="341.0" promptText="Priezvisko" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                            <VBox.margin>
                               <Insets />
@@ -243,7 +243,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Button fx:id="ButtonVypisZnamok" defaultButton="true" mnemonicParsing="false" prefHeight="42.0" prefWidth="233.0" style="-fx-background-color: ORANGE;" text="VÝPIS ZNÁMOK" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                        <Button fx:id="ButtonVypisZnamok" onAction="#handleMarkExport" defaultButton="true" mnemonicParsing="false" prefHeight="42.0" prefWidth="233.0" style="-fx-background-color: ORANGE;" text="VÝPIS ZNÁMOK" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -251,7 +251,7 @@
                               <ColorAdjust brightness="-0.17" contrast="1.0" hue="-1.0" saturation="0.19" />
                            </effect>
                         </Button>
-                        <Button fx:id="ButtonSocialnaPoistovna" defaultButton="true" mnemonicParsing="false" prefHeight="39.0" prefWidth="234.0" style="-fx-background-color: green;" text="SOCIÁLNA POISŤOVŇA" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                        <Button fx:id="ButtonSocialnaPoistovna" onAction="#handleSocialInsuranceExport" defaultButton="true" mnemonicParsing="false" prefHeight="39.0" prefWidth="234.0" style="-fx-background-color: green;" text="SOCIÁLNA POISŤOVŇA" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>

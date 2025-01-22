@@ -6,6 +6,9 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -131,5 +134,57 @@ public class Study {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public String getNewestFinishDate() {
+        if (this.getStudyEnd() == null) {
+            return "Unknown";
+        }
+
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate newestDate = null;
+
+        // Collect all dates
+        List<String> allDates = new ArrayList<>();
+
+        // Add state exam dates
+        if (this.getStudyEnd().getStateExams() != null) {
+            for (Study.StudyEnd.StateExam exam : this.getStudyEnd().getStateExams()) {
+                System.out.println("StateExam found: " + exam);
+                if (exam.getDate() != null && !exam.getDate().isEmpty()) {
+                    System.out.println("Adding StateExam date: " + exam.getDate());
+                    allDates.add(exam.getDate());
+                }
+            }
+        }
+
+        // Add thesis defense date
+        if (this.getStudyEnd().getThesis() != null) {
+            String thesisDate = this.getStudyEnd().getThesis().getDefenceDate();
+            if (thesisDate != null && !thesisDate.isEmpty()) {
+                allDates.add(thesisDate);
+            }
+        }
+
+        // Debug: Print collected dates
+        System.out.println("Collected dates: " + allDates);
+
+        // Parse and find the newest date
+        for (String dateString : allDates) {
+            try {
+                LocalDate parsedDate = LocalDate.parse(dateString, dateFormatter);
+                System.out.println("Parsed date: " + parsedDate);
+                if (newestDate == null || parsedDate.isAfter(newestDate)) {
+                    newestDate = parsedDate;
+                    System.out.println("Updated newest date: " + newestDate);
+                }
+            } catch (Exception e) {
+                System.err.println("Invalid date format: " + dateString);
+                e.printStackTrace();
+            }
+        }
+
+        // Return the newest date as a string or "Unknown" if none found
+        return newestDate != null ? newestDate.format(dateFormatter) : "Unknown";
     }
 }

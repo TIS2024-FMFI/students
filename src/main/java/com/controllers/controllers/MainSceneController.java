@@ -2,6 +2,7 @@ package com.controllers.controllers;
 
 import com.tis.dbf.model.*;
 import com.tis.dbf.service.DataService;
+import com.tis.dbf.service.DocumentExporter;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.text.Normalizer;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -212,7 +214,7 @@ public class MainSceneController {
             } else {
                 labelStartStudy.setText("Unknown");
             }
-            String finishDate = getNewestFinishDate(selectedStudy);
+            String finishDate = selectedStudy.getNewestFinishDate();
             labelFinishStudy.setText(finishDate);
 
 
@@ -245,10 +247,8 @@ public class MainSceneController {
 
                 // prerusenie
                 if (selectedStudy.getInterruptions() != null && !selectedStudy.getInterruptions().isEmpty()) {
-                    System.out.println("Interruptions: " + selectedStudy.getInterruptions());
                     for (Interruption interruption : selectedStudy.getInterruptions()) {
                         if (interruption.getReason() != null && !interruption.getReason().contains("PRERUŠENIE")) {
-                            System.out.println("aj tu bolo");
                             String combinedReason = "PRERUŠENIE: " + interruption.getReason();
                             interruption.setReason(combinedReason);
                         }
@@ -258,7 +258,6 @@ public class MainSceneController {
 
                 // studium zahranicie
                 if (selectedStudy.getAbroadProgrammes() != null && !selectedStudy.getAbroadProgrammes().isEmpty()) {
-                    System.out.println("Abroad Programs: " + selectedStudy.getAbroadProgrammes());
                     for (AbroadProgramme abroadProgramm : selectedStudy.getAbroadProgrammes()) {
                         if (abroadProgramm.getUniversity() != null && !abroadProgramm.getUniversity().contains("ERAZMUS")) {
                             String combinedReason = "ERAZMUS: " + abroadProgramm.getUniversity();
@@ -271,10 +270,8 @@ public class MainSceneController {
 
                 if (eventsList.isEmpty()) {
                     eventsTable.setVisible(false);
-                    System.out.println("xxx");
                 } else {
                     eventsTable.setVisible(true);
-                    System.out.println("yyy");
                 }
 
             } else {
@@ -285,61 +282,11 @@ public class MainSceneController {
         }
     }
 
-    private String getNewestFinishDate(Study study) {
-        if (study == null || study.getStudyEnd() == null) {
-            return "Unknown";
-        }
-
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        LocalDate newestDate = null;
-
-        // Collect all dates
-        List<String> allDates = new ArrayList<>();
-
-        // Add state exam dates
-        if (study.getStudyEnd().getStateExams() != null) {
-            for (Study.StudyEnd.StateExam exam : study.getStudyEnd().getStateExams()) {
-                System.out.println("StateExam found: " + exam);
-                if (exam.getDate() != null && !exam.getDate().isEmpty()) {
-                    System.out.println("Adding StateExam date: " + exam.getDate());
-                    allDates.add(exam.getDate());
-                }
-            }
-        }
-
-        // Add thesis defense date
-        if (study.getStudyEnd().getThesis() != null) {
-            String thesisDate = study.getStudyEnd().getThesis().getDefenceDate();
-            if (thesisDate != null && !thesisDate.isEmpty()) {
-                allDates.add(thesisDate);
-            }
-        }
-
-        // Debug: Print collected dates
-        System.out.println("Collected dates: " + allDates);
-
-        // Parse and find the newest date
-        for (String dateString : allDates) {
-            try {
-                LocalDate parsedDate = LocalDate.parse(dateString, dateFormatter);
-                System.out.println("Parsed date: " + parsedDate);
-                if (newestDate == null || parsedDate.isAfter(newestDate)) {
-                    newestDate = parsedDate;
-                    System.out.println("Updated newest date: " + newestDate);
-                }
-            } catch (Exception e) {
-                System.err.println("Invalid date format: " + dateString);
-                e.printStackTrace();
-            }
-        }
-
-        // Return the newest date as a string or "Unknown" if none found
-        return newestDate != null ? newestDate.format(dateFormatter) : "Unknown";
-    }
 
     public void handleSearch(ActionEvent actionEvent) {
         String firstName = normalizeInput(firstNameField.getText());
         String secondName = normalizeInput(secondNameField.getText());
+        String marriedName = normalizeInput(secondOriginNameField.getText());
         String birthPlace = normalizeInput(birthPlaceField.getText());
         String birthDate = birthDateField.getValue() != null
                 ? birthDateField.getValue().format(INPUT_DATE_FORMATTER)
@@ -350,6 +297,7 @@ public class MainSceneController {
                     Student student = study.getStudent();
                     return (firstName.isEmpty() || (student != null && normalizeInput(student.getFirstName()).contains(firstName))) &&
                             (secondName.isEmpty() || (student != null && normalizeInput(student.getLastName()).contains(secondName))) &&
+                            (marriedName.isEmpty() || (student != null && normalizeInput(student.getMarriedName()).contains(marriedName))) &&
                             (birthPlace.isEmpty() || (student != null && normalizeInput(student.getBirthPlace()).contains(birthPlace))) &&
                             (birthDate.isEmpty() || (student != null && student.getBirthDate().equals(birthDate)));
                 })
@@ -368,21 +316,13 @@ public class MainSceneController {
         labelFirstName.setText("");
         labelLastName.setText("");
         labelBirthDate.setText("");
-        //FixLabelYears.setText("");
         labelStudyStartDate.setText("");
         labelStudyProgramme.setText("");
         labelGraduate.setText("");
         labelCountYears.setText("");
-        //FixLabelFrom.setText("");
-        //FixLabelCountYears.setText("");
-        //FixLabelTo.setText("");
         labelCountYears.setText("");
         labelStartStudy.setText("");
         labelFinishStudy.setText("");
-        //ButtonSocialnaPoistovna.setVisible(false);
-        //ButtonVypisZnamok.setVisible(false);
-        //ButtonDiplom.setVisible(false);
-        //eventsTable.setVisible(false);
         eventsList.clear();
         loadAllStudies();
     }
@@ -401,6 +341,20 @@ public class MainSceneController {
     private String normalizeInput(String input) {
         return Normalizer.normalize(input != null ? input.trim().toLowerCase() : "", Normalizer.Form.NFD)
                 .replaceAll("[^\\p{ASCII}]", "");
+    }
+
+    public void handleMarkExport(ActionEvent actionEvent) throws IOException {
+        if (studiesTable.getSelectionModel().getSelectedItem() != null) {
+            DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem(), dataService.getSubjectMap());
+            documentExporter.markExport();
+        }
+    }
+
+    public void handleSocialInsuranceExport(ActionEvent actionEvent) throws IOException {
+        if (studiesTable.getSelectionModel().getSelectedItem() != null) {
+            DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem(), dataService.getSubjectMap());
+            documentExporter.socialInsurance();
+        }
     }
 }
 
