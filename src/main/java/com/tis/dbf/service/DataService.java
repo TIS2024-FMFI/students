@@ -10,9 +10,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class DataService {
     private String sharedData;
@@ -24,6 +21,7 @@ public class DataService {
 
     private Map<String, List<Study>> studyMap;
     private String serverPassword;
+    Map<String, Subject> subjectMap = new HashMap<>();
 
     public static DataService getInstance() {
         if (instance == null) {
@@ -63,6 +61,7 @@ public class DataService {
         students = serverConnection.downloadAndParseStudents(username);
 
         buildStudyMap();
+        buildSubjectMap();
         //System.out.println(studyMap);
     }
 
@@ -75,9 +74,18 @@ public class DataService {
             studyMap = new HashMap<>();
         }
     }
+    private void buildSubjectMap() {
+        for (Subject subject : subjects.subjectList) {
+            subjectMap.put(subject.getUIDP(), subject);
+        }
+    }
 
     public Map<String, List<Study>> getStudyMap() {
         return studyMap;
+    }
+
+    public Map<String, Subject> getSubjectMap() {
+        return subjectMap;
     }
 
     public Subjects getSubjects() {

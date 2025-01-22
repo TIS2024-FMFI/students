@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.text.Normalizer;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -353,13 +354,13 @@ public class MainSceneController {
                 .replaceAll("[^\\p{ASCII}]", "");
     }
 
-    public void handleMarkExport(ActionEvent actionEvent) {
-        DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem());
+    public void handleMarkExport(ActionEvent actionEvent) throws IOException {
+        DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem(), dataService.getSubjectMap());
         documentExporter.markExport();
     }
 
-    public void handleSocialInsuranceExport(ActionEvent actionEvent) {
-        DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem());
+    public void handleSocialInsuranceExport(ActionEvent actionEvent) throws IOException {
+        DocumentExporter documentExporter = new DocumentExporter(studiesTable.getSelectionModel().getSelectedItem(), dataService.getSubjectMap());
         documentExporter.socialInsurance();
     }
 }

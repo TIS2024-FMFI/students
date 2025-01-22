@@ -9,23 +9,31 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.borders.SolidBorder;
-import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.element.Text;
+import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.properties.TextAlignment;
-import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.properties.UnitValue;
 import com.tis.dbf.model.*;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.Map;
 
 public class DocumentExporter {
     private final Study study;
     private final Student student;
+    PdfFont boldFont;
+    PdfFont italicFont;
+    PdfFont regularFont;
+    Map<String, Subject> subjectMap;
 
-    public DocumentExporter(Study study) {
+
+    public DocumentExporter(Study study, Map<String, Subject> subjectMap) throws IOException {
         this.study = study;
         this.student = this.study.getStudent();
+        this.boldFont = PdfFontFactory.createFont("C:/Windows/Fonts/timesbd.ttf", PdfEncodings.IDENTITY_H);
+        this.italicFont = PdfFontFactory.createFont("C:/Windows/Fonts/timesi.ttf", PdfEncodings.IDENTITY_H);
+        this.regularFont = PdfFontFactory.createFont("C:/Windows/Fonts/times.ttf", PdfEncodings.IDENTITY_H);
+        this.subjectMap = subjectMap;
     }
 
     public void socialInsurance() {
@@ -42,11 +50,6 @@ public class DocumentExporter {
              PdfDocument pdf = new PdfDocument(writer);
              Document document = new Document(pdf, PageSize.A4)) {
 
-            PdfFont boldFont = PdfFontFactory.createFont("C:/Windows/Fonts/timesbd.ttf", PdfEncodings.IDENTITY_H);
-            PdfFont italicFont = PdfFontFactory.createFont("C:/Windows/Fonts/timesi.ttf", PdfEncodings.IDENTITY_H);
-            PdfFont regularFont = PdfFontFactory.createFont("C:/Windows/Fonts/times.ttf", PdfEncodings.IDENTITY_H);
-
-
             header(document, boldFont, regularFont);
 
             document.add(new Paragraph("PRIEBEH ŠTÚDIA\n\n")
@@ -56,44 +59,49 @@ public class DocumentExporter {
 
             studentTable(document, boldFont, regularFont);
 
-            document.add(createStudyTable(boldFont, italicFont, regularFont));
+            document.add(createStudyTable());
 
-            document.add(new Paragraph("\nAkademické roky:").setFont(boldFont).setMultipliedLeading(0.8f));
-            for (AcademicYear academicYear : study.getAcademicYears()) {
-                document.add(new Paragraph(academicYear.getYears() + ", zápis " +
-                        academicYear.getRegistrationDate()).setFont(regularFont).setMultipliedLeading(0.8f));
-            }
+            addStudyData(document);
 
-            document.add(new Paragraph("\nPrerušenia:").setFont(boldFont).setMultipliedLeading(0.8f));
-            for (Interruption interruption : study.getInterruptions()) {
-                document.add(new Paragraph(interruption.getStartDate() + " - " +
-                        interruption.getEndDate() + ", " +
-                        interruption.getReason()).setFont(regularFont).setMultipliedLeading(0.8f));
-            }
-
-            document.add(new Paragraph("\nŠtúdium v zahraničí:").setFont(boldFont).setMultipliedLeading(0.8f));
-            for (AbroadProgramme abroadProgramme : study.getAbroadProgrammes()) {
-                document.add(new Paragraph(abroadProgramme.getStartDate() + " - " +
-                        abroadProgramme.getEndDate() + ", " + abroadProgramme.getUniversity() + ", " + abroadProgramme.getCountry() + ", " +
-                        abroadProgramme.getSemester()).setFont(regularFont).setMultipliedLeading(0.8f));
-            }
-
-            document.add(new Paragraph("\nŠtátne skúšky:").setFont(boldFont).setMultipliedLeading(0.8f));
-            for (Study.StudyEnd.StateExam stateExam : study.getStudyEnd().getStateExams()) {
-                document.add(new Paragraph("Hodnotenie: " + stateExam.getGrade()).setFont(regularFont).setMultipliedLeading(0.8f));
-                document.add(new Paragraph("Dátum obhajoby: " + stateExam.getDate()).setFont(regularFont).setMultipliedLeading(0.8f));
-            }
-
-            document.add(new Paragraph("\nZaverečna práca:").setFont(boldFont).setMultipliedLeading(0.8f));
-            Study.StudyEnd.Thesis thesis = study.getStudyEnd().getThesis();
-            if (thesis != null) {
-                document.add(new Paragraph("Hodnotenie: " + thesis.getGrade()).setFont(regularFont).setMultipliedLeading(0.8f));
-                document.add(new Paragraph("Dátum obhajoby: " + thesis.getDefenceDate()).setFont(regularFont).setMultipliedLeading(0.8f));
-            }
 
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private void addStudyData(Document document) {
+        document.add(new Paragraph("\nAkademické roky:").setFont(boldFont).setMultipliedLeading(0.8f));
+        for (AcademicYear academicYear : study.getAcademicYears()) {
+            document.add(new Paragraph(academicYear.getYears() + ", zápis " +
+                    academicYear.getRegistrationDate()).setFont(regularFont).setMultipliedLeading(0.8f));
+        }
+
+        document.add(new Paragraph("\nPrerušenia:").setFont(boldFont).setMultipliedLeading(0.8f));
+        for (Interruption interruption : study.getInterruptions()) {
+            document.add(new Paragraph(interruption.getStartDate() + " - " +
+                    interruption.getEndDate() + ", " +
+                    interruption.getReason()).setFont(regularFont).setMultipliedLeading(0.8f));
+        }
+
+        document.add(new Paragraph("\nŠtúdium v zahraničí:").setFont(boldFont).setMultipliedLeading(0.8f));
+        for (AbroadProgramme abroadProgramme : study.getAbroadProgrammes()) {
+            document.add(new Paragraph(abroadProgramme.getStartDate() + " - " +
+                    abroadProgramme.getEndDate() + ", " + abroadProgramme.getUniversity() + ", " + abroadProgramme.getCountry() + ", " +
+                    abroadProgramme.getSemester()).setFont(regularFont).setMultipliedLeading(0.8f));
+        }
+
+        document.add(new Paragraph("\nŠtátne skúšky:").setFont(boldFont).setMultipliedLeading(0.8f));
+        for (Study.StudyEnd.StateExam stateExam : study.getStudyEnd().getStateExams()) {
+            document.add(new Paragraph("Hodnotenie: " + stateExam.getGrade()).setFont(regularFont).setMultipliedLeading(0.8f));
+            document.add(new Paragraph("Dátum obhajoby: " + stateExam.getDate()).setFont(regularFont).setMultipliedLeading(0.8f));
+        }
+
+        document.add(new Paragraph("\nZaverečna práca:").setFont(boldFont).setMultipliedLeading(0.8f));
+        Study.StudyEnd.Thesis thesis = study.getStudyEnd().getThesis();
+        if (thesis != null) {
+            document.add(new Paragraph("Hodnotenie: " + thesis.getGrade()).setFont(regularFont).setMultipliedLeading(0.8f));
+            document.add(new Paragraph("Dátum obhajoby: " + thesis.getDefenceDate()).setFont(regularFont).setMultipliedLeading(0.8f));
         }
     }
 
@@ -128,30 +136,71 @@ public class DocumentExporter {
 
             document.add(new Paragraph(new Text("Zameranie: ").setFont(boldFont))
                     .add(new Text(study.getStudyProgramme()).setFont(regularFont)).setMultipliedLeading(0.8f));
+            document.add(new Paragraph(""));
 
-            Table table = new Table(5);
+
+            Table table = new Table(6);
             table.setWidth(UnitValue.createPercentValue(100));
 
-            String[] headers = {"Zimný + Letný semester:", "Povinnosť:", "Dátum:", "Výsledok:", "Termín:"};
+            String[] headers = {"Názov predmetu:", "Semester" ,"Povinnosť:", "Dátum:", "Výsledok:", "Termín:"};
             for (String headerText : headers) {
                 table.addCell(createTableCell(headerText, italicFont, true));
             }
 
-            for (AcademicYear year : study.getAcademicYears()) {
-                for (Subject subject : year.getSubjects().getSubjectList()) {
-                    table.addCell(createTableCell(stringSubjectName(subject), italicFont, false));
-                    table.addCell(createTableCell(subject.getId1(), regularFont, false)
-                            .setTextAlignment(TextAlignment.CENTER));
-                    table.addCell(createTableCell("placeH", regularFont, false)
-                            .setTextAlignment(TextAlignment.CENTER));
-                    table.addCell(createTableCell("placeH", regularFont, false)
-                            .setTextAlignment(TextAlignment.CENTER));
-                    table.addCell(createTableCell("placeH", regularFont, false)
-                            .setTextAlignment(TextAlignment.CENTER));
+            for (AcademicYear academicYear : study.getAcademicYears()) {
+                // Pridanie rozdeľovača s názvom akademického roka
+                table.addCell(new Cell(1, 6) // Spája 6 stĺpcov
+                        .add(new Paragraph("Akademický rok: " + academicYear.getYears())
+                                .setFont(boldFont)
+                                .setTextAlignment(TextAlignment.LEFT))
+                        .setBorder(Border.NO_BORDER)
+                        .setPaddingTop(10f)
+                        .setPaddingBottom(10f));
+
+                // Overenie, či StudySubjects existuje a nie je null
+                StudySubjects studySubjects = academicYear.getStudySubjects();
+                if (studySubjects == null || studySubjects.getStudySubjectList() == null) {
+                    System.out.println("StudySubjects alebo jeho zoznam je null pre akademický rok: " + academicYear.getYears());
+                    continue; // Preskočí tento akademický rok, ak chýbajú údaje
+                }
+
+                // Prechod cez predmety v akademickom roku
+                for (StudySubject.SubjectDetail studySubject : studySubjects.getStudySubjectList()) {
+                    // Overenie, či UIDP nie je null
+                    if (studySubject.getUIDP() == null) {
+                        System.out.println("UIDP je null pre predmet v akademickom roku: " + academicYear.getYears());
+                        continue; // Preskočí tento predmet, ak chýba UIDP
+                    }
+
+                    // Nájsť spárovaný predmet
+                    Subject matchingSubject = subjectMap.get(studySubject.getUIDP());
+                    if (matchingSubject != null) {
+                        // Pridanie detailov spárovaného predmetu do tabuľky
+                        table.addCell(createTableCell(stringSubjectName(matchingSubject), italicFont, false));
+                        table.addCell(createTableCell(studySubject.getSemester(), regularFont, false)
+                                .setTextAlignment(TextAlignment.CENTER));
+                        table.addCell(createTableCell(studySubject.getType(), regularFont, false)
+                                .setTextAlignment(TextAlignment.CENTER));
+                        table.addCell(createTableCell(studySubject.getEndSubjectDate(), regularFont, false)
+                                .setTextAlignment(TextAlignment.CENTER));
+                        table.addCell(createTableCell(studySubject.getEndSubject(), regularFont, false)
+                                .setTextAlignment(TextAlignment.CENTER));
+                        table.addCell(createTableCell(studySubject.getAttempt(), regularFont, false)
+                                .setTextAlignment(TextAlignment.CENTER));
+                    } else {
+                        // Spracovanie nespárovaných predmetov
+                        table.addCell(createTableCell("Unknown Subject", italicFont, false));
+                        for (int i = 0; i < 5; i++) {
+                            table.addCell(createTableCell("", regularFont, false).setTextAlignment(TextAlignment.CENTER));
+                        }
+                    }
                 }
             }
 
-            for (int i = 0; i < 5; i++) {
+
+
+            addEmptyRow(table);
+            for (int i = 0; i < 6; i++) {
                 table.addCell(new Cell().setBorder(Border.NO_BORDER).setBorderTop(new SolidBorder(1)));
             }
 
@@ -161,12 +210,20 @@ public class DocumentExporter {
         }
     }
 
+    private void addEmptyRow(Table table) {
+        for (int i = 0; i < 6; i++) {
+            table.addCell(new Cell()
+                    .setBorder(Border.NO_BORDER)
+                    .add(new Paragraph(""))); // Add an empty paragraph for spacing
+        }
+    }
+
     private String getDownloadsPath(String fileName) {
         String userHome = System.getProperty("user.home");
         return userHome + File.separator + "Downloads" + File.separator + fileName;
     }
 
-    private Table createStudyTable(PdfFont boldFont, PdfFont italicFont, PdfFont regularFont) {
+    private Table createStudyTable() {
         float[] columnWidths = {100f, 300f};
         Table table = new Table(columnWidths);
 
@@ -229,14 +286,5 @@ public class DocumentExporter {
 
     private String getStudyLength() {
         return "-";
-    }
-
-    public static void main(String[] args) {
-        Study study = new Study();
-        DocumentExporter exporter = new DocumentExporter(study);
-        System.out.println("hallo");
-        exporter.socialInsurance();
-        System.out.println("ddd");
-        exporter.markExport();
     }
 }
