@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.controllers.MainSceneController">
+<HBox prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.MainSceneController">
    <children>
       <SplitPane dividerPositions="0.5026109660574413" orientation="VERTICAL" prefHeight="768.0" prefWidth="720.0">
          <items>
