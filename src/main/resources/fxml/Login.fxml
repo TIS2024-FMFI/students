@@ -17,7 +17,7 @@
             <GridPane.margin>
                 <Insets bottom="-30"/> <!-- Negative bottom margin to "pull" fields closer -->
             </GridPane.margin>
-            <Image url="@/uk_logo.png"/>
+            <Image url="@/logo/uk_logo.png"/>
         </ImageView>
 
         <!-- Username field -->

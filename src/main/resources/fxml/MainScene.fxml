@@ -71,8 +71,8 @@
                                  </font>
                               </Label>
                               <TextField fx:id="firstNameField" minHeight="30.0" promptText="Meno" GridPane.columnIndex="1" />
-                              <TextField fx:id="secondNameField" minHeight="30.0" prefHeight="30.0" prefWidth="336.0" promptText="Rodné riezvisko" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="birthPlaceField" minHeight="30.0" prefHeight="30.0" prefWidth="359.0" promptText="Mesto narodnia" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="secondNameField" minHeight="30.0" prefHeight="30.0" prefWidth="336.0" promptText="Priezvisko" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="birthPlaceField" minHeight="30.0" prefHeight="30.0" prefWidth="359.0" promptText="Mesto narodenia" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <DatePicker fx:id="birthDateField" minHeight="30.0" prefHeight="30.0" prefWidth="226.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <TextField fx:id="secondOriginNameField" minHeight="28.0" minWidth="30.0" prefHeight="28.0" prefWidth="341.0" promptText="Priezvisko" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
