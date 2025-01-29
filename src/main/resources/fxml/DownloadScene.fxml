@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Arc?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.control.PasswordField?>
-<AnchorPane stylesheets="@styles.css" fx:id="anchorPane" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.DownloadController">
+<?import javafx.scene.text.Font?>
 
-    <StackPane fx:id="stackPane" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
-        <Label fx:id="statusLabel" text="Initializing..." styleClass="status-label"/>
+<AnchorPane fx:id="anchorPane" prefHeight="768.0" prefWidth="1366.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DownloadController">
+
+    <StackPane fx:id="stackPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <Label fx:id="statusLabel" styleClass="status-label" text="" />
+      <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
     </StackPane>
 
-    <Arc fx:id="spinner" startAngle="90" length="270" radiusX="50" radiusY="50" fill="transparent" styleClass="spinner"/>
+    <Arc fx:id="spinner" fill="transparent" length="270" radiusX="50" radiusY="50" startAngle="90" styleClass="spinner" />
 
-    <VBox layoutX="100" layoutY="150" spacing="10">
-        <PasswordField fx:id="passwordField" promptText="Password"/>
-        <Button fx:id="startDownloadButton" text="Start Download" onAction="#handlePasswordAndStartDownload"/>
+    <VBox layoutX="600" layoutY="550" prefHeight="86.0" prefWidth="200.0" spacing="10">
+        <PasswordField fx:id="passwordField" alignment="CENTER" prefHeight="34.0" prefWidth="166.0" promptText="Heslo od servera" />
+        <Button fx:id="startDownloadButton" alignment="CENTER" contentDisplay="CENTER" onAction="#handlePasswordAndStartDownload" prefHeight="27.0" prefWidth="152.0" style="-fx-background-color: orange;" text="Začať sťahovanie">
+            <font>
+                <Font size="13.0" />
+            </font>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin></Button>
     </VBox>
 
-    <Button fx:id="nextButton" text="Vstúp do hlavnej scény" layoutX="100" layoutY="300" onAction="#handleProceed" visible="false" styleClass="green-button"/>
+    <Button fx:id="nextButton" layoutX="100" layoutY="300" onAction="#handleProceed" styleClass="green-button" text="Vstúp do hlavnej scény" visible="false" />
 
-    <Button fx:id="retryButton" text="Skúsiť znova" layoutX="100" layoutY="350" onAction="#handleRetry" visible="false" styleClass="red-button"/>
+    <Button fx:id="retryButton" layoutX="100" layoutY="350" onAction="#handleRetry" styleClass="red-button" text="Skúsiť znova" visible="false" />
 </AnchorPane>

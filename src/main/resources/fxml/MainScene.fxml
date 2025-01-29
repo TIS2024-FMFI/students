@@ -16,9 +16,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.MainSceneController">
+<HBox prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainSceneController">
    <children>
       <SplitPane dividerPositions="0.5026109660574413" orientation="VERTICAL" prefHeight="768.0" prefWidth="720.0">
          <items>
@@ -74,13 +75,13 @@
                               <TextField fx:id="secondNameField" minHeight="30.0" prefHeight="30.0" prefWidth="336.0" promptText="Priezvisko" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="birthPlaceField" minHeight="30.0" prefHeight="30.0" prefWidth="359.0" promptText="Mesto narodenia" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <DatePicker fx:id="birthDateField" minHeight="30.0" prefHeight="30.0" prefWidth="226.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField fx:id="secondOriginNameField" minHeight="28.0" minWidth="30.0" prefHeight="28.0" prefWidth="341.0" promptText="Priezvisko" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="secondOriginNameField" minHeight="28.0" minWidth="30.0" prefHeight="28.0" prefWidth="341.0" promptText="Rodné priezvisko" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
                         </GridPane>
-                        <HBox alignment="CENTER" maxHeight="300.0" maxWidth="590.0" prefHeight="63.0" prefWidth="590.0" spacing="100.0">
+                        <HBox alignment="CENTER" maxHeight="300.0" maxWidth="590.0" prefHeight="93.0" prefWidth="590.0" spacing="100.0">
                            <children>
                               <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSearch" prefHeight="55.0" prefWidth="174.0" style="-fx-background-color: green;" text="HĽADAJ" textFill="WHITE">
                                  <font>
@@ -138,22 +139,21 @@
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="486.6666259765625" minWidth="10.0" prefWidth="265.0" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="93.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="129.0" minHeight="4.333343505859375" prefHeight="42.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="154.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="57.79998931884765" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="93.0" minHeight="0.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="129.0" minHeight="4.333343505859375" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="147.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="144.3333740234375" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="126.33331298828125" minHeight="0.0" prefHeight="55.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="126.33331298828125" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="126.33331298828125" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="126.33331298828125" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="126.33331298828125" minHeight="3.0" prefHeight="3.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="165.0" minHeight="0.199981689453125" prefHeight="0.199981689453125" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="126.33331298828125" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="126.33331298828125" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="126.33331298828125" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="136.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="126.33331298828125" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="126.33331298828125" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
@@ -197,7 +197,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="FixLabelStudyData" prefHeight="34.0" prefWidth="257.0" text="ŠTÚDIJNÉ ÚDAJE" GridPane.rowIndex="5">
+                        <Label fx:id="FixLabelStudyData" prefHeight="34.0" prefWidth="257.0" text="ŠTÚDIJNÉ ÚDAJE" GridPane.rowIndex="6">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -205,7 +205,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="FixLabelStudyProgramme" text="Študijný program" GridPane.rowIndex="6">
+                        <Label fx:id="FixLabelStudyProgramme" text="Študijný program" GridPane.rowIndex="7">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -213,7 +213,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="FixLabelStudyStart" text="Začiatok štúdia" GridPane.rowIndex="7">
+                        <Label fx:id="FixLabelStudyStart" text="Začiatok štúdia" GridPane.rowIndex="8">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -221,7 +221,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="FixLabelGraduate" text="Status štúdia" GridPane.rowIndex="8">
+                        <Label fx:id="FixLabelGraduate" text="Status štúdia" GridPane.rowIndex="9">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -232,18 +232,7 @@
                               <Insets left="8.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="FixLabelYears" prefHeight="35.0" prefWidth="385.0" text="Priebeh štúdia / akademické roky" GridPane.rowIndex="9">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets />
-                           </GridPane.margin>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Button fx:id="ButtonVypisZnamok" onAction="#handleMarkExport" defaultButton="true" mnemonicParsing="false" prefHeight="42.0" prefWidth="233.0" style="-fx-background-color: ORANGE;" text="VÝPIS ZNÁMOK" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                        <Button fx:id="ButtonVypisZnamok" defaultButton="true" mnemonicParsing="false" onAction="#handleMarkExport" prefHeight="42.0" prefWidth="233.0" style="-fx-background-color: ORANGE;" text="VÝPIS ZNÁMOK" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -251,15 +240,15 @@
                               <ColorAdjust brightness="-0.17" contrast="1.0" hue="-1.0" saturation="0.19" />
                            </effect>
                         </Button>
-                        <Button fx:id="ButtonSocialnaPoistovna" onAction="#handleSocialInsuranceExport" defaultButton="true" mnemonicParsing="false" prefHeight="39.0" prefWidth="234.0" style="-fx-background-color: green;" text="SOCIÁLNA POISŤOVŇA" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                        <Button fx:id="ButtonSocialnaPoistovna" defaultButton="true" mnemonicParsing="false" onAction="#handleSocialInsuranceExport" prefHeight="39.0" prefWidth="234.0" style="-fx-background-color: green;" text="SOCIÁLNA POISŤOVŇA" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="13">
                            <font>
-                              <Font name="System Bold" size="20.0" />
+                              <Font name="System Bold" size="18.0" />
                            </font>
                            <effect>
                               <ColorAdjust brightness="0.52" contrast="1.0" hue="-0.62" saturation="0.02" />
                            </effect>
                         </Button>
-                        <Button fx:id="ButtonDiplom" defaultButton="true" mnemonicParsing="false" prefHeight="38.0" prefWidth="229.0" style="-fx-background-color: green;" text="DODATOK K DIPLOMU" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                        <Button fx:id="ButtonDiplom" defaultButton="true" mnemonicParsing="false" prefHeight="38.0" prefWidth="229.0" style="-fx-background-color: green;" text="DODATOK K DIPLOMU" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="11">
                            <font>
                               <Font name="System Italic" size="20.0" />
                            </font>
@@ -300,7 +289,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="labelStudyProgramme" contentDisplay="RIGHT" minWidth="450.0" prefHeight="42.0" prefWidth="407.0" GridPane.rowIndex="6">
+                        <Label fx:id="labelStudyProgramme" contentDisplay="RIGHT" minWidth="450.0" prefHeight="42.0" prefWidth="407.0" GridPane.rowIndex="7">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -311,7 +300,7 @@
                               <Insets left="220.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label fx:id="labelStudyStartDate" contentDisplay="RIGHT" minWidth="450.0" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="7">
+                        <Label fx:id="labelStudyStartDate" contentDisplay="RIGHT" minWidth="450.0" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="8">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -322,7 +311,7 @@
                               <Insets left="220.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label fx:id="labelGraduate" contentDisplay="RIGHT" minWidth="400.0" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="8">
+                        <Label fx:id="labelGraduate" contentDisplay="RIGHT" minWidth="400.0" prefHeight="42.0" prefWidth="453.0" GridPane.rowIndex="9">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -333,33 +322,33 @@
                               <Insets left="220.0" />
                            </GridPane.margin>
                         </Label>
-                        <GridPane GridPane.rowIndex="10">
+                        <GridPane GridPane.rowIndex="11">
                            <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="208.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="228.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.66668701171875" minWidth="10.0" prefWidth="286.1333984375" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="153.0666015625" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label fx:id="FixLabelCountYears" prefHeight="45.0" prefWidth="236.0" text="Štand. dĺžka štúdia ">
+                              <Label fx:id="FixLabelCountYears" prefHeight="46.0" prefWidth="313.0" text="Štandardná dĺžka štúdia ">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="24.0" />
                                  </font>
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
                                  <padding>
-                                    <Insets left="15.0" />
+                                    <Insets left="10.0" />
                                  </padding>
                               </Label>
-                              <Label fx:id="labelCountYears" prefHeight="59.0" prefWidth="250.0" GridPane.columnIndex="1">
+                              <Label fx:id="labelCountYears" prefHeight="50.0" prefWidth="241.0" GridPane.columnIndex="1">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="24.0" />
                                  </font></Label>
                            </children>
                         </GridPane>
-                        <GridPane GridPane.rowIndex="11">
+                        <GridPane GridPane.rowIndex="12">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="60.0" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="381.0" minWidth="10.0" prefWidth="381.0" />
@@ -370,22 +359,22 @@
                            <children>
                               <Label fx:id="FixLabelFrom" prefHeight="47.0" prefWidth="172.0" text="Od">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="24.0" />
                                  </font>
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
                                  <padding>
-                                    <Insets left="20.0" />
+                                    <Insets left="10.0" />
                                  </padding>
                               </Label>
                               <Label fx:id="labelStartStudy" prefHeight="45.0" prefWidth="201.0" GridPane.columnIndex="1">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="24.0" />
                                  </font></Label>
                            </children>
                         </GridPane>
-                        <GridPane GridPane.rowIndex="12">
+                        <GridPane GridPane.rowIndex="13">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="60.0" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="387.0" minWidth="10.0" prefWidth="382.0" />
@@ -396,28 +385,30 @@
                            <children>
                               <Label fx:id="FixLabelTo" prefHeight="41.0" prefWidth="236.0" text="Do">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="24.0" />
                                  </font>
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
                                  <padding>
-                                    <Insets left="20.0" />
+                                    <Insets left="10.0" />
                                  </padding>
                               </Label>
                               <Label fx:id="labelFinishStudy" prefHeight="41.0" prefWidth="206.0" GridPane.columnIndex="1">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="24.0" />
                                  </font></Label>
                            </children>
                         </GridPane>
                         <TableView fx:id="eventsTable" prefHeight="92.0" prefWidth="430.0" GridPane.rowIndex="14">
                            <columns>
-                              <TableColumn fx:id="columnStartDate" prefWidth="75.0" text="ZACIATOK" />
-                              <TableColumn fx:id="columnEndDate" prefWidth="105.0" text="UKONCENIE" />
-                              <TableColumn fx:id="columnReason" prefWidth="254.0" text="UDALOST" />
+                              <TableColumn fx:id="columnStartDate" prefWidth="75.0" text="ZAČIATOK" />
+                              <TableColumn fx:id="columnEndDate" prefWidth="105.0" text="UKONČENIE" />
+                              <TableColumn fx:id="columnReason" prefWidth="254.0" text="UDALOSŤ" />
                            </columns>
                         </TableView>
+                        <Line endX="657.5595092773438" endY="-0.3543751537799835" startX="-100.0" GridPane.rowIndex="5" />
+                        <Line endX="603.2929077148438" endY="0.5928810238838196" startX="-100.0" GridPane.rowIndex="10" />
                      </children>
                      <opaqueInsets>
                         <Insets left="100.0" right="20.0" />

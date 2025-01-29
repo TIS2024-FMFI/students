@@ -203,7 +203,13 @@ public class MainSceneController {
             labelStudyProgramme.setText(selectedStudy.getStudyProgramme());
             labelGraduate.setText(selectedStudy.getDegree() + " " + selectedStudy.getStudyStatus());
             labelStudyStartDate.setText(selectedStudy.getStudyAdmission().getDate());
-            labelCountYears.setText(String.valueOf(selectedStudy.getStandardLength()));
+            int years = selectedStudy.getStandardLength();
+            if (years == 1) {
+                labelCountYears.setText(years + " rok");
+            } else {
+                labelCountYears.setText(years + " roky");
+            }
+
             if (selectedStudy.getAcademicYears() != null && !selectedStudy.getAcademicYears().isEmpty()) {
                 String firstAcademicYearStartDate = selectedStudy.getAcademicYears()
                         .get(0)
@@ -289,10 +295,10 @@ public class MainSceneController {
         List<Study> filteredStudies = studyList.stream()
                 .filter(study -> {
                     Student student = study.getStudent();
-                    return (firstName.isEmpty() || (student != null && normalizeInput(student.getFirstName()).contains(firstName))) &&
-                            (secondName.isEmpty() || (student != null && normalizeInput(student.getLastName()).contains(secondName))) &&
-                            (marriedName.isEmpty() || (student != null && normalizeInput(student.getMarriedName()).contains(marriedName))) &&
-                            (birthPlace.isEmpty() || (student != null && normalizeInput(student.getBirthPlace()).contains(birthPlace))) &&
+                    return (firstName.isEmpty() || (student != null && normalizeInput(student.getFirstName()).startsWith(firstName))) &&
+                            (secondName.isEmpty() || (student != null && normalizeInput(student.getLastName()).startsWith(secondName))) &&
+                            (marriedName.isEmpty() || (student != null && normalizeInput(student.getMarriedName()).startsWith(marriedName))) &&
+                            (birthPlace.isEmpty() || (student != null && normalizeInput(student.getBirthPlace()).startsWith(birthPlace))) &&
                             (birthDate.isEmpty() || (student != null && student.getBirthDate().equals(birthDate)));
                 })
                 .collect(Collectors.toList());
@@ -351,5 +357,4 @@ public class MainSceneController {
         }
     }
 }
-
 
