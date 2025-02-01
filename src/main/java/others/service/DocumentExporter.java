@@ -1,6 +1,8 @@
 package others.service;
 
 import com.itextpdf.io.font.PdfEncodings;
+import com.itextpdf.io.image.ImageData;
+import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -12,11 +14,16 @@ import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.properties.UnitValue;
+import com.itextpdf.layout.properties.VerticalAlignment;
 import others.model.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 
 public class DocumentExporter {
@@ -55,14 +62,14 @@ public class DocumentExporter {
              PdfDocument pdf = new PdfDocument(writer);
              Document document = new Document(pdf, PageSize.A4)) {
 
-            header(document, boldFont, regularFont);
+            header(document);
 
             document.add(new Paragraph("PRIEBEH ŠTÚDIA\n\n")
                     .setTextAlignment(TextAlignment.CENTER)
                     .setFont(boldFont)
                     .setFontSize(12));
 
-            studentTable(document, boldFont, regularFont);
+            studentTable(document);
 
             document.add(createStudyTable());
 
@@ -121,14 +128,14 @@ public class DocumentExporter {
              PdfDocument pdf = new PdfDocument(writer);
              Document document = new Document(pdf, PageSize.A4)) {
 
-            header(document, boldFont, regularFont);
+            header(document);
 
             document.add(new Paragraph("VÝPIS ZNÁMOK\n\n")
                     .setTextAlignment(TextAlignment.CENTER)
                     .setFont(boldFont)
                     .setFontSize(12));
 
-            studentTable(document, boldFont, regularFont);
+            studentTable(document);
 
             document.add(new Paragraph(new Text("Odbor: ").setFont(boldFont))
                     .add(new Text(study.getStudyField()).setFont(regularFont)).setMultipliedLeading(0.8f));
@@ -201,6 +208,7 @@ public class DocumentExporter {
             }
 
             document.add(table);
+            table.complete();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -253,18 +261,49 @@ public class DocumentExporter {
         return cell;
     }
 
-    private void header(Document document, PdfFont boldFont, PdfFont regularFont) {
-        document.add(new Paragraph("Univerzita Komenského v Bratislave")
-                .setTextAlignment(TextAlignment.CENTER)
+    private void header(Document document) throws IOException {
+        String path = "logo/" + getFacultyShortName(study.getFaculty()) + "_logo.png";
+
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(path);
+
+        if (inputStream == null) {
+            throw new IOException("Logo not found at: " + path);
+        }
+
+        byte[] imageBytes = inputStream.readAllBytes();
+        ImageData imageData = ImageDataFactory.create(imageBytes);
+        Image logo = new Image(imageData);
+
+        logo.setWidth(100);
+        logo.setAutoScaleHeight(true);
+
+        // Create a container for the header
+        Div container = new Div();
+        container.setWidth(UnitValue.createPercentValue(100));
+
+        // Create a div for the logo (ABSOLUTE LEFT)
+        Div logoDiv = new Div();
+        logoDiv.add(logo);
+        logoDiv.setFixedPosition(45, 715, 100); // X=50, Y=760, Width=100 (adjust Y if needed)
+
+        // Create a div for the centered text
+        Div textDiv = new Div();
+        textDiv.setTextAlignment(TextAlignment.CENTER);
+
+        textDiv.add(new Paragraph("Univerzita Komenského v Bratislave")
                 .setFont(boldFont)
-                .setFontSize(14));
-        document.add(new Paragraph(study.getFaculty())
-                .setTextAlignment(TextAlignment.CENTER)
+                .setFontSize(16));  // Increased font size for better balance
+
+        textDiv.add(new Paragraph(study.getFaculty())
                 .setFont(regularFont)
-                .setFontSize(12));
+                .setFontSize(14));
+
+        // Add elements to the document
+        document.add(logoDiv);
+        document.add(textDiv);
     }
 
-    private void studentTable(Document document, PdfFont boldFont, PdfFont regularFont) {
+    private void studentTable(Document document) {
         float[] columnWidthsStudent = {300f, 200f};
         Table table = new Table(columnWidthsStudent);
 
@@ -274,6 +313,7 @@ public class DocumentExporter {
 
         table.setBorder(Border.NO_BORDER);
         document.add(table);
+        table.complete();
 
         document.add(new Paragraph(new Text("Dátum a miesto narodenia: ").setFont(boldFont))
                 .add(new Text(student.getBirthDate() + ", " + student.getBirthPlace() + "\n\n").setFont(regularFont))
@@ -282,5 +322,38 @@ public class DocumentExporter {
 
     private String getStudyLength() {
         return "-";
+    }
+
+    private String getFacultyShortName(String facultyName) {
+        switch (facultyName.toLowerCase()) {
+            case "lekárska fakulta":
+                return "lf";
+            case "právnická fakulta":
+                return "praf";
+            case "filozofická fakulta":
+                return "fif";
+            case "prírodovedecká fakulta":
+                return "prif";
+            case "pedagogická fakulta":
+                return "pdf";
+            case "farmaceutická fakulta":
+                return "faf";
+            case "fakulta telesnej výchovy a športu":
+                return "ftvs";
+            case "jesseniova lekárska fakulta v martine":
+                return "jlf";
+            case "fakulta matematiky, fyziky a informatiky":
+                return "fmfi";
+            case "rímskokatolícka cyrilometodská bohoslovecká fakulta":
+                return "rkcmbf";
+            case "evanjelická bohoslovecká fakulta":
+                return "ebf";
+            case "fakulta manažmentu":
+                return "fm";
+            case "fakulta sociálnych a ekonomických vied":
+                return "fsev";
+            default:
+                return "uk"; // uniba
+        }
     }
 }
