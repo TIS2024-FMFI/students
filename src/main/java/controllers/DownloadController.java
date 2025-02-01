@@ -56,6 +56,7 @@ public class DownloadController {
         // Set initial visibility and positions
         nextButton.setVisible(false);
         retryButton.setVisible(false);
+        spinner.setVisible(false);
 
         // Update positions when the window is resized
         anchorPane.widthProperty().addListener((obs, oldWidth, newWidth) -> updatePositions());
