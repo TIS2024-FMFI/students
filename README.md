@@ -41,7 +41,7 @@ Follow these steps to set up and run the application:
 Clone the repository or download the source code:
 
 ```bash
-git clone https://github.com/yourusername/students.git
+git clone https://github.com/TIS2024-FMFI/students.git
 cd students
 ```
 
