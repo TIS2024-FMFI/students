@@ -128,14 +128,6 @@ public class Study {
 
     private Student student;
 
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
     public String getNewestFinishDate() {
         if (this.getStudyEnd() == null) {
             return "Unknown";

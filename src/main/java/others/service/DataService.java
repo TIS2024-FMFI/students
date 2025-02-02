@@ -2,6 +2,7 @@ package others.service;
 
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.SftpException;
+import lombok.Data;
 import others.model.*;
 import jakarta.xml.bind.JAXBException;
 
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 
 import java.util.HashMap;
 
+@Data
 public class DataService {
     private String sharedData;
     private String username;
@@ -71,21 +73,10 @@ public class DataService {
         return studyMap;
     }
 
-    public Map<String, Subject> getSubjectMap() {
-        return subjectMap;
-    }
+//    public Map<String, Subject> getSubjectMap() {
+//        return subjectMap;
+//    }
 
-    public Subjects getSubjects() {
-        return subjects;
-    }
-
-    public Studies getStudies() {
-        return studies;
-    }
-
-    public Students getStudents() {
-        return students;
-    }
 }
 
 
